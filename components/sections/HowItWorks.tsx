@@ -23,7 +23,16 @@ export default function HowItWorks() {
   const isFinal = (i: number) => i === steps.length - 1;
 
   return (
-    <Section id="how-it-works" tone="ink">
+    <Section
+      id="how-it-works"
+      tone="ink"
+      character={{
+        src: "/characters/char-howitworks.png",
+        alt: "A RapKids character cheering on the championship steps",
+        side: "left",
+        placeholderLabel: "characters/char-howitworks.png",
+      }}
+    >
       <SectionHeader
         eyebrow="How it works"
         caret="punch"

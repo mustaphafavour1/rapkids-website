@@ -1,13 +1,11 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import Link from "next/link";
-import { ArrowRight, Users } from "lucide-react";
+import { Users } from "lucide-react";
 import Section from "@/components/primitives/Section";
 import SectionHeader from "@/components/primitives/SectionHeader";
 import Reveal from "@/components/primitives/Reveal";
 import { fairness } from "@/lib/content";
-import { SHADOW_RANK_URL } from "@/lib/config";
 import { ease } from "@/lib/motion";
 
 /* 1 — two brackets: kids matched within their own age lane */
@@ -111,10 +109,9 @@ function MondayReset() {
   );
 }
 
-/* 3 — one subscription, up to four children each with their own board */
+/* 3 — one subscription, up to two children each with their own board */
 function FamilyFanout() {
-  const reduce = useReducedMotion();
-  const kids = ["Ada", "Zed", "Kai", "Mia"];
+  const kids = ["Ada", "Zed"];
   return (
     <div className="flex h-full flex-col justify-center gap-3">
       <div className="flex items-center gap-2 self-start rounded-full border border-gold/30 bg-gold/10 px-3 py-1.5">
@@ -141,7 +138,7 @@ function FamilyFanout() {
         ))}
       </div>
       <div className="font-mono text-[0.6rem] text-faint">
-        up to 4 kids · 4 boards · 4 chances
+        up to 2 kids · 2 boards · 2 chances
       </div>
     </div>
   );
@@ -186,32 +183,6 @@ export default function Fairness() {
           );
         })}
       </div>
-
-      {/* shadow-rank band */}
-      <Reveal delay={0.1}>
-        <div className="mt-10 flex flex-col items-start justify-between gap-6 overflow-hidden rounded-3xl border border-line/15 bg-gradient-to-r from-ink to-surface p-7 sm:flex-row sm:items-center md:p-9">
-          <div className="max-w-xl">
-            <div className="mb-2 flex items-center gap-2 font-mono text-xs text-faint">
-              <span>shadow rank</span>
-              <span className="text-line/40">›</span>
-              <span className="text-cream">#—</span>
-              <ArrowRight className="h-3 w-3 text-faint" />
-              <span className="text-volt">#12 this week</span>
-            </div>
-            <h3 className="font-display text-xl font-bold text-cream sm:text-2xl">
-              Not subscribed yet?
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted">
-              Try a free practice round and see exactly where your child would
-              rank today — no card, no commitment.
-            </p>
-          </div>
-          <a href={SHADOW_RANK_URL} className="btn-ghost shrink-0">
-            See your child&apos;s shadow rank
-            <ArrowRight className="h-4 w-4" />
-          </a>
-        </div>
-      </Reveal>
     </Section>
   );
 }

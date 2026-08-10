@@ -1,7 +1,7 @@
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import CaretHeadline from "@/components/primitives/CaretHeadline";
 import Reveal from "@/components/primitives/Reveal";
-import { REGISTER_URL, SHADOW_RANK_URL } from "@/lib/config";
 
 type Props = {
   title?: string;
@@ -13,7 +13,7 @@ type Props = {
 export default function CtaBand({
   title = "Ready. Set. ",
   accent = "Type",
-  subtitle = "Every child on an active RapKids plan can enter — and one subscription enters your whole family.",
+  subtitle = "Every child on an active RapKids plan can enter — one subscription enters both your kids.",
 }: Props) {
   return (
     <section className="relative overflow-hidden bg-surface py-20 md:py-28">
@@ -34,14 +34,11 @@ export default function CtaBand({
           </p>
         </Reveal>
         <Reveal delay={0.12}>
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a href={REGISTER_URL} className="btn-primary">
+          <div className="mt-8 flex justify-center">
+            <Link href="/register" className="btn-primary">
               Register your child
               <ArrowRight className="h-4 w-4" />
-            </a>
-            <a href={SHADOW_RANK_URL} className="btn-ghost">
-              See your child&apos;s shadow rank
-            </a>
+            </Link>
           </div>
         </Reveal>
       </div>

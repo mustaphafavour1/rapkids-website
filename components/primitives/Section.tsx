@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import SectionCharacter from "./SectionCharacter";
 
 type Props = {
   id?: string;
@@ -8,6 +9,13 @@ type Props = {
   className?: string;
   /** remove default container to let a child go full-bleed */
   bleed?: boolean;
+  /** an optional comic-character cutout peeking from a bottom corner */
+  character?: {
+    src: string;
+    alt: string;
+    side: "left" | "right";
+    placeholderLabel?: string;
+  };
 };
 
 /**
@@ -20,15 +28,17 @@ export default function Section({
   tone = "ink",
   className = "",
   bleed = false,
+  character,
 }: Props) {
   return (
     <section
       id={id}
-      className={`relative scroll-mt-24 py-24 sm:py-28 md:py-36 ${
+      className={`relative scroll-mt-24 overflow-hidden py-24 sm:py-28 md:py-36 ${
         tone === "surface" ? "bg-surface" : "bg-ink"
       } ${className}`}
     >
       {bleed ? children : <div className="container-page">{children}</div>}
+      {character ? <SectionCharacter {...character} /> : null}
     </section>
   );
 }

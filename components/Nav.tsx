@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { navLinks } from "@/lib/content";
-import { REGISTER_URL } from "@/lib/config";
 
 function Wordmark() {
   return (
@@ -64,13 +63,13 @@ export default function Nav() {
           </div>
 
           <div className="flex items-center gap-3">
-            <a
-              href={REGISTER_URL}
+            <Link
+              href="/register"
               className="btn-primary hidden !px-5 !py-2.5 text-sm sm:inline-flex"
             >
               Register your child
               <ArrowRight className="h-4 w-4" />
-            </a>
+            </Link>
             <button
               type="button"
               aria-label={open ? "Close menu" : "Open menu"}
@@ -104,14 +103,14 @@ export default function Nav() {
                   {l.label}
                 </Link>
               ))}
-              <a
-                href={REGISTER_URL}
+              <Link
+                href="/register"
                 className="btn-primary mt-3"
                 onClick={() => setOpen(false)}
               >
                 Register your child
                 <ArrowRight className="h-4 w-4" />
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}

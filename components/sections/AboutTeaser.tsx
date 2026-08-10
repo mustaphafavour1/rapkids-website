@@ -86,7 +86,16 @@ const facts = [
 
 export default function AboutTeaser() {
   return (
-    <Section id="about" tone="ink">
+    <Section
+      id="about"
+      tone="ink"
+      character={{
+        src: "/characters/char-about.png",
+        alt: "A RapKids character typing confidently",
+        side: "right",
+        placeholderLabel: "characters/char-about.png",
+      }}
+    >
       <div className="grid items-center gap-14 lg:grid-cols-2">
         {/* text */}
         <div>
@@ -102,11 +111,9 @@ export default function AboutTeaser() {
           />
           <Reveal delay={0.05}>
             <p className="mt-5 text-lg leading-relaxed text-muted text-pretty">
-              A typing habit sticks when there&apos;s something worth showing up
-              for. Every run is scored on speed and accuracy — but accuracy
-              counts for more. A child at 40 words a minute and 98% accuracy
-              beats one racing at 45 and 90%. That&apos;s the habit worth
-              building, and the one that&apos;s hardest to fake.
+              Accuracy counts more than speed. A child at 40 wpm and 98%
+              accuracy beats one racing at 45 and 90% — the habit that&apos;s
+              hardest to fake, and the one worth building.
             </p>
           </Reveal>
 

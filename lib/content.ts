@@ -68,14 +68,14 @@ export const steps: Step[] = [
     window: "Anytime",
     tag: "Register",
     title: "Register from the Parent Zone",
-    body: "Enter each child in a couple of minutes. One subscription covers up to four children.",
+    body: "Enter each child in a couple of minutes. One subscription covers up to two children.",
   },
   {
     n: "02",
     window: "12–23 Aug",
     tag: "Warm up",
     title: "Practice with nothing on the line",
-    body: "See your child's shadow rank, build the daily habit, find their footing. Nothing counts yet.",
+    body: "Build the daily habit and find their footing. Nothing counts yet.",
   },
   {
     n: "03",
@@ -109,7 +109,7 @@ export const fairness = [
   {
     key: "family",
     title: "One subscription, the whole family",
-    body: "Every child profile on your plan can enter, up to four. Three kids means three leaderboards and three chances at a prize, every week.",
+    body: "Both children on your plan can enter — two leaderboards, two chances at a prize, every week.",
   },
 ];
 
@@ -202,7 +202,7 @@ export const rules: RuleSection[] = [
       "Entrants must be 5 to 12 as of 24 August 2026.",
       "An active RapKids subscription is required to enter, appear on the leaderboard or win a prize. Monthly is the minimum plan.",
       "Entry must be completed by a parent or legal guardian, who confirms consent on the child's behalf.",
-      "Up to four child profiles per parent account may compete.",
+      "Up to two child profiles per parent account may compete.",
     ],
   },
   {
@@ -289,7 +289,7 @@ export const faqs: Faq[] = [
   {
     category: "Getting in",
     q: "Do I need a separate subscription for each child?",
-    a: "No. One RapKids subscription covers up to four child profiles, and every profile on your plan can enter. Three kids means three leaderboards and three chances at a prize, every week.",
+    a: "No. One RapKids subscription covers up to two child profiles, and both can enter — two leaderboards, two chances at a prize, every week.",
   },
   {
     category: "Getting in",

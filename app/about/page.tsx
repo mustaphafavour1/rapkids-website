@@ -32,7 +32,7 @@ export default function AboutPage() {
           { text: "A habit worth " },
           { text: "showing up for", accent: "punch" },
         ]}
-        intro="A typing habit sticks when there's something worth showing up for. The TypeMaster Championship gives your child four weeks of daily practice with real stakes at the end of it: a leaderboard, real prizes and a live final."
+        intro="A habit sticks when there's something worth showing up for. Four weeks of daily practice, with a leaderboard, real prizes and a live final at the end of it."
       />
 
       {/* How scoring works */}
@@ -44,15 +44,13 @@ export default function AboutPage() {
               Accuracy beats speed — on purpose
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-muted text-pretty">
-              Every run is scored on speed and accuracy, but accuracy counts for
-              more. Slow down a little and your score barely moves; type fast and
-              sloppy and it drops fast. That&apos;s the habit worth building — and
-              it happens to be the one that&apos;s hardest to fake.
+              Every run is scored on speed and accuracy — but accuracy counts
+              for more. Type fast and sloppy, and the score drops fast. That&apos;s
+              the habit worth building, and the hardest one to fake.
             </p>
             <p className="mt-4 text-lg leading-relaxed text-muted text-pretty">
-              Play every day and you earn a bonus: seven days a week adds a 20%
-              boost to that week&apos;s score, often worth more than any single
-              great run.
+              Play all seven days in a week for a 20% score boost — often worth
+              more than any single great run.
             </p>
           </div>
 

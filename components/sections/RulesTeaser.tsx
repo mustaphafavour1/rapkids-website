@@ -124,7 +124,16 @@ export default function RulesTeaser() {
   const [mode, setMode] = useState<string>("camera");
 
   return (
-    <Section id="rules" tone="ink">
+    <Section
+      id="rules"
+      tone="ink"
+      character={{
+        src: "/characters/char-rules.png",
+        alt: "A RapKids character giving a thumbs up",
+        side: "left",
+        placeholderLabel: "characters/char-rules.png",
+      }}
+    >
       <SectionHeader
         eyebrow="Rules &amp; safety"
         caret="volt"

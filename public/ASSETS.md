@@ -18,7 +18,17 @@ These are the transparent PNG characters from the app.
 | Filename | Used on | What it should be | Recommended size |
 |---|---|---|---|
 | `hero-champion.png` | Home hero (right side) | A single hero character celebrating / at the keyboard, **transparent background** | Portrait, ~800 × 1000px (4:5), PNG |
-| `comic-champion.png` | Home "Prizes" teaser, Prizes page, About page | A comic character bust/badge, **transparent background** | Square-ish, ~600 × 600px, PNG |
+| `comic-champion.png` | Home "Prizes" teaser, Prizes page | A comic character bust/badge, **transparent background** | Square-ish, ~600 × 600px, PNG |
+| `char-howitworks.png` | Home "How it works" (bottom-left corner) | A character cheering, no background | ~500px tall, PNG, cropped tight to the figure |
+| `char-about.png` | Home "About" teaser (bottom-right corner) | A character typing confidently, no background | ~500px tall, PNG, cropped tight to the figure |
+| `char-rules.png` | Home "Rules & safety" teaser (bottom-left corner) | A character giving a thumbs up, no background | ~500px tall, PNG, cropped tight to the figure |
+| `char-cta.png` | Home closing CTA (bottom-right corner) | A character waving, no background | ~500px tall, PNG, cropped tight to the figure |
+
+These four sit bare in the corner of their section — no card or frame around
+them — so a tight crop with a fully transparent background (no drop shadow
+baked in) is what makes them "just fit in." They only show on wide desktop
+screens (xl breakpoint and up) since narrower viewports don't have the side
+margin to fit them without overlapping the copy.
 
 **Optional extra characters** you can add and I can wire in on request:
 `junior-kid.png`, `senior-kid.png`, `mascot.png`, `champion-trophy.png`.
@@ -30,7 +40,7 @@ These are the transparent PNG characters from the app.
 | Filename | Used on | What it should be | Recommended size |
 |---|---|---|---|
 | `og-image.png` | Link previews (WhatsApp, X, Facebook, iMessage) | A branded share card: title + "$4,000 · Live Grand Final" + a character | **1200 × 630px**, PNG or JPG |
-| `logo.svg` *(optional)* | Can replace the text wordmark | The RapKids logo, transparent | SVG preferred |
+| `rapkids-footer.png` | Footer, centered lockup | The RapKids logo mark, transparent background | ~200px tall, PNG (height-constrained, width flexes) |
 
 ---
 
