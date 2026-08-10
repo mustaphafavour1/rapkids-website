@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  RapKids TypeMaster Championship — Midnight Arena tokens.
+  Colors are space-separated RGB channels so Tailwind opacity modifiers work:
+  e.g. bg-punch/20 -> rgb(var(--c-punch) / 0.2)
+*/
+:root {
+  --c-ink: 19 10 34; /* #130A22 deep midnight indigo */
+  --c-surface: 27 16 48; /* #1B1030 */
+  --c-raise: 38 23 66; /* #261742 */
+  --c-line: 138 122 184; /* #8A7AB8 used at low alpha for hairlines */
+  --c-cream: 251 243 234; /* #FBF3EA warm near-white */
+  --c-muted: 185 174 205; /* #B9AECD secondary text */
+  --c-faint: 133 120 160; /* #8578A0 captions */
+  --c-punch: 255 90 60; /* #FF5A3C coral — primary + Juniors */
+  --c-sky: 47 216 245; /* #2FD8F5 cyan — secondary + Seniors */
+  --c-gold: 255 196 61; /* #FFC43D prizes / winning */
+  --c-volt: 180 255 59; /* #B4FF3B live / streak / go */
+}
+
+* {
+  border-color: rgb(var(--c-line) / 0.14);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  /* Silence the continuous looping animations; scroll reveals fall back to a
+     simple fade via framer-motion's own reduced-motion handling. */
+  .animate-blink,
+  .animate-floaty,
+  .animate-marquee,
+  .animate-shimmer,
+  .animate-ping {
+    animation: none !important;
+  }
+}
+
+body {
+  background-color: rgb(var(--c-ink));
+  color: rgb(var(--c-cream));
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgb(var(--c-punch) / 0.85);
+  color: rgb(var(--c-ink));
+}
+
+/* Keyboard focus visibility (never rely on hover alone). */
+:focus-visible {
+  outline: 2px solid rgb(var(--c-sky));
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Thin themed scrollbar */
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(var(--c-ink));
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--c-raise));
+  border-radius: 999px;
+  border: 3px solid rgb(var(--c-ink));
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--c-line) / 0.5);
+}
+
+@layer components {
+  /* Page gutter: ~4% of viewport, capped so ultra-wide stays readable. */
+  .container-page {
+    width: 100%;
+    max-width: theme("maxWidth.page");
+    margin-inline: auto;
+    padding-inline: clamp(1.15rem, 4vw, 4rem);
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono), monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgb(var(--c-faint));
+  }
+
+  /* Small status / label pill */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    font-family: var(--font-mono), monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    border: 1px solid rgb(var(--c-line) / 0.2);
+    background: rgb(var(--c-cream) / 0.03);
+  }
+
+  /* Primary action — always a fixed bright fill, dark text is safe here. */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.95rem 1.5rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-family: var(--font-sans), sans-serif;
+    color: #150a22;
+    background: rgb(var(--c-punch));
+    box-shadow: 0 10px 34px -12px rgb(var(--c-punch) / 0.85);
+    transition: transform 0.18s ease, box-shadow 0.25s ease, filter 0.2s ease;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+    box-shadow: 0 16px 42px -12px rgb(var(--c-punch) / 0.95);
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.95rem 1.4rem;
+    border-radius: 999px;
+    font-weight: 600;
+    color: rgb(var(--c-cream));
+    border: 1px solid rgb(var(--c-line) / 0.28);
+    background: rgb(var(--c-cream) / 0.02);
+    transition: transform 0.18s ease, border-color 0.2s ease, background 0.2s ease;
+  }
+  .btn-ghost:hover {
+    transform: translateY(-2px);
+    border-color: rgb(var(--c-sky) / 0.6);
+    background: rgb(var(--c-sky) / 0.06);
+  }
+
+  /* A see-more inline link with an animated arrow. */
+  .link-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-weight: 600;
+    color: rgb(var(--c-cream));
+    transition: gap 0.2s ease, color 0.2s ease;
+  }
+  .link-more:hover {
+    gap: 0.75rem;
+    color: rgb(var(--c-sky));
+  }
+
+  .hairline {
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgb(var(--c-line) / 0.3),
+      transparent
+    );
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  /* Faint grid used as ambient background texture — presence not prominence. */
+  .bg-grid {
+    background-image: linear-gradient(rgb(var(--c-line) / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--c-line) / 0.05) 1px, transparent 1px);
+    background-size: 46px 46px;
+  }
+  .bg-dots {
+    background-image: radial-gradient(rgb(var(--c-line) / 0.12) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  /* Money / gold gradient text used for prize figures. */
+  .text-gold-grad {
+    background: linear-gradient(180deg, #ffe08a, rgb(var(--c-gold)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
