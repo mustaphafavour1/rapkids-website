@@ -14,22 +14,22 @@ const ribbon = [
 
 export default function FinalCta() {
   return (
-    <section className="relative overflow-hidden bg-peach/[0.07] py-24 md:py-32">
-      <div aria-hidden className="pointer-events-none absolute inset-0 bg-dots opacity-30" />
+    <section className="relative overflow-hidden bg-peach py-24 text-white md:py-32">
+      <div aria-hidden className="pointer-events-none absolute inset-0 bg-dots opacity-20" />
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-0 h-[30rem] w-[42rem] -translate-x-1/2 rounded-full bg-peach/10 blur-[130px]"
+        className="pointer-events-none absolute left-1/2 top-0 h-[30rem] w-[42rem] -translate-x-1/2 rounded-full bg-white/10 blur-[130px]"
       />
 
       {/* marquee ribbon */}
-      <div className="relative mb-16 flex overflow-hidden border-y border-line/15 py-4">
+      <div className="relative mb-16 flex overflow-hidden border-y border-white/20 py-4">
         <div className="flex shrink-0 animate-marquee items-center gap-8 pr-8">
           {[...ribbon, ...ribbon].map((r, i) => (
             <span key={i} className="flex items-center gap-8">
-              <span className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-white/80">
                 {r}
               </span>
-              <span className="h-1.5 w-1.5 rounded-full bg-punch" aria-hidden />
+              <span className="h-1.5 w-1.5 rounded-full bg-white/60" aria-hidden />
             </span>
           ))}
         </div>
@@ -39,10 +39,10 @@ export default function FinalCta() {
         >
           {[...ribbon, ...ribbon].map((r, i) => (
             <span key={i} className="flex items-center gap-8">
-              <span className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-white/80">
                 {r}
               </span>
-              <span className="h-1.5 w-1.5 rounded-full bg-punch" aria-hidden />
+              <span className="h-1.5 w-1.5 rounded-full bg-white/60" aria-hidden />
             </span>
           ))}
         </div>
@@ -51,23 +51,23 @@ export default function FinalCta() {
       <div className="container-page relative text-center">
         <CaretHeadline
           as="h2"
-          caret="punch"
-          className="mx-auto max-w-4xl text-5xl sm:text-7xl md:text-8xl"
+          caret="spark"
+          className="mx-auto max-w-4xl text-5xl text-white sm:text-7xl md:text-8xl"
           segments={[
             { text: "Ready. Set. " },
-            { text: "Type", accent: "punch" },
+            { text: "Type", accent: "spark" },
             { text: "." },
           ]}
         />
         <Reveal delay={0.05}>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted text-pretty">
+          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/85 text-pretty">
             One subscription enters both your kids. The first heat is a fresh
             leaderboard away.
           </p>
         </Reveal>
         <Reveal delay={0.15}>
           <div className="mt-9 flex justify-center">
-            <Link href="/register" className="btn-primary">
+            <Link href="/register" className="btn-on-color">
               Register your child
               <ArrowRight className="h-4 w-4" />
             </Link>
@@ -75,11 +75,9 @@ export default function FinalCta() {
         </Reveal>
         <Reveal delay={0.25}>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
-            <span className="chip">Warm-up · 12–23 Aug</span>
-            <span className="chip">Heats · 24 Aug – 20 Sep</span>
-            <span className="chip !border-gold/30 !bg-gold/10 text-gold">
-              Grand Final · 26 Sep
-            </span>
+            <span className="chip-on-dark">Warm-up · 12–23 Aug</span>
+            <span className="chip-on-dark">Heats · 24 Aug – 20 Sep</span>
+            <span className="chip-on-dark !text-spark">Grand Final · 26 Sep</span>
           </div>
         </Reveal>
       </div>

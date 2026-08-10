@@ -18,9 +18,10 @@ Built with **Next.js (App Router) · TypeScript · Tailwind CSS · Framer Motion
 
 ## Design system
 
-A light theme, mostly white with a few sections carrying a soft accent-colour
-wash. Tokens live in `app/globals.css` (as space-separated RGB channels) and
-are surfaced through Tailwind in `tailwind.config.ts`:
+A light theme: most sections are white or a pale lavender step, with a handful
+of **fully-saturated colour sections** for punch. Tokens live in
+`app/globals.css` (as space-separated RGB channels) and are surfaced through
+Tailwind in `tailwind.config.ts`:
 
 - **ink / surface / raise** — near-white page base, a pale lavender step for
   section rhythm, and a soft raised fill
@@ -28,22 +29,39 @@ are surfaced through Tailwind in `tailwind.config.ts`:
   these are now the primary/secondary/tertiary **text** colors (dark on light)
 - **punch** (purple, `#7A3EF5`) — primary actions + the Juniors bracket
 - **sky** (pink, `#B825B2`) — secondary + the Seniors bracket
-- **gold** (amber, `#C28A1A`) — prizes, money, winning
-- **volt** (green, `#5C8A22`) — "live" / streak / go states
-- **peach** (rose, `#C73864`) — tertiary accent
+- **gold / volt / peach** (`#C28A1A` / `#5C8A22` / `#C73864`) — deepened amber,
+  green and rose, tuned to hold up as **text/icon** colour on white (prizes/
+  money, "live"/go states, tertiary accent). `peach` doubles as the closing
+  CTA's solid background.
 
-Every accent is deepened from the brand's original pastel values so it holds
-up as full-opacity text/icon color on white; the same token reads as a soft
-pastel wash automatically wherever it's used at low alpha (`bg-gold/[0.07]`,
-etc.), so section-level tints and text share one value each rather than a
-separate light/dark pair.
+The three accents above are deepened from the brand's pastels so they read as
+text on white. For the **solid colour section backgrounds** there's a second,
+brighter set — light enough that dark ink text clears AA on them — plus two
+helpers for headlines on colour:
 
-**Section backgrounds:** the hero carries a subtle diagonal purple-to-pink
-gradient (`from-punch/[0.11]` `via-sky/[0.05]`); most sections stay white or
-the pale lavender `surface` step; a few carry their own accent wash — Prizes
-is a warm `gold` tint, Rules & Safety a `volt` (green) tint, and the closing
-CTA a `peach` tint, bookending the hero's gradient. Set via `Section`'s `tone`
-prop (`components/primitives/Section.tsx`).
+- **sun** (`#F5B838`) — the Prizes section's bright-gold canvas
+- **grass** (`#A6D95B`) — the Rules section's bright-lime canvas
+- **blush** (`#E62EDF`) — the warm end of the hero's purple→pink gradient
+- **spark** (`#FED59D`) — pale gold used as the headline keyword + caret on the
+  dark colour sections (hero, closing CTA)
+
+**Section backgrounds:** the hero is a **fully-coloured** diagonal
+purple→pink gradient (`from-punch via-punch to-blush`) with white text; most
+sections stay white or the pale lavender `surface` step for breathing room; and
+three sections go **solid, full-strength** colour — Prizes on `sun` (bright
+gold) and Rules & Safety on `grass` (bright lime), both with dark text, and the
+closing CTA on `peach` (deep rose) with white text, bookending the hero. The
+gold/lime canvases take dark ink text; the purple/rose ones take white — chosen
+per background for AA contrast. Colour sections get white/translucent buttons
+(`.btn-on-color`), chips (`.chip-solid` / `.chip-on-dark`) and cards so nothing
+dissolves into the background. Set via `Section`'s `tone` prop and the
+`SectionHeader` `tone` prop (`"page"` / `"onColor"` / `"onDark"`).
+
+**Logo & wordmark:** the nav and footer show the RapKids logo mark
+(`public/brand/logo.png`, via `BrandLogo` / `BrandLockup`, which hide cleanly
+until the file is uploaded) beside the "RapKids" wordmark set in **Nunito Sans**
+(not the display face). The same file is the browser-tab favicon
+(`metadata.icons` in `app/layout.tsx`).
 
 Type: **Bubblegum Sans** (display headlines), **Nunito Sans** (body/UI),
 **JetBrains Mono** (data, labels, the typing motif). Loaded via `next/font` —

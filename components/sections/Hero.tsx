@@ -42,30 +42,29 @@ export default function Hero() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative overflow-hidden bg-ink pb-20 pt-28 sm:pt-32 md:pb-28 md:pt-40">
-      {/* ambient background: a subtle purple-to-pink gradient wash, a faint grid for texture */}
+    <section className="relative overflow-hidden bg-gradient-to-br from-punch via-punch to-blush pb-20 pt-28 sm:pt-32 md:pb-28 md:pt-40">
+      {/* soft sheen on the character side for depth on the saturated gradient */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-gradient-to-br from-punch/[0.11] via-sky/[0.05] to-transparent"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_78%_22%,rgba(255,255,255,0.20),transparent_55%)]"
       />
-      <div aria-hidden className="pointer-events-none absolute inset-0 bg-grid opacity-30" />
 
       <div className="container-page relative grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
         {/* left — headline, offer, action */}
-        <div>
+        <div className="text-white">
           <CaretHeadline
             as="h1"
             typed
-            caret="gold"
+            caret="spark"
             className="text-[2.35rem] leading-[1.08] sm:text-6xl md:text-7xl lg:text-[4.6rem]"
             segments={[
-              { text: "$4,000", accent: "gold" },
+              { text: "$4,000", accent: "spark" },
               { text: " Up for Grabs for Kids in the TypeMaster Championship" },
             ]}
           />
 
           <Reveal delay={0.1}>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted text-pretty">
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/85 text-pretty">
               Four weeks of competitive typing game. $4,000 in cash prizes. For
               kids between ages 5 to 12.
             </p>
@@ -73,11 +72,11 @@ export default function Hero() {
 
           <Reveal delay={0.2}>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Link href="/register" className="btn-primary">
+              <Link href="/register" className="btn-on-color">
                 Register your child
                 <ArrowRight className="h-4 w-4" />
               </Link>
-              <a href="#how-it-works" className="btn-ghost">
+              <a href="#how-it-works" className="btn-ghost-on-color">
                 <Play className="h-4 w-4" />
                 See how it works
               </a>
@@ -86,14 +85,14 @@ export default function Hero() {
 
           <Reveal delay={0.3}>
             <div className="mt-7 flex flex-wrap items-center gap-2.5">
-              <span className="chip !border-volt/30 !bg-volt/10 text-volt">
+              <span className="chip-on-dark">
                 <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-volt opacity-70" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-volt" />
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-70" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-white" />
                 </span>
                 Registration open
               </span>
-              <span className="chip">4-week championship · ages 5–12</span>
+              <span className="chip-on-dark">4-week championship · ages 5–12</span>
             </div>
           </Reveal>
         </div>
@@ -109,7 +108,7 @@ export default function Hero() {
               {/* glow platform behind the character */}
               <div
                 aria-hidden
-                className="absolute inset-x-6 bottom-6 top-10 rounded-[2rem] bg-gradient-to-b from-punch/15 via-sky/[0.06] to-transparent blur-2xl"
+                className="absolute inset-x-6 bottom-6 top-10 rounded-[2rem] bg-gradient-to-b from-white/25 via-white/10 to-transparent blur-2xl"
               />
               <CharacterImage
                 src="/characters/hero-champion.png"
@@ -124,7 +123,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease, delay: 1 }}
-              className="absolute -left-2 top-10 z-20 flex items-center gap-2 rounded-2xl border border-gold/25 bg-ink/80 px-4 py-3 backdrop-blur-md"
+              className="absolute -left-2 top-10 z-20 flex items-center gap-2 rounded-2xl border border-gold/25 bg-ink/90 px-4 py-3 shadow-xl shadow-black/10 backdrop-blur-md"
             >
               <Trophy className="h-5 w-5 text-gold" />
               <div className="leading-tight">
@@ -139,7 +138,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease, delay: 1.25 }}
-              className="absolute -right-2 bottom-16 z-20 flex items-center gap-2 rounded-2xl border border-sky/25 bg-ink/80 px-4 py-3 backdrop-blur-md"
+              className="absolute -right-2 bottom-16 z-20 flex items-center gap-2 rounded-2xl border border-sky/25 bg-ink/90 px-4 py-3 shadow-xl shadow-black/10 backdrop-blur-md"
             >
               <Radio className="h-5 w-5 text-sky" />
               <div className="leading-tight">
@@ -158,7 +157,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease, delay: 1.4 }}
-            className="mx-auto mt-6 flex max-w-sm items-center justify-center gap-x-4 rounded-xl border border-line/15 bg-cream/[0.03] px-3 py-2 backdrop-blur-sm"
+            className="mx-auto mt-6 flex max-w-sm items-center justify-center gap-x-4 rounded-xl border border-line/10 bg-ink/90 px-3 py-2 shadow-lg shadow-black/10 backdrop-blur-sm"
           >
             <HudStat label="Speed" size="sm">
               <CountUp to={54} group={false} /> wpm

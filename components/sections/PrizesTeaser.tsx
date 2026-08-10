@@ -28,11 +28,11 @@ function PodiumBar({
   const reduce = useReducedMotion();
   return (
     <div className={`flex w-full flex-col items-center justify-end ${order}`}>
-      {primary && <Crown className="mb-2 h-6 w-6 text-gold" />}
+      {primary && <Crown className="mb-2 h-6 w-6 text-punch" />}
       <div className="mb-2 text-center">
         <div
           className={`font-display font-bold ${
-            primary ? "text-3xl text-gold-grad" : "text-2xl text-gold/80"
+            primary ? "text-3xl text-punch" : "text-2xl text-cream/80"
           }`}
         >
           {amount}
@@ -41,8 +41,8 @@ function PodiumBar({
       <motion.div
         className={`relative w-full overflow-hidden rounded-t-xl ${
           primary
-            ? "bg-gradient-to-t from-gold/30 to-gold"
-            : "bg-gradient-to-t from-gold/15 to-gold/60"
+            ? "bg-gradient-to-t from-punch/80 to-punch"
+            : "bg-gradient-to-t from-punch/45 to-punch/75"
         }`}
         style={{ height: barHeight, transformOrigin: "bottom" }}
         initial={{ scaleY: reduce ? 1 : 0 }}
@@ -50,7 +50,7 @@ function PodiumBar({
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.9, ease, delay }}
       >
-        <span className="absolute inset-x-0 top-2 text-center font-display text-4xl font-bold text-ink/30">
+        <span className="absolute inset-x-0 top-2 text-center font-display text-4xl font-bold text-white/45">
           {place}
         </span>
       </motion.div>
@@ -66,10 +66,11 @@ export default function PrizesTeaser() {
     <Section id="prizes" tone="gold">
       <SectionHeader
         eyebrow="The prizes"
-        caret="gold"
+        caret="punch"
         align="center"
+        tone="onColor"
         segments={[
-          { text: "$4,000, and 30 Ways ", accent: "gold" },
+          { text: "$4,000, and 30 Ways ", accent: "punch" },
           { text: "to Win It" },
         ]}
         intro="Thirty children win cash. Hundreds more win free months, badges and a certificate, with their name in the record books."
@@ -80,10 +81,8 @@ export default function PrizesTeaser() {
       {/* Grand Final podium, centered */}
       <div className="mx-auto mt-14 max-w-md">
         <div className="mb-6 flex items-center justify-center gap-2">
-          <span className="chip !border-gold/30 !bg-gold/10 text-gold">
-            Grand Final · 26 Sep
-          </span>
-          <span className="font-mono text-xs text-faint">$1,600 on finals day</span>
+          <span className="chip-solid">Grand Final · 26 Sep</span>
+          <span className="font-mono text-xs text-cream/70">$1,600 on finals day</span>
         </div>
         <div className="flex items-end justify-center gap-3 sm:gap-4">
           <PodiumBar
@@ -112,7 +111,7 @@ export default function PrizesTeaser() {
             delay={0.3}
           />
         </div>
-        <p className="mt-5 text-center font-mono text-xs text-faint">
+        <p className="mt-5 text-center font-mono text-xs text-cream/70">
           Per bracket, live. Juniors and Seniors each crown a Grand Champion.
         </p>
       </div>
@@ -120,15 +119,15 @@ export default function PrizesTeaser() {
       {/* Weekly heat prizes, shown underneath as multi-line chips */}
       <div className="mx-auto mt-14 max-w-3xl">
         <div className="mb-6 flex items-center justify-center gap-2">
-          <span className="chip">Every weekly heat</span>
-          <span className="font-mono text-xs text-faint">
+          <span className="chip-solid">Every weekly heat</span>
+          <span className="font-mono text-xs text-cream/70">
             $300 per bracket · $2,400 across 4 heats
           </span>
         </div>
         <div className="grid gap-4 sm:grid-cols-3">
           {weeklyPrizes.map((p, i) => (
             <Reveal key={p.name} delay={i * 0.08}>
-              <div className="flex h-full flex-col gap-2 rounded-lg border border-line/15 bg-cream/[0.03] px-5 py-4">
+              <div className="flex h-full flex-col gap-2 rounded-lg border border-cream/10 bg-white px-5 py-4 shadow-sm shadow-black/5">
                 <span className="font-display text-lg font-bold text-cream">
                   {p.name}
                 </span>

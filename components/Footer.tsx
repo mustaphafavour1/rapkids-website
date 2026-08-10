@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { navLinks } from "@/lib/content";
-import CharacterImage from "@/components/primitives/CharacterImage";
+import BrandLockup from "@/components/primitives/BrandLockup";
 
 export default function Footer() {
   return (
@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <div className="flex items-baseline gap-0.5">
-              <span className="font-display text-3xl font-extrabold tracking-tight">
+              <span className="font-sans text-3xl font-extrabold tracking-tight">
                 Rap<span className="text-punch">Kids</span>
               </span>
               <span className="ml-0.5 inline-block h-[0.9em] w-[0.42ch] rounded-[2px] bg-punch animate-blink" aria-hidden />
@@ -59,19 +59,8 @@ export default function Footer() {
 
         <div className="mt-14 h-px w-full bg-line/15" />
 
-        {/* Centered logo lockup */}
-        <div className="mt-10 flex items-center justify-center gap-4">
-          <CharacterImage
-            src="/brand/rapkids-footer.png"
-            alt="RapKids logo"
-            placeholderLabel="brand/rapkids-footer.png"
-            className="h-9 w-auto object-contain"
-          />
-          <span className="h-8 w-px bg-line/25" aria-hidden />
-          <span className="font-display text-3xl font-extrabold tracking-tight">
-            Rap<span className="text-punch">Kids</span>
-          </span>
-        </div>
+        {/* Centered logo lockup: logo mark + divider + wordmark */}
+        <BrandLockup />
 
         <div className="mt-8 flex flex-col gap-4 text-xs text-faint md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} RapKids. All rights reserved.</p>

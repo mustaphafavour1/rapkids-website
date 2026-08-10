@@ -137,10 +137,11 @@ export default function RulesTeaser() {
     >
       <SectionHeader
         eyebrow="Rules &amp; safety"
-        caret="volt"
+        caret="punch"
+        tone="onColor"
         segments={[
           { text: "Built With " },
-          { text: "Safety", accent: "volt" },
+          { text: "Safety", accent: "punch" },
           { text: " in Mind" },
         ]}
         intro="Appearing on camera is never a condition of winning. Every finalist's guardian picks how their child takes part, and all three earn the same prizes."
@@ -162,16 +163,16 @@ export default function RulesTeaser() {
                   aria-pressed={active}
                   className={`flex flex-col items-center gap-2 rounded-xl border px-2 py-3 text-center transition-all ${
                     active
-                      ? "border-cream/30 bg-cream/[0.06]"
-                      : "border-line/15 bg-transparent hover:border-line/30"
+                      ? "border-cream/10 bg-white shadow-sm shadow-black/5"
+                      : "border-white/50 bg-white/40 hover:bg-white/70"
                   }`}
                 >
                   <m.icon
-                    className={`h-5 w-5 ${active ? "text-cream" : "text-faint"}`}
+                    className={`h-5 w-5 ${active ? "text-punch" : "text-cream/55"}`}
                   />
                   <span
                     className={`text-xs font-semibold ${
-                      active ? "text-cream" : "text-muted"
+                      active ? "text-cream" : "text-cream/70"
                     }`}
                   >
                     {m.label}
@@ -182,7 +183,7 @@ export default function RulesTeaser() {
           </div>
 
           {/* fixed-size preview so the layout never jumps on switch */}
-          <div className="mt-4 h-56 overflow-hidden rounded-2xl border border-line/15 bg-surface/60">
+          <div className="mt-4 h-56 overflow-hidden rounded-2xl border border-cream/10 bg-white shadow-sm shadow-black/5">
             <AnimatePresence mode="wait">
               <motion.div
                 key={mode}
@@ -196,7 +197,7 @@ export default function RulesTeaser() {
               </motion.div>
             </AnimatePresence>
           </div>
-          <p className="mt-4 text-center font-mono text-xs text-faint">
+          <p className="mt-4 text-center font-mono text-xs text-cream/70">
             All three are scored identically · eligible for the full prize
           </p>
         </div>
@@ -206,14 +207,14 @@ export default function RulesTeaser() {
           {guarantees.map((g, i) => (
             <Reveal key={g.title} delay={i * 0.08}>
               <div className="flex items-start gap-4 py-5 first:pt-0">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cream/[0.05] text-volt">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white text-volt shadow-sm shadow-black/5">
                   <g.icon className="h-5 w-5" />
                 </span>
                 <div>
                   <h3 className="font-display text-lg font-bold text-cream">
                     {g.title}
                   </h3>
-                  <p className="mt-1 text-sm leading-relaxed text-muted">
+                  <p className="mt-1 text-sm leading-relaxed text-cream/80">
                     {g.body}
                   </p>
                 </div>

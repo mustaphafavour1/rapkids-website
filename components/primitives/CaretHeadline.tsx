@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useInView, useReducedMotion } from "framer-motion";
 
-export type Accent = "punch" | "sky" | "gold" | "volt" | "peach";
+export type Accent = "punch" | "sky" | "gold" | "volt" | "peach" | "spark";
 export type Segment = { text: string; accent?: Accent };
 
 const accentText: Record<Accent, string> = {
@@ -12,6 +12,7 @@ const accentText: Record<Accent, string> = {
   gold: "text-gold",
   volt: "text-volt",
   peach: "text-peach",
+  spark: "text-spark", // pale gold — keyword color on the dark color sections
 };
 
 const caretBg: Record<Accent, string> = {
@@ -20,6 +21,7 @@ const caretBg: Record<Accent, string> = {
   gold: "bg-gold",
   volt: "bg-volt",
   peach: "bg-peach",
+  spark: "bg-spark",
 };
 
 type Props = {

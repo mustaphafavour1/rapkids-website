@@ -38,8 +38,13 @@ them without overlapping the copy.
 
 | Filename | Used on | What it should be | Recommended size |
 |---|---|---|---|
+| `logo.png` | **Nav bar** (left of the wordmark), **footer** centered lockup, and the **browser-tab favicon** | The RapKids logo mark, transparent background, ideally square-ish so it reads well as a tiny tab icon | ~256 × 256px (or height-constrained), PNG |
 | `og-image.png` | Link previews (WhatsApp, X, Facebook, iMessage) | A branded share card: title + "$4,000 · Live Grand Final" + a character | **1200 × 630px**, PNG or JPG |
-| `rapkids-footer.png` | Footer, centered lockup | The RapKids logo mark, transparent background | ~200px tall, PNG (height-constrained, width flexes) |
+
+> The nav and footer show the "RapKids" wordmark on its own until `logo.png` is
+> uploaded (no broken image, no placeholder box); the mark appears automatically
+> once the file lands. The favicon points at the same file via
+> `app/layout.tsx` (`metadata.icons`).
 
 ---
 

@@ -5,16 +5,17 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { navLinks } from "@/lib/content";
+import BrandLogo from "@/components/primitives/BrandLogo";
 
 function Wordmark() {
   return (
-    <Link href="/" className="group flex items-baseline gap-0.5" aria-label="RapKids TypeMaster Championship, home">
-      <span className="font-display text-2xl font-extrabold tracking-tight">
-        Rap<span className="text-punch">Kids</span>
-      </span>
-      <span className="ml-0.5 inline-block h-[0.9em] w-[0.42ch] translate-y-[0.02em] rounded-[2px] bg-punch animate-blink" aria-hidden />
-      <span className="ml-2 hidden font-mono text-[0.62rem] uppercase tracking-[0.22em] text-faint sm:inline">
-        TypeMaster
+    <Link href="/" className="group flex items-center gap-2" aria-label="RapKids TypeMaster Championship, home">
+      <BrandLogo className="h-8 w-auto object-contain md:h-9" />
+      <span className="flex items-baseline gap-0.5">
+        <span className="font-sans text-2xl font-extrabold tracking-tight">
+          Rap<span className="text-punch">Kids</span>
+        </span>
+        <span className="ml-0.5 inline-block h-[0.9em] w-[0.42ch] translate-y-[0.02em] rounded-[2px] bg-punch animate-blink" aria-hidden />
       </span>
     </Link>
   );
@@ -41,10 +42,8 @@ export default function Nav() {
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div
-        className={`transition-colors duration-300 ${
-          scrolled
-            ? "border-b border-line/15 bg-ink/80 backdrop-blur-xl"
-            : "bg-transparent"
+        className={`bg-ink/80 backdrop-blur-xl transition-colors duration-300 ${
+          scrolled ? "border-b border-line/15" : "border-b border-transparent"
         }`}
       >
         <nav className="container-page flex h-16 items-center justify-between md:h-[4.5rem]">

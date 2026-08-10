@@ -27,9 +27,13 @@ const config: Config = {
         faint: withOpacity("--c-faint"), // tertiary text / captions
         punch: withOpacity("--c-punch"), // primary action + Juniors bracket (purple)
         sky: withOpacity("--c-sky"), // secondary + Seniors bracket (pink)
-        gold: withOpacity("--c-gold"), // prizes / money / winning
-        volt: withOpacity("--c-volt"), // "live" / streak / go states (green)
-        peach: withOpacity("--c-peach"), // tertiary accent
+        gold: withOpacity("--c-gold"), // prizes / money / winning (text on white)
+        volt: withOpacity("--c-volt"), // "live" / streak / go states (green, text on white)
+        peach: withOpacity("--c-peach"), // tertiary accent + the closing CTA's solid bg
+        spark: withOpacity("--c-spark"), // pale gold — headline keyword/caret on dark color sections
+        blush: withOpacity("--c-blush"), // bright pink — the hero gradient's warm end
+        sun: withOpacity("--c-sun"), // bright gold — Prizes section's solid canvas
+        grass: withOpacity("--c-grass"), // bright lime — Rules section's solid canvas
       },
       fontFamily: {
         display: ["var(--font-display)", "system-ui", "sans-serif"],

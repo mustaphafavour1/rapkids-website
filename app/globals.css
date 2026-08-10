@@ -22,9 +22,18 @@
   --c-faint: 138 122 168; /* #8A7AA8 captions */
   --c-punch: 122 62 245; /* #7A3EF5 purple — primary + Juniors */
   --c-sky: 184 37 178; /* #B825B2 pink — secondary + Seniors */
-  --c-gold: 194 138 26; /* #C28A1A amber gold — prizes / winning */
-  --c-volt: 92 138 34; /* #5C8A22 green — live / streak / go */
-  --c-peach: 199 56 100; /* #C73864 peach/rose — tertiary accent */
+  --c-gold: 194 138 26; /* #C28A1A amber gold — prizes / winning (as text on white) */
+  --c-volt: 92 138 34; /* #5C8A22 green — live / streak / go (as text on white) */
+  --c-peach: 199 56 100; /* #C73864 peach/rose — tertiary accent / a full-color section bg */
+
+  /* Bright, fully-saturated values used as large SOLID section backgrounds (with
+     dark ink text) and as headline accents on the dark color sections. These are
+     intentionally lighter than the deepened text tokens above so dark text clears
+     AA on them; the deepened tokens above still power text/icons on white. */
+  --c-spark: 254 213 157; /* #FED59D pale gold — headline keyword + caret on dark color sections */
+  --c-blush: 230 46 223; /* #E62EDF bright pink — the hero gradient's warm end */
+  --c-sun: 245 184 56; /* #F5B838 bright gold — Prizes section canvas */
+  --c-grass: 166 217 91; /* #A6D95B bright lime — Rules section canvas */
 }
 
 * {
@@ -120,6 +129,38 @@ body {
     background: rgb(var(--c-cream) / 0.03);
   }
 
+  /* Chip for use on a bright solid-color section (Prizes/Rules): a real white
+     fill with dark text, so it doesn't disappear into the colored background. */
+  .chip-solid {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    font-family: var(--font-mono), monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    border: 1px solid rgb(var(--c-cream) / 0.12);
+    background: #fff;
+    color: rgb(var(--c-cream));
+  }
+
+  /* Chip for use on a dark color section (Hero/Final CTA): translucent white
+     glass with white text. */
+  .chip-on-dark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    font-family: var(--font-mono), monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    border: 1px solid rgb(255 255 255 / 0.28);
+    background: rgb(255 255 255 / 0.12);
+    color: #fff;
+  }
+
   /* Primary action — always a fixed bright purple fill, so its text stays a
      hardcoded light value regardless of the page theme (dark text fails
      contrast on #7A3EF5). */
@@ -160,6 +201,49 @@ body {
     transform: translateY(-2px);
     border-color: rgb(var(--c-punch) / 0.5);
     background: rgb(var(--c-punch) / 0.06);
+  }
+
+  /* Primary action placed ON a dark color section (hero gradient, peach CTA):
+     a white pill with purple text, so it pops off the saturated background
+     where the standard purple fill would blend in. */
+  .btn-on-color {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.95rem 1.5rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-family: var(--font-sans), sans-serif;
+    color: rgb(var(--c-punch));
+    background: #fff;
+    box-shadow: 0 12px 36px -14px rgb(0 0 0 / 0.45);
+    transition: transform 0.18s ease, box-shadow 0.25s ease, filter 0.2s ease;
+  }
+  .btn-on-color:hover {
+    transform: translateY(-2px);
+    filter: brightness(0.97);
+    box-shadow: 0 18px 44px -14px rgb(0 0 0 / 0.5);
+  }
+
+  /* Secondary/ghost action on a dark color section: white outline + text. */
+  .btn-ghost-on-color {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.95rem 1.4rem;
+    border-radius: 999px;
+    font-weight: 600;
+    color: #fff;
+    border: 1px solid rgb(255 255 255 / 0.55);
+    background: rgb(255 255 255 / 0.08);
+    transition: transform 0.18s ease, border-color 0.2s ease, background 0.2s ease;
+  }
+  .btn-ghost-on-color:hover {
+    transform: translateY(-2px);
+    border-color: rgb(255 255 255 / 0.85);
+    background: rgb(255 255 255 / 0.16);
   }
 
   /* A see-more inline link with an animated arrow. */

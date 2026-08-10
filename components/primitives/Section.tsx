@@ -4,7 +4,7 @@ import SectionCharacter from "./SectionCharacter";
 type Props = {
   id?: string;
   children: ReactNode;
-  /** background rhythm: base white, a stepped lavender surface, or a soft accent tint */
+  /** background rhythm: base white, a stepped lavender surface, or a fully-saturated accent canvas */
   tone?: "ink" | "surface" | "gold" | "volt" | "peach";
   className?: string;
   /** remove default container to let a child go full-bleed */
@@ -22,9 +22,9 @@ type Props = {
 const toneClass: Record<NonNullable<Props["tone"]>, string> = {
   ink: "bg-ink",
   surface: "bg-surface",
-  gold: "bg-gold/[0.07]",
-  volt: "bg-volt/[0.07]",
-  peach: "bg-peach/[0.07]",
+  gold: "bg-sun", // bright gold canvas (dark text) — Prizes
+  volt: "bg-grass", // bright lime canvas (dark text) — Rules
+  peach: "bg-peach", // deep rose canvas (white text)
 };
 
 /**

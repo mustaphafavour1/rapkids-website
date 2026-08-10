@@ -57,6 +57,11 @@ export const metadata: Metadata = {
       "Four weeks of competitive typing. $4,000 in cash prizes. A live Grand Final.",
     images: ["/brand/og-image.png"],
   },
+  icons: {
+    icon: [{ url: "/brand/logo.png", type: "image/png" }],
+    shortcut: [{ url: "/brand/logo.png" }],
+    apple: [{ url: "/brand/logo.png" }],
+  },
 };
 
 export const viewport: Viewport = {
