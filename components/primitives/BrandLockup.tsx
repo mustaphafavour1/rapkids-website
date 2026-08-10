@@ -4,9 +4,11 @@ import { useEffect, useRef, useState } from "react";
 
 /**
  * The footer's centered brand lockup: the logo mark, a vertical divider, then
- * the "RapKids" wordmark (Nunito). If public/brand/logo.png isn't present yet,
- * the logo and its divider drop out so the wordmark simply centers on its own,
- * rather than leaving a divider floating next to nothing.
+ * the "RapKids" wordmark (Nunito). Uses the dedicated, higher-res footer logo
+ * (public/brand/rapkids-footer.png); the nav + favicon use the smaller
+ * brand/logo.png. If the footer file isn't present yet, the logo and its
+ * divider drop out so the wordmark simply centers on its own, rather than
+ * leaving a divider floating next to nothing.
  */
 export default function BrandLockup() {
   const [failed, setFailed] = useState(false);
@@ -24,9 +26,9 @@ export default function BrandLockup() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             ref={ref}
-            src="/brand/logo.png"
+            src="/brand/rapkids-footer.png"
             alt="RapKids logo"
-            className="h-10 w-auto object-contain"
+            className="h-12 w-auto object-contain"
             onError={() => setFailed(true)}
           />
           <span className="h-8 w-px bg-line/25" aria-hidden />

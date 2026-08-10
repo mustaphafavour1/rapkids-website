@@ -38,7 +38,8 @@ them without overlapping the copy.
 
 | Filename | Used on | What it should be | Recommended size |
 |---|---|---|---|
-| `logo.png` | **Nav bar** (left of the wordmark), **footer** centered lockup, and the **browser-tab favicon** | The RapKids logo mark, transparent background, ideally square-ish so it reads well as a tiny tab icon | ~256 × 256px (or height-constrained), PNG |
+| `logo.png` | **Nav bar** (left of the wordmark) and the **browser-tab favicon** | The RapKids logo mark, transparent background, ideally square-ish so it reads well as a tiny tab icon | ~256 × 256px (or height-constrained), PNG |
+| `rapkids-footer.png` | **Footer** centered lockup (a higher-res version of the mark) | The RapKids logo mark, transparent background | ~200px tall, PNG (height-constrained, width flexes) |
 | `og-image.png` | Link previews (WhatsApp, X, Facebook, iMessage) | A branded share card: title + "$4,000 · Live Grand Final" + a character | **1200 × 630px**, PNG or JPG |
 
 > The nav and footer show the "RapKids" wordmark on its own until `logo.png` is

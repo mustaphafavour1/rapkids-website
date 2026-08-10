@@ -57,10 +57,11 @@ per background for AA contrast. Colour sections get white/translucent buttons
 dissolves into the background. Set via `Section`'s `tone` prop and the
 `SectionHeader` `tone` prop (`"page"` / `"onColor"` / `"onDark"`).
 
-**Logo & wordmark:** the nav and footer show the RapKids logo mark
-(`public/brand/logo.png`, via `BrandLogo` / `BrandLockup`, which hide cleanly
-until the file is uploaded) beside the "RapKids" wordmark set in **Nunito Sans**
-(not the display face). The same file is the browser-tab favicon
+**Logo & wordmark:** the nav shows the RapKids logo mark
+(`public/brand/logo.png`, via `BrandLogo`) and the footer shows the higher-res
+`public/brand/rapkids-footer.png` (via `BrandLockup`) beside the "RapKids"
+wordmark set in **Nunito Sans** (not the display face). Both hide the mark
+cleanly if the file isn't present. `logo.png` is also the browser-tab favicon
 (`metadata.icons` in `app/layout.tsx`).
 
 Type: **Bubblegum Sans** (display headlines), **Nunito Sans** (body/UI),
