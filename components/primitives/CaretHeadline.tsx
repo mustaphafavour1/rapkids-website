@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useInView, useReducedMotion } from "framer-motion";
 
-export type Accent = "punch" | "sky" | "gold" | "volt";
+export type Accent = "punch" | "sky" | "gold" | "volt" | "peach";
 export type Segment = { text: string; accent?: Accent };
 
 const accentText: Record<Accent, string> = {
@@ -11,6 +11,7 @@ const accentText: Record<Accent, string> = {
   sky: "text-sky",
   gold: "text-gold",
   volt: "text-volt",
+  peach: "text-peach",
 };
 
 const caretBg: Record<Accent, string> = {
@@ -18,6 +19,7 @@ const caretBg: Record<Accent, string> = {
   sky: "bg-sky",
   gold: "bg-gold",
   volt: "bg-volt",
+  peach: "bg-peach",
 };
 
 type Props = {
@@ -81,7 +83,7 @@ export default function CaretHeadline({
   return (
     <Tag
       ref={ref}
-      className={`font-display font-extrabold leading-[1.02] tracking-[-0.01em] text-balance ${className}`}
+      className={`font-display leading-[1.12] tracking-normal text-balance ${className}`}
     >
       {rendered}
       <span

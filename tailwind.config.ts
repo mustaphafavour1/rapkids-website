@@ -28,7 +28,8 @@ const config: Config = {
         punch: withOpacity("--c-punch"), // primary action + Juniors bracket (coral)
         sky: withOpacity("--c-sky"), // secondary + Seniors bracket (cyan)
         gold: withOpacity("--c-gold"), // prizes / money / winning
-        volt: withOpacity("--c-volt"), // "live" / streak / go states (lime)
+        volt: withOpacity("--c-volt"), // "live" / streak / go states (green)
+        peach: withOpacity("--c-peach"), // tertiary accent
       },
       fontFamily: {
         display: ["var(--font-display)", "system-ui", "sans-serif"],

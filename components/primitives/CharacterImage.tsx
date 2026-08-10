@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ImageIcon } from "lucide-react";
 
 type Props = {
@@ -15,6 +15,11 @@ type Props = {
  * Renders a transparent PNG asset (comic character, pattern, etc.) if it has
  * been uploaded, and a tasteful labelled placeholder if it hasn't — so the page
  * never looks broken before the real art is dropped in. See /public/ASSETS.md.
+ *
+ * The server-rendered <img> starts loading before React hydrates, so a fast
+ * local 404 can fire its error event before our onError listener is attached.
+ * We double-check on mount (img.complete + naturalWidth === 0) to catch that
+ * race, in addition to the live onError handler for failures after hydration.
  */
 export default function CharacterImage({
   src,
@@ -23,6 +28,14 @@ export default function CharacterImage({
   placeholderLabel,
 }: Props) {
   const [failed, setFailed] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    const el = imgRef.current;
+    if (el && el.complete && el.naturalWidth === 0) {
+      setFailed(true);
+    }
+  }, []);
 
   if (failed) {
     return (
@@ -42,6 +55,7 @@ export default function CharacterImage({
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
+      ref={imgRef}
       src={src}
       alt={alt}
       className={className}

@@ -37,6 +37,7 @@ export const metadata: Metadata = {
 };
 
 const beyondIcons = [Gift, Medal, Award, TrendingUp, Flame, Frame, Smartphone];
+const beyondAccents = ["text-volt", "text-sky", "text-peach", "text-gold", "text-punch"];
 
 export default function PrizesPage() {
   return (
@@ -191,10 +192,13 @@ export default function PrizesPage() {
         <div className="mt-12 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {beyondCash.map((b, i) => {
             const Icon = beyondIcons[i] ?? Award;
+            const accent = beyondAccents[i % beyondAccents.length];
             return (
               <Reveal key={b.title} delay={(i % 3) * 0.08}>
                 <div className="flex gap-4 border-t border-line/15 pt-6">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cream/[0.05] text-volt">
+                  <span
+                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cream/[0.05] ${accent}`}
+                  >
                     <Icon className="h-5 w-5" />
                   </span>
                   <div>
