@@ -4,8 +4,8 @@ import SectionCharacter from "./SectionCharacter";
 type Props = {
   id?: string;
   children: ReactNode;
-  /** background rhythm: base ink, or a stepped surface */
-  tone?: "ink" | "surface";
+  /** background rhythm: base white, a stepped lavender surface, or a soft accent tint */
+  tone?: "ink" | "surface" | "gold" | "volt" | "peach";
   className?: string;
   /** remove default container to let a child go full-bleed */
   bleed?: boolean;
@@ -17,6 +17,14 @@ type Props = {
     vertical?: "top" | "bottom";
     placeholderLabel?: string;
   };
+};
+
+const toneClass: Record<NonNullable<Props["tone"]>, string> = {
+  ink: "bg-ink",
+  surface: "bg-surface",
+  gold: "bg-gold/[0.07]",
+  volt: "bg-volt/[0.07]",
+  peach: "bg-peach/[0.07]",
 };
 
 /**
@@ -34,9 +42,7 @@ export default function Section({
   return (
     <section
       id={id}
-      className={`relative scroll-mt-24 overflow-hidden py-24 sm:py-28 md:py-36 ${
-        tone === "surface" ? "bg-surface" : "bg-ink"
-      } ${className}`}
+      className={`relative scroll-mt-24 overflow-hidden py-24 sm:py-28 md:py-36 ${toneClass[tone]} ${className}`}
     >
       {bleed ? children : <div className="container-page">{children}</div>}
       {character ? <SectionCharacter {...character} /> : null}

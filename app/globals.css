@@ -3,23 +3,28 @@
 @tailwind utilities;
 
 /*
-  RapKids TypeMaster Championship — Midnight Arena tokens.
+  RapKids TypeMaster Championship — light theme tokens.
   Colors are space-separated RGB channels so Tailwind opacity modifiers work:
   e.g. bg-punch/20 -> rgb(var(--c-punch) / 0.2)
+
+  Accent hues are deepened from the brand's pale/pastel originals so they hold
+  up as full-opacity text and icon color on a white page; the same values
+  read as soft pastel washes automatically once used at low alpha for card
+  and section-background tints (e.g. bg-gold/[0.08]).
 */
 :root {
-  --c-ink: 20 9 42; /* #14092A deep purple background */
-  --c-surface: 30 16 62; /* #1E103E */
-  --c-raise: 44 26 88; /* #2C1A58 */
-  --c-line: 169 143 224; /* #A98FE0 used at low alpha for hairlines */
-  --c-cream: 250 244 255; /* #FAF4FF near-white body text */
-  --c-muted: 197 186 224; /* #C5BAE0 secondary text */
-  --c-faint: 146 132 178; /* #9284B2 captions */
+  --c-ink: 253 251 255; /* #FDFBFF page base, near-white with a hint of warmth */
+  --c-surface: 246 241 252; /* #F6F1FC pale lavender, stepped section rhythm */
+  --c-raise: 231 221 245; /* #E7DDF5 soft raised fill */
+  --c-line: 130 110 165; /* #826AA5 mid purple-gray, used at low alpha for hairlines */
+  --c-cream: 26 15 46; /* #1A0F2E near-black, primary text (token name kept from the dark build) */
+  --c-muted: 90 76 115; /* #5A4C73 secondary text */
+  --c-faint: 138 122 168; /* #8A7AA8 captions */
   --c-punch: 122 62 245; /* #7A3EF5 purple — primary + Juniors */
-  --c-sky: 230 46 223; /* #E62EDF pink — secondary + Seniors */
-  --c-gold: 254 213 157; /* #FED59D cream — prizes / winning */
-  --c-volt: 154 197 94; /* #9AC55E green — live / streak / go */
-  --c-peach: 242 99 138; /* #F2638A peach — tertiary accent */
+  --c-sky: 184 37 178; /* #B825B2 pink — secondary + Seniors */
+  --c-gold: 194 138 26; /* #C28A1A amber gold — prizes / winning */
+  --c-volt: 92 138 34; /* #5C8A22 green — live / streak / go */
+  --c-peach: 199 56 100; /* #C73864 peach/rose — tertiary accent */
 }
 
 * {
@@ -57,12 +62,12 @@ body {
 
 ::selection {
   background: rgb(var(--c-punch) / 0.85);
-  color: rgb(var(--c-cream));
+  color: #fff;
 }
 
 /* Keyboard focus visibility (never rely on hover alone). */
 :focus-visible {
-  outline: 2px solid rgb(var(--c-sky));
+  outline: 2px solid rgb(var(--c-punch));
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -73,12 +78,12 @@ body {
   height: 11px;
 }
 ::-webkit-scrollbar-track {
-  background: rgb(var(--c-ink));
+  background: rgb(var(--c-surface));
 }
 ::-webkit-scrollbar-thumb {
   background: rgb(var(--c-raise));
   border-radius: 999px;
-  border: 3px solid rgb(var(--c-ink));
+  border: 3px solid rgb(var(--c-surface));
 }
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(var(--c-line) / 0.5);
@@ -111,12 +116,13 @@ body {
     font-family: var(--font-mono), monospace;
     font-size: 0.72rem;
     letter-spacing: 0.04em;
-    border: 1px solid rgb(var(--c-line) / 0.2);
+    border: 1px solid rgb(var(--c-line) / 0.22);
     background: rgb(var(--c-cream) / 0.03);
   }
 
-  /* Primary action — always a fixed bright fill, cream text keeps AA contrast
-     against the purple fill (dark text reads too low-contrast on #7A3EF5). */
+  /* Primary action — always a fixed bright purple fill, so its text stays a
+     hardcoded light value regardless of the page theme (dark text fails
+     contrast on #7A3EF5). */
   .btn-primary {
     display: inline-flex;
     align-items: center;
@@ -126,15 +132,15 @@ body {
     border-radius: 999px;
     font-weight: 700;
     font-family: var(--font-sans), sans-serif;
-    color: rgb(var(--c-cream));
+    color: #fff;
     background: rgb(var(--c-punch));
-    box-shadow: 0 10px 34px -12px rgb(var(--c-punch) / 0.85);
+    box-shadow: 0 10px 34px -14px rgb(var(--c-punch) / 0.75);
     transition: transform 0.18s ease, box-shadow 0.25s ease, filter 0.2s ease;
   }
   .btn-primary:hover {
     transform: translateY(-2px);
     filter: brightness(1.05);
-    box-shadow: 0 16px 42px -12px rgb(var(--c-punch) / 0.95);
+    box-shadow: 0 16px 42px -14px rgb(var(--c-punch) / 0.8);
   }
 
   .btn-ghost {
@@ -146,14 +152,14 @@ body {
     border-radius: 999px;
     font-weight: 600;
     color: rgb(var(--c-cream));
-    border: 1px solid rgb(var(--c-line) / 0.28);
+    border: 1px solid rgb(var(--c-line) / 0.3);
     background: rgb(var(--c-cream) / 0.02);
     transition: transform 0.18s ease, border-color 0.2s ease, background 0.2s ease;
   }
   .btn-ghost:hover {
     transform: translateY(-2px);
-    border-color: rgb(var(--c-sky) / 0.6);
-    background: rgb(var(--c-sky) / 0.06);
+    border-color: rgb(var(--c-punch) / 0.5);
+    background: rgb(var(--c-punch) / 0.06);
   }
 
   /* A see-more inline link with an animated arrow. */
@@ -167,7 +173,7 @@ body {
   }
   .link-more:hover {
     gap: 0.75rem;
-    color: rgb(var(--c-sky));
+    color: rgb(var(--c-punch));
   }
 
   .hairline {
@@ -175,7 +181,7 @@ body {
     background: linear-gradient(
       to right,
       transparent,
-      rgb(var(--c-line) / 0.3),
+      rgb(var(--c-line) / 0.35),
       transparent
     );
   }
@@ -190,17 +196,19 @@ body {
   }
   /* Faint grid used as ambient background texture — presence not prominence. */
   .bg-grid {
-    background-image: linear-gradient(rgb(var(--c-line) / 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgb(var(--c-line) / 0.05) 1px, transparent 1px);
+    background-image: linear-gradient(rgb(var(--c-line) / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--c-line) / 0.06) 1px, transparent 1px);
     background-size: 46px 46px;
   }
   .bg-dots {
-    background-image: radial-gradient(rgb(var(--c-line) / 0.12) 1px, transparent 1px);
+    background-image: radial-gradient(rgb(var(--c-line) / 0.15) 1px, transparent 1px);
     background-size: 22px 22px;
   }
-  /* Money / gold gradient text used for prize figures. */
+  /* Money / gold gradient text used for prize figures: two gold-family
+     stops (not the dark body-text color) so it reads as shiny gold, not
+     muddy, on a light page. */
   .text-gold-grad {
-    background: linear-gradient(180deg, rgb(var(--c-cream)), rgb(var(--c-gold)));
+    background: linear-gradient(180deg, #f4d28a, rgb(var(--c-gold)));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -209,21 +217,19 @@ body {
 
 /* Bubblegum Sans ships one weight (400). Force it everywhere the display
    family is used so a stacked font-bold/font-extrabold utility can't trigger
-   the browser's synthetic-bold fallback, which looks muddy on a bubble font.
-   A same-color text-stroke fakes a heavier weight instead — thickening the
-   glyphs without the muddiness of synthetic bold. Falls back to the plain
-   regular weight in browsers without text-stroke support (still legible). */
+   the browser's synthetic-bold fallback, which looks muddy on a bubble font. */
 .font-display {
   font-weight: 400 !important;
+}
+
+/* A same-color text-stroke fakes a heavier weight for the big signature
+   headlines specifically (applied only inside CaretHeadline) — thickening
+   the glyphs without the muddiness of synthetic bold. At small sizes the
+   fixed-width stroke overwhelms the letterforms, so it's deliberately not
+   applied to card titles, labels, wordmarks, or FAQ questions. Falls back to
+   the plain regular weight in browsers without text-stroke support. */
+.headline-stroke {
   -webkit-text-stroke: 1.4px currentColor;
   text-stroke: 1.4px currentColor;
   paint-order: stroke fill;
-}
-
-/* Gradient-filled display text sets color:transparent for the clip trick, so
-   currentColor would make its stroke invisible — give it an explicit stroke
-   color in the same warm tone instead. */
-.text-gold-grad.font-display {
-  -webkit-text-stroke-color: rgb(var(--c-gold));
-  text-stroke-color: rgb(var(--c-gold));
 }

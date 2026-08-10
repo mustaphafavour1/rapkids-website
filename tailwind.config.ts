@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 /**
- * RapKids TypeMaster Championship — "Midnight Arena" design system.
+ * RapKids TypeMaster Championship — light theme design system.
  *
  * Colors are declared as space-separated RGB channels in globals.css so that
  * Tailwind's opacity modifier syntax (bg-punch/20) keeps working on top of the
@@ -18,15 +18,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: withOpacity("--c-ink"), // page base — deep midnight indigo
-        surface: withOpacity("--c-surface"), // a step up from ink for section rhythm
+        ink: withOpacity("--c-ink"), // page base — near-white
+        surface: withOpacity("--c-surface"), // a pale lavender step for section rhythm
         raise: withOpacity("--c-raise"), // raised elements / hairline fills
         line: withOpacity("--c-line"), // borders / dividers
-        cream: withOpacity("--c-cream"), // primary text on dark
+        cream: withOpacity("--c-cream"), // primary text (dark, despite the name kept from the earlier dark build)
         muted: withOpacity("--c-muted"), // secondary text
         faint: withOpacity("--c-faint"), // tertiary text / captions
-        punch: withOpacity("--c-punch"), // primary action + Juniors bracket (coral)
-        sky: withOpacity("--c-sky"), // secondary + Seniors bracket (cyan)
+        punch: withOpacity("--c-punch"), // primary action + Juniors bracket (purple)
+        sky: withOpacity("--c-sky"), // secondary + Seniors bracket (pink)
         gold: withOpacity("--c-gold"), // prizes / money / winning
         volt: withOpacity("--c-volt"), // "live" / streak / go states (green)
         peach: withOpacity("--c-peach"), // tertiary accent

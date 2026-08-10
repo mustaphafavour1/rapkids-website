@@ -63,7 +63,7 @@ function PodiumBar({
 
 export default function PrizesTeaser() {
   return (
-    <Section id="prizes" tone="surface">
+    <Section id="prizes" tone="gold">
       <SectionHeader
         eyebrow="The prizes"
         caret="gold"

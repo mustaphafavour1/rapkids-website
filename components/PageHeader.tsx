@@ -21,7 +21,7 @@ export default function PageHeader({
 }: Props) {
   return (
     <header className="relative overflow-hidden bg-ink pb-16 pt-32 md:pb-20 md:pt-40">
-      <div aria-hidden className="pointer-events-none absolute inset-0 bg-grid opacity-50" />
+      <div aria-hidden className="pointer-events-none absolute inset-0 bg-grid opacity-25" />
       <div
         aria-hidden
         className="pointer-events-none absolute -top-40 left-1/2 h-[30rem] w-[40rem] -translate-x-1/2 rounded-full bg-punch/15 blur-[130px]"

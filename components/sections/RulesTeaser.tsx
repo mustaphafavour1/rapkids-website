@@ -126,7 +126,7 @@ export default function RulesTeaser() {
   return (
     <Section
       id="rules"
-      tone="ink"
+      tone="volt"
       character={{
         src: "/characters/char-rules.png",
         alt: "A RapKids character giving a thumbs up",

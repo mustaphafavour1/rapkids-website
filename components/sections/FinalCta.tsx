@@ -14,11 +14,11 @@ const ribbon = [
 
 export default function FinalCta() {
   return (
-    <section className="relative overflow-hidden bg-ink py-24 md:py-32">
-      <div aria-hidden className="pointer-events-none absolute inset-0 bg-dots opacity-40" />
+    <section className="relative overflow-hidden bg-peach/[0.07] py-24 md:py-32">
+      <div aria-hidden className="pointer-events-none absolute inset-0 bg-dots opacity-30" />
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-0 h-[30rem] w-[42rem] -translate-x-1/2 rounded-full bg-punch/15 blur-[130px]"
+        className="pointer-events-none absolute left-1/2 top-0 h-[30rem] w-[42rem] -translate-x-1/2 rounded-full bg-peach/10 blur-[130px]"
       />
 
       {/* marquee ribbon */}

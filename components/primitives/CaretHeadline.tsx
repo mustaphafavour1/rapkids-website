@@ -83,7 +83,7 @@ export default function CaretHeadline({
   return (
     <Tag
       ref={ref}
-      className={`font-display leading-[1.12] tracking-normal text-balance ${className}`}
+      className={`font-display headline-stroke leading-[1.12] tracking-normal text-balance ${className}`}
     >
       {rendered}
       <span

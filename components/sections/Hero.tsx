@@ -43,16 +43,12 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-ink pb-20 pt-28 sm:pt-32 md:pb-28 md:pt-40">
-      {/* ambient background: faint grid + soft color glows */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 bg-grid opacity-60" />
+      {/* ambient background: a subtle purple-to-pink gradient wash, a faint grid for texture */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-40 -top-40 h-[36rem] w-[36rem] rounded-full bg-punch/20 blur-[120px]"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-br from-punch/[0.11] via-sky/[0.05] to-transparent"
       />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -right-40 top-10 h-[32rem] w-[32rem] rounded-full bg-sky/15 blur-[120px]"
-      />
+      <div aria-hidden className="pointer-events-none absolute inset-0 bg-grid opacity-30" />
 
       <div className="container-page relative grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
         {/* left — headline, offer, action */}
@@ -113,7 +109,7 @@ export default function Hero() {
               {/* glow platform behind the character */}
               <div
                 aria-hidden
-                className="absolute inset-x-6 bottom-6 top-10 rounded-[2rem] bg-gradient-to-b from-punch/25 via-sky/10 to-transparent blur-2xl"
+                className="absolute inset-x-6 bottom-6 top-10 rounded-[2rem] bg-gradient-to-b from-punch/15 via-sky/[0.06] to-transparent blur-2xl"
               />
               <CharacterImage
                 src="/characters/hero-champion.png"

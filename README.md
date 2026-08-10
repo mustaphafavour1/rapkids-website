@@ -18,29 +18,51 @@ Built with **Next.js (App Router) · TypeScript · Tailwind CSS · Framer Motion
 
 ## Design system
 
-A dark purple theme. Tokens live in `app/globals.css` (as space-separated RGB
-channels) and are surfaced through Tailwind in `tailwind.config.ts`:
+A light theme, mostly white with a few sections carrying a soft accent-colour
+wash. Tokens live in `app/globals.css` (as space-separated RGB channels) and
+are surfaced through Tailwind in `tailwind.config.ts`:
 
-- **ink / surface / raise** — dark purple backgrounds and section rhythm
+- **ink / surface / raise** — near-white page base, a pale lavender step for
+  section rhythm, and a soft raised fill
+- **cream / muted / faint** — despite the name kept from an earlier dark build,
+  these are now the primary/secondary/tertiary **text** colors (dark on light)
 - **punch** (purple, `#7A3EF5`) — primary actions + the Juniors bracket
-- **sky** (pink, `#E62EDF`) — secondary + the Seniors bracket
-- **gold** (cream, `#FED59D`) — prizes, money, winning
-- **volt** (green, `#9AC55E`) — "live" / streak / go states
-- **peach** (`#F2638A`) — tertiary accent
+- **sky** (pink, `#B825B2`) — secondary + the Seniors bracket
+- **gold** (amber, `#C28A1A`) — prizes, money, winning
+- **volt** (green, `#5C8A22`) — "live" / streak / go states
+- **peach** (rose, `#C73864`) — tertiary accent
+
+Every accent is deepened from the brand's original pastel values so it holds
+up as full-opacity text/icon color on white; the same token reads as a soft
+pastel wash automatically wherever it's used at low alpha (`bg-gold/[0.07]`,
+etc.), so section-level tints and text share one value each rather than a
+separate light/dark pair.
+
+**Section backgrounds:** the hero carries a subtle diagonal purple-to-pink
+gradient (`from-punch/[0.11]` `via-sky/[0.05]`); most sections stay white or
+the pale lavender `surface` step; a few carry their own accent wash — Prizes
+is a warm `gold` tint, Rules & Safety a `volt` (green) tint, and the closing
+CTA a `peach` tint, bookending the hero's gradient. Set via `Section`'s `tone`
+prop (`components/primitives/Section.tsx`).
 
 Type: **Bubblegum Sans** (display headlines), **Nunito Sans** (body/UI),
 **JetBrains Mono** (data, labels, the typing motif). Loaded via `next/font` —
 self-hosted at build, no external CDN at runtime. Bubblegum Sans ships one
 weight, so `.font-display` forces `font-weight: 400` globally to stop the
-browser from synthesizing a fake bold.
+browser from synthesizing a fake bold. A same-color text-stroke
+(`.headline-stroke`) fakes a heavier weight on top of that, but only for the
+big signature headlines — it's applied inside `CaretHeadline` specifically,
+not globally, since the fixed-width stroke overwhelms small text (card
+titles, FAQ questions, wordmarks all stay stroke-free).
 
 Every major headline carries the project's one headline mechanism: one keyword
 in an accent colour, trailed by a blinking "typing caret" — the through-line for
 a typing championship. Motion respects `prefers-reduced-motion`.
 
 Comic-character cutouts (`components/primitives/SectionCharacter.tsx`) peek
-from alternating bottom corners on every other landing-page section, wide
-desktop only (`xl:` and up) so they never crowd the copy on smaller screens.
+from a section corner (either top or bottom, left or right — set per usage),
+wide desktop only (`xl:` and up) so they never crowd the copy on smaller
+screens.
 
 ## Getting started
 
