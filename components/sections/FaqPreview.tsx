@@ -21,7 +21,7 @@ export default function FaqPreview() {
       <SectionHeader
         eyebrow="Questions, answered"
         caret="sky"
-        segments={[{ text: "The parent " }, { text: "cheat sheet", accent: "sky" }]}
+        segments={[{ text: "The Parent " }, { text: "Cheat Sheet", accent: "sky" }]}
         intro="The things guardians ask first. There's more where these came from."
       />
       <Reveal delay={0.1}>

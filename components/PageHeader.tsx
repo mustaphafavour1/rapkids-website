@@ -41,7 +41,7 @@ export default function PageHeader({
           as="h1"
           caret={caret}
           segments={segments}
-          className="max-w-4xl text-4xl sm:text-5xl md:text-6xl"
+          className="max-w-4xl text-5xl sm:text-6xl md:text-7xl"
         />
         {intro ? (
           <Reveal delay={0.08}>

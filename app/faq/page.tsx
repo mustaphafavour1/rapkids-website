@@ -27,10 +27,10 @@ export default function FaqPage() {
         caret="sky"
         segments={[
           { text: "Everything a " },
-          { text: "guardian", accent: "sky" },
-          { text: " asks" },
+          { text: "Guardian", accent: "sky" },
+          { text: " Asks" },
         ]}
-        intro="Grouped so you can jump straight to what matters — getting in, winning, the Grand Final, money, and keeping your child safe."
+        intro="Grouped so you can jump straight to what matters: getting in, winning, the Grand Final, money, and keeping your child safe."
       />
 
       <Section tone="ink" className="!pt-8">
@@ -38,7 +38,7 @@ export default function FaqPage() {
           {Object.entries(categories).map(([category, items], i) => (
             <div key={category} className="grid gap-6 md:grid-cols-[0.4fr_1fr] md:gap-10">
               <Reveal>
-                <h2 className="font-display text-xl font-bold text-cream md:sticky md:top-28">
+                <h2 className="font-display text-2xl font-bold text-cream md:sticky md:top-28">
                   <span className="mr-2 font-mono text-sm text-punch">
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -54,8 +54,8 @@ export default function FaqPage() {
 
         <Reveal delay={0.1}>
           <div className="mt-16 rounded-3xl border border-line/15 bg-surface p-8 text-center">
-            <p className="font-display text-lg font-bold text-cream">
-              Still have a question?
+            <p className="font-display text-xl font-bold text-cream">
+              Still Have a Question?
             </p>
             <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-muted">
               We&apos;re happy to help before you enter your child. Email the

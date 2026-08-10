@@ -29,7 +29,8 @@ export default function HowItWorks() {
       character={{
         src: "/characters/char-howitworks.png",
         alt: "A RapKids character cheering on the championship steps",
-        side: "left",
+        side: "right",
+        vertical: "top",
         placeholderLabel: "characters/char-howitworks.png",
       }}
     >
@@ -37,10 +38,10 @@ export default function HowItWorks() {
         eyebrow="How it works"
         caret="punch"
         segments={[
-          { text: "From sign-up to the " },
-          { text: "live final", accent: "gold" },
+          { text: "From SignUp to the " },
+          { text: "Live Final", accent: "gold" },
         ]}
-        intro="Four moves, four weeks. Register once, warm up, then chase a fresh leaderboard every single week — all the way to the Grand Final."
+        intro="Four moves, four weeks. Register once, warm up, then chase a fresh leaderboard every single week, all the way to the Grand Final."
       />
 
       {/* ---- desktop: horizontal drawing timeline ---- */}
@@ -112,7 +113,7 @@ export default function HowItWorks() {
                   <div className="mt-2 font-mono text-xs text-muted">
                     {s.window}
                   </div>
-                  <h3 className="mt-3 font-display text-lg font-bold leading-snug text-cream">
+                  <h3 className="mt-3 font-display text-xl font-bold leading-snug text-cream">
                     {s.title}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted">
@@ -155,7 +156,7 @@ export default function HowItWorks() {
                   </span>
                   <span className="font-mono text-xs text-muted">· {s.window}</span>
                 </div>
-                <h3 className="mt-2 font-display text-lg font-bold text-cream">
+                <h3 className="mt-2 font-display text-xl font-bold text-cream">
                   {s.title}
                 </h3>
                 <p className="mt-1.5 text-sm leading-relaxed text-muted">

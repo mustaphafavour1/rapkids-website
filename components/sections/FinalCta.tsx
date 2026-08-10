@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import CaretHeadline from "@/components/primitives/CaretHeadline";
 import Reveal from "@/components/primitives/Reveal";
-import SectionCharacter from "@/components/primitives/SectionCharacter";
 
 const ribbon = [
   "$4,000 PRIZE POOL",
@@ -53,7 +52,7 @@ export default function FinalCta() {
         <CaretHeadline
           as="h2"
           caret="punch"
-          className="mx-auto max-w-4xl text-4xl sm:text-6xl md:text-7xl"
+          className="mx-auto max-w-4xl text-5xl sm:text-7xl md:text-8xl"
           segments={[
             { text: "Ready. Set. " },
             { text: "Type", accent: "punch" },
@@ -84,13 +83,6 @@ export default function FinalCta() {
           </div>
         </Reveal>
       </div>
-
-      <SectionCharacter
-        src="/characters/char-cta.png"
-        alt="A RapKids character waving goodbye"
-        side="right"
-        placeholderLabel="characters/char-cta.png"
-      />
     </section>
   );
 }

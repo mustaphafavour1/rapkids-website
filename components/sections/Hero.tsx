@@ -61,10 +61,10 @@ export default function Hero() {
             as="h1"
             typed
             caret="gold"
-            className="text-[2rem] leading-[1.05] sm:text-5xl md:text-6xl lg:text-[4rem]"
+            className="text-[2.35rem] leading-[1.08] sm:text-6xl md:text-7xl lg:text-[4.6rem]"
             segments={[
               { text: "$4,000", accent: "gold" },
-              { text: " up for grabs for kids in the TypeMaster Championship" },
+              { text: " Up for Grabs for Kids in the TypeMaster Championship" },
             ]}
           />
 
@@ -132,7 +132,7 @@ export default function Hero() {
             >
               <Trophy className="h-5 w-5 text-gold" />
               <div className="leading-tight">
-                <div className="font-display text-lg font-bold text-gold-grad">$4,000</div>
+                <div className="font-display text-xl font-bold text-gold-grad">$4,000</div>
                 <div className="font-mono text-[0.6rem] uppercase tracking-widest text-faint">
                   30 cash winners
                 </div>
@@ -147,7 +147,7 @@ export default function Hero() {
             >
               <Radio className="h-5 w-5 text-sky" />
               <div className="leading-tight">
-                <div className="font-display text-sm font-bold text-cream">
+                <div className="font-display text-base font-bold text-cream">
                   Live Grand Final
                 </div>
                 <div className="font-mono text-[0.6rem] uppercase tracking-widest text-faint">

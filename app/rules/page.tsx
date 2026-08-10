@@ -22,8 +22,8 @@ export default function RulesPage() {
         eyebrow="Official rules"
         caret="volt"
         segments={[
-          { text: "The rules, in " },
-          { text: "plain language", accent: "volt" },
+          { text: "The Rules, in " },
+          { text: "Plain Language", accent: "volt" },
         ]}
         intro="No fine print you need a lawyer for. Here's exactly how entry, winning, billing and your child's privacy work."
       />
@@ -56,10 +56,10 @@ export default function RulesPage() {
               <Reveal key={r.n} as="section">
                 <div id={slug(r.n, r.title)} className="scroll-mt-28">
                   <div className="flex items-baseline gap-4">
-                    <span className="font-display text-3xl font-extrabold text-punch/40">
+                    <span className="font-display text-4xl font-extrabold text-punch/40">
                       {String(r.n).padStart(2, "0")}
                     </span>
-                    <h2 className="font-display text-2xl font-bold text-cream">
+                    <h2 className="font-display text-3xl font-bold text-cream">
                       {r.title}
                     </h2>
                   </div>
@@ -87,8 +87,8 @@ export default function RulesPage() {
       </Section>
 
       <CtaBand
-        title="Fair, safe, and "
-        accent="worth it"
+        title="Fair, Safe, and "
+        accent="Worth It"
         subtitle="That's the whole game. Enter your child and let a fresh leaderboard do the rest."
       />
     </PageShell>

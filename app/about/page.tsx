@@ -29,8 +29,8 @@ export default function AboutPage() {
         eyebrow="About the championship"
         caret="punch"
         segments={[
-          { text: "A habit worth " },
-          { text: "showing up for", accent: "punch" },
+          { text: "A Habit Worth " },
+          { text: "Showing Up For", accent: "punch" },
         ]}
         intro="A habit sticks when there's something worth showing up for. Four weeks of daily practice, with a leaderboard, real prizes and a live final at the end of it."
       />
@@ -40,16 +40,16 @@ export default function AboutPage() {
         <div className="grid gap-14 lg:grid-cols-2 lg:gap-16">
           <div>
             <p className="eyebrow mb-4">How scoring actually works</p>
-            <h2 className="font-display text-3xl font-bold text-cream sm:text-4xl">
-              Accuracy beats speed — on purpose
+            <h2 className="font-display text-4xl font-bold text-cream sm:text-5xl">
+              Accuracy Beats Speed. On Purpose.
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-muted text-pretty">
-              Every run is scored on speed and accuracy — but accuracy counts
+              Every run is scored on speed and accuracy, but accuracy counts
               for more. Type fast and sloppy, and the score drops fast. That&apos;s
               the habit worth building, and the hardest one to fake.
             </p>
             <p className="mt-4 text-lg leading-relaxed text-muted text-pretty">
-              Play all seven days in a week for a 20% score boost — often worth
+              Play all seven days in a week for a 20% score boost; often worth
               more than any single great run.
             </p>
           </div>
@@ -62,7 +62,7 @@ export default function AboutPage() {
                 </div>
                 <div className="mt-4 flex items-center gap-4">
                   <div className="flex-1 rounded-xl bg-punch/10 p-4 ring-1 ring-punch/40">
-                    <div className="font-display text-lg font-bold text-cream">
+                    <div className="font-display text-xl font-bold text-cream">
                       40 wpm
                     </div>
                     <div className="font-mono text-xs text-volt">98% accuracy</div>
@@ -70,9 +70,9 @@ export default function AboutPage() {
                       wins
                     </div>
                   </div>
-                  <span className="font-display text-sm text-faint">beats</span>
+                  <span className="font-display text-base text-faint">beats</span>
                   <div className="flex-1 rounded-xl bg-cream/[0.03] p-4">
-                    <div className="font-display text-lg font-bold text-muted">
+                    <div className="font-display text-xl font-bold text-muted">
                       45 wpm
                     </div>
                     <div className="font-mono text-xs text-muted">90% accuracy</div>
@@ -106,14 +106,14 @@ export default function AboutPage() {
             { text: "Ten scored tries", accent: "sky" },
             { text: " a day." },
           ]}
-          intro="Winning comes down to how well your child types, not how many hours they spend trying — screen time you don't have to feel guilty about."
+          intro="Winning comes down to how well your child types, not how many hours they spend trying; screen time you don't have to feel guilty about."
         />
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           <Reveal>
             <div className="h-full rounded-3xl border border-line/15 bg-cream/[0.02] p-7">
               <InfinityIcon className="h-7 w-7 text-sky" />
-              <h3 className="mt-4 font-display text-xl font-bold text-cream">
-                Practice is unlimited, always
+              <h3 className="mt-4 font-display text-2xl font-bold text-cream">
+                Practice Is Unlimited, Always
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">
                 Any length, no cap, works offline. Your child can warm up as much
@@ -124,8 +124,8 @@ export default function AboutPage() {
           <Reveal delay={0.1}>
             <div className="h-full rounded-3xl border border-line/15 bg-cream/[0.02] p-7">
               <Gauge className="h-7 w-7 text-punch" />
-              <h3 className="mt-4 font-display text-xl font-bold text-cream">
-                Scored attempts are capped at 10 a day
+              <h3 className="mt-4 font-display text-2xl font-bold text-cream">
+                Scored Attempts Are Capped at 10 a Day
               </h3>
               <p className="mt-4 flex flex-wrap gap-1.5">
                 {Array.from({ length: 10 }).map((_, i) => (
@@ -153,11 +153,11 @@ export default function AboutPage() {
         <div className="grid gap-14 lg:grid-cols-2 lg:gap-16">
           <div>
             <p className="eyebrow mb-4">The Grand Final</p>
-            <h2 className="font-display text-3xl font-bold text-cream sm:text-4xl">
-              Sixteen finalists, live and unscripted
+            <h2 className="font-display text-4xl font-bold text-cream sm:text-5xl">
+              Sixteen Finalists, Live and Unscripted
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-muted text-pretty">
-              The top 8 from each bracket — 16 children in total — compete live on
+              The top 8 from each bracket (16 children in total) compete live on
               26 September, on passages nobody has seen before.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-2">
@@ -171,8 +171,8 @@ export default function AboutPage() {
           </div>
           <Reveal delay={0.1}>
             <div className="h-full rounded-3xl border border-line/15 bg-surface/60 p-7">
-              <h3 className="font-display text-lg font-bold text-cream">
-                Every finalist&apos;s guardian chooses how their child appears
+              <h3 className="font-display text-xl font-bold text-cream">
+                Every Finalist&apos;s Guardian Chooses How Their Child Appears
               </h3>
               <ul className="mt-4 space-y-3 text-sm text-muted">
                 <li className="flex gap-3">
@@ -181,7 +181,7 @@ export default function AboutPage() {
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sky" />
-                  Audio and avatar only — heard, not shown
+                  Audio and avatar only; heard, not shown
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-volt" />
@@ -206,8 +206,8 @@ export default function AboutPage() {
             <div className="flex h-full flex-col justify-between rounded-3xl border border-gold/20 bg-gradient-to-br from-gold/[0.08] to-transparent p-8">
               <div>
                 <Sparkles className="h-7 w-7 text-gold" />
-                <h3 className="mt-4 font-display text-2xl font-bold text-cream">
-                  More than cash
+                <h3 className="mt-4 font-display text-3xl font-bold text-cream">
+                  More Than Cash
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted">
                   Badges, free subscription months and a certificate with your
@@ -225,8 +225,8 @@ export default function AboutPage() {
             <div className="flex h-full flex-col justify-between rounded-3xl border border-line/15 bg-cream/[0.02] p-8">
               <div>
                 <CalendarClock className="h-7 w-7 text-sky" />
-                <h3 className="mt-4 font-display text-2xl font-bold text-cream">
-                  After the championship
+                <h3 className="mt-4 font-display text-3xl font-bold text-cream">
+                  After the Championship
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted">
                   The TypeMaster Term League opens 5 October: a free, ongoing
@@ -243,8 +243,8 @@ export default function AboutPage() {
       </Section>
 
       <CtaBand
-        title="Give them a reason to "
-        accent="show up"
+        title="Give Them a Reason to "
+        accent="Show Up"
         subtitle="Four weeks of daily practice, with a leaderboard, real prizes and a live final waiting at the end."
       />
     </PageShell>

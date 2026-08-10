@@ -38,7 +38,7 @@ export default function FaqAccordion({ items, idPrefix = "faq" }: Props) {
                   {">"}
                 </span>
                 <span
-                  className={`flex-1 font-display text-base font-bold transition-colors sm:text-lg ${
+                  className={`flex-1 font-display text-lg font-bold transition-colors sm:text-xl ${
                     isOpen ? "text-cream" : "text-cream/90"
                   }`}
                 >

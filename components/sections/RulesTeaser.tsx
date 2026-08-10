@@ -89,7 +89,7 @@ function Preview({ mode }: { mode: string }) {
         <div className="font-mono text-[0.6rem] uppercase tracking-widest text-faint">
           Public
         </div>
-        <div className="font-display text-lg font-bold text-cream">Score: 96</div>
+        <div className="font-display text-xl font-bold text-cream">Score: 96</div>
       </div>
       <p className="font-mono text-xs text-faint">Private, proctored session</p>
     </div>
@@ -100,7 +100,7 @@ const guarantees = [
   {
     icon: EyeOff,
     title: "Handles, never names",
-    body: "Public boards show your child's chosen handle only — never their real name, photo or school.",
+    body: "Public boards show your child's chosen handle only; never their real name, photo or school.",
   },
   {
     icon: BadgeDollarSign,
@@ -130,7 +130,8 @@ export default function RulesTeaser() {
       character={{
         src: "/characters/char-rules.png",
         alt: "A RapKids character giving a thumbs up",
-        side: "left",
+        side: "right",
+        vertical: "top",
         placeholderLabel: "characters/char-rules.png",
       }}
     >
@@ -138,11 +139,11 @@ export default function RulesTeaser() {
         eyebrow="Rules &amp; safety"
         caret="volt"
         segments={[
-          { text: "Built with " },
-          { text: "parents", accent: "volt" },
-          { text: " in mind" },
+          { text: "Built With " },
+          { text: "Safety", accent: "volt" },
+          { text: " in Mind" },
         ]}
-        intro="Appearing on camera is never a condition of winning. Every finalist's guardian picks how their child takes part — all three earn the same prizes."
+        intro="Appearing on camera is never a condition of winning. Every finalist's guardian picks how their child takes part, and all three earn the same prizes."
         moreHref="/rules"
         moreLabel="Read the full rules"
       />
@@ -209,7 +210,7 @@ export default function RulesTeaser() {
                   <g.icon className="h-5 w-5" />
                 </span>
                 <div>
-                  <h3 className="font-display text-base font-bold text-cream">
+                  <h3 className="font-display text-lg font-bold text-cream">
                     {g.title}
                   </h3>
                   <p className="mt-1 text-sm leading-relaxed text-muted">

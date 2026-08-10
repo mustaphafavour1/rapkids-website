@@ -18,17 +18,16 @@ These are the transparent PNG characters from the app.
 | Filename | Used on | What it should be | Recommended size |
 |---|---|---|---|
 | `hero-champion.png` | Home hero (right side) | A single hero character celebrating / at the keyboard, **transparent background** | Portrait, ~800 × 1000px (4:5), PNG |
-| `comic-champion.png` | Home "Prizes" teaser, Prizes page | A comic character bust/badge, **transparent background** | Square-ish, ~600 × 600px, PNG |
-| `char-howitworks.png` | Home "How it works" (bottom-left corner) | A character cheering, no background | ~500px tall, PNG, cropped tight to the figure |
+| `comic-champion.png` | Prizes page ("Grand Champion" callout) | A comic character bust/badge, **transparent background** | Square-ish, ~600 × 600px, PNG |
+| `char-howitworks.png` | Home "How it works" (top-right corner) | A character cheering, no background | ~500px tall, PNG, cropped tight to the figure |
 | `char-about.png` | Home "About" teaser (bottom-right corner) | A character typing confidently, no background | ~500px tall, PNG, cropped tight to the figure |
-| `char-rules.png` | Home "Rules & safety" teaser (bottom-left corner) | A character giving a thumbs up, no background | ~500px tall, PNG, cropped tight to the figure |
-| `char-cta.png` | Home closing CTA (bottom-right corner) | A character waving, no background | ~500px tall, PNG, cropped tight to the figure |
+| `char-rules.png` | Home "Rules & safety" teaser (top-right corner) | A character giving a thumbs up, no background | ~500px tall, PNG, cropped tight to the figure |
 
-These four sit bare in the corner of their section — no card or frame around
-them — so a tight crop with a fully transparent background (no drop shadow
-baked in) is what makes them "just fit in." They only show on wide desktop
-screens (xl breakpoint and up) since narrower viewports don't have the side
-margin to fit them without overlapping the copy.
+These sit bare in the corner of their section — no card or frame around them —
+so a tight crop with a fully transparent background (no drop shadow baked in)
+is what makes them "just fit in." They only show on wide desktop screens (xl
+breakpoint and up) since narrower viewports don't have the side margin to fit
+them without overlapping the copy.
 
 **Optional extra characters** you can add and I can wire in on request:
 `junior-kid.png`, `senior-kid.png`, `mascot.png`, `champion-trophy.png`.
@@ -44,7 +43,25 @@ margin to fit them without overlapping the copy.
 
 ---
 
-## 3. Background images & patterns — `public/backgrounds/` and `public/patterns/`
+## 3. App screenshot — `public/screenshots/`
+
+| Filename | Used on | What it should be | Recommended size |
+|---|---|---|---|
+| `why-it-works.png` | Home "Why it works" section (right side, replacing the placeholder score mock-up) | A real screenshot of the RapKids app scoring a typing run | 4:3, PNG or JPG |
+
+---
+
+## 4. Bracket photos — `public/photos/` (already included)
+
+`junior-bracket.jpg` and `senior-bracket.jpg` are real photos already checked
+into the repo for the "Built to Be Fair" section's Juniors/Seniors bracket
+visual, sourced from Unsplash (free to use, no attribution required). Swap
+either file for your own photo whenever you'd like; same filenames, square
+crop, face centered.
+
+---
+
+## 5. Background images & patterns — `public/backgrounds/` and `public/patterns/`
 
 Optional. The site already ships with built-in ambient textures (a faint grid
 and dot field) so it looks complete without these. Upload here if you'd like to

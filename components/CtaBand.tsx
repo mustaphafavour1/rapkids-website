@@ -13,7 +13,7 @@ type Props = {
 export default function CtaBand({
   title = "Ready. Set. ",
   accent = "Type",
-  subtitle = "Every child on an active RapKids plan can enter — one subscription enters both your kids.",
+  subtitle = "Every child on an active RapKids plan can enter; one subscription enters both your kids.",
 }: Props) {
   return (
     <section className="relative overflow-hidden bg-surface py-20 md:py-28">
@@ -25,7 +25,7 @@ export default function CtaBand({
         <CaretHeadline
           as="h2"
           caret="punch"
-          className="mx-auto max-w-3xl text-3xl sm:text-4xl md:text-5xl"
+          className="mx-auto max-w-3xl text-4xl sm:text-5xl md:text-6xl"
           segments={[{ text: title }, { text: accent, accent: "punch" }, { text: "." }]}
         />
         <Reveal delay={0.05}>

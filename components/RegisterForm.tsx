@@ -50,8 +50,8 @@ export default function RegisterForm() {
         className="mx-auto max-w-lg rounded-3xl border border-volt/25 bg-volt/[0.06] p-10 text-center"
       >
         <CheckCircle2 className="mx-auto h-10 w-10 text-volt" />
-        <h2 className="mt-4 font-display text-2xl font-bold text-cream">
-          You&apos;re on the list
+        <h2 className="mt-4 font-display text-3xl font-bold text-cream">
+          You&apos;re on the List
         </h2>
         <p className="mt-3 text-sm leading-relaxed text-muted">
           We&apos;ve got {children.length === 2 ? "both children" : "your child"}{" "}
@@ -161,7 +161,7 @@ export default function RegisterForm() {
                     </div>
                   </div>
                   <p className="mt-3 text-xs text-faint">
-                    The nickname is what shows on public leaderboards — never
+                    The nickname is what shows on public leaderboards; never
                     their real name.
                   </p>
                 </div>

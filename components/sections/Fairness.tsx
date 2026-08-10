@@ -8,52 +8,54 @@ import Reveal from "@/components/primitives/Reveal";
 import { fairness } from "@/lib/content";
 import { ease } from "@/lib/motion";
 
-/* 1 — two brackets: kids matched within their own age lane */
+/* 1 — two brackets: kids matched within their own age lane, each fronted by
+   a real photo so the bracket reads as real kids, not an abstract diagram */
 function BracketLanes() {
-  const reduce = useReducedMotion();
   const Lane = ({
     label,
     ages,
     color,
-    count,
+    photo,
+    alt,
   }: {
     label: string;
     ages: string;
     color: "punch" | "sky";
-    count: number;
+    photo: string;
+    alt: string;
   }) => (
     <div
-      className={`flex items-center justify-between gap-3 rounded-xl border px-3 py-2.5 ${
+      className={`flex items-center gap-3 rounded-xl border px-3 py-2.5 ${
         color === "punch"
           ? "border-punch/25 bg-punch/[0.07]"
           : "border-sky/25 bg-sky/[0.07]"
       }`}
     >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={photo}
+        alt={alt}
+        className={`h-11 w-11 shrink-0 rounded-full object-cover ring-2 ${
+          color === "punch" ? "ring-punch/50" : "ring-sky/50"
+        }`}
+      />
       <div className="leading-tight">
-        <div className="font-display text-sm font-bold text-cream">{label}</div>
+        <div className="font-display text-base font-bold text-cream">{label}</div>
         <div className="font-mono text-[0.6rem] uppercase tracking-widest text-faint">
           Ages {ages}
         </div>
-      </div>
-      <div className="flex -space-x-1.5">
-        {Array.from({ length: count }).map((_, i) => (
-          <motion.span
-            key={i}
-            initial={{ opacity: 0, scale: 0.4 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.35, ease, delay: i * 0.07 }}
-            className={`h-6 w-6 rounded-full border-2 border-surface ${
-              color === "punch" ? "bg-punch" : "bg-sky"
-            }`}
-          />
-        ))}
       </div>
     </div>
   );
   return (
     <div className="flex h-full flex-col justify-center gap-3">
-      <Lane label="Juniors" ages="5–8" color="punch" count={5} />
+      <Lane
+        label="Juniors"
+        ages="5–8"
+        color="punch"
+        photo="/photos/junior-bracket.jpg"
+        alt="A Juniors-bracket kid"
+      />
       <div className="flex items-center justify-center gap-2">
         <span className="h-px w-8 bg-line/20" />
         <span className="font-mono text-[0.6rem] uppercase tracking-widest text-faint">
@@ -61,7 +63,13 @@ function BracketLanes() {
         </span>
         <span className="h-px w-8 bg-line/20" />
       </div>
-      <Lane label="Seniors" ages="9–12" color="sky" count={5} />
+      <Lane
+        label="Seniors"
+        ages="9–12"
+        color="sky"
+        photo="/photos/senior-bracket.jpg"
+        alt="A Seniors-bracket kid"
+      />
     </div>
   );
 }
@@ -152,9 +160,10 @@ export default function Fairness() {
       <SectionHeader
         eyebrow="Built to be fair"
         caret="sky"
+        align="center"
         segments={[
           { text: "Always a " },
-          { text: "fair fight", accent: "sky" },
+          { text: "Fair Fight", accent: "sky" },
         ]}
         intro="No child is ever out of it. Same-age brackets, a clean slate every week, and a plan that lets your whole family compete."
       />
@@ -172,7 +181,7 @@ export default function Fairness() {
                 <Visual />
               </div>
               <div>
-                <h3 className="font-display text-lg font-bold leading-snug text-cream">
+                <h3 className="font-display text-xl font-bold leading-snug text-cream">
                   {f.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">

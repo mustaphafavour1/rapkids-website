@@ -10,13 +10,13 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <div className="flex items-baseline gap-0.5">
-              <span className="font-display text-2xl font-extrabold tracking-tight">
+              <span className="font-display text-3xl font-extrabold tracking-tight">
                 Rap<span className="text-punch">Kids</span>
               </span>
               <span className="ml-0.5 inline-block h-[0.9em] w-[0.42ch] rounded-[2px] bg-punch animate-blink" aria-hidden />
             </div>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
-              The TypeMaster Championship — four weeks of competitive typing for
+              The TypeMaster Championship: four weeks of competitive typing for
               kids 5–12, ending in a live Grand Final on 26 September.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
@@ -68,7 +68,7 @@ export default function Footer() {
             className="h-9 w-auto object-contain"
           />
           <span className="h-8 w-px bg-line/25" aria-hidden />
-          <span className="font-display text-2xl font-extrabold tracking-tight">
+          <span className="font-display text-3xl font-extrabold tracking-tight">
             Rap<span className="text-punch">Kids</span>
           </span>
         </div>

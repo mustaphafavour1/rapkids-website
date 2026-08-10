@@ -33,7 +33,7 @@ import {
 export const metadata: Metadata = {
   title: "Prizes",
   description:
-    "$4,000 in prizes across four weeks and two brackets. 30 children win cash; hundreds more win free months, badges, certificates — and two become characters in a real RapKids comic.",
+    "$4,000 in prizes across four weeks and two brackets. 30 children win cash; hundreds more win free months, badges, certificates, and two become characters in a real RapKids comic.",
 };
 
 const beyondIcons = [Gift, Medal, Award, TrendingUp, Flame, Frame, Smartphone];
@@ -46,14 +46,14 @@ export default function PrizesPage() {
         eyebrow="The prize pool"
         caret="gold"
         segments={[
-          { text: "$4,000 in prizes", accent: "gold" },
-          { text: ". Four weeks. Two brackets." },
+          { text: "$4,000 in Prizes", accent: "gold" },
+          { text: ". Four Weeks. Two Brackets." },
         ]}
         intro="Thirty children win cash. Hundreds more win free months, badges and a spot in the record books."
       >
         <div className="flex flex-wrap gap-3">
           <div className="rounded-2xl border border-gold/25 bg-gold/[0.06] px-5 py-3">
-            <div className="font-display text-2xl font-extrabold text-gold-grad">
+            <div className="font-display text-3xl font-extrabold text-gold-grad">
               $<CountUp to={4000} />
             </div>
             <div className="font-mono text-[0.62rem] uppercase tracking-widest text-faint">
@@ -61,7 +61,7 @@ export default function PrizesPage() {
             </div>
           </div>
           <div className="rounded-2xl border border-line/15 bg-cream/[0.03] px-5 py-3">
-            <div className="font-display text-2xl font-extrabold text-cream">
+            <div className="font-display text-3xl font-extrabold text-cream">
               <CountUp to={30} />
             </div>
             <div className="font-mono text-[0.62rem] uppercase tracking-widest text-faint">
@@ -69,7 +69,7 @@ export default function PrizesPage() {
             </div>
           </div>
           <div className="rounded-2xl border border-line/15 bg-cream/[0.03] px-5 py-3">
-            <div className="font-display text-2xl font-extrabold text-cream">
+            <div className="font-display text-3xl font-extrabold text-cream">
               100s
             </div>
             <div className="font-mono text-[0.62rem] uppercase tracking-widest text-faint">
@@ -84,8 +84,8 @@ export default function PrizesPage() {
         <SectionHeader
           eyebrow="Weekly heats · both brackets"
           caret="punch"
-          segments={[{ text: "Win every " }, { text: "single week", accent: "punch" }]}
-          intro="Three ways to win each week, in each bracket. Boards reset every Monday — winners announced the Monday after."
+          segments={[{ text: "Win Every " }, { text: "Single Week", accent: "punch" }]}
+          intro="Three ways to win each week, in each bracket. Boards reset every Monday; winners announced the Monday after."
         />
         <Reveal delay={0.1}>
           <div className="mt-10 overflow-hidden rounded-3xl border border-line/15">
@@ -99,10 +99,10 @@ export default function PrizesPage() {
                 key={p.name}
                 className="grid grid-cols-2 gap-x-4 gap-y-1 border-b border-line/10 px-6 py-5 last:border-0 sm:grid-cols-[1.2fr_0.6fr_1.4fr] sm:items-center sm:gap-4"
               >
-                <span className="font-display text-base font-bold text-cream">
+                <span className="font-display text-lg font-bold text-cream">
                   {p.name}
                 </span>
-                <span className="text-right font-display text-xl font-extrabold text-gold/90 sm:text-left">
+                <span className="text-right font-display text-2xl font-extrabold text-gold/90 sm:text-left">
                   {p.amount}
                 </span>
                 <span className="col-span-2 text-sm text-muted sm:col-span-1">
@@ -125,8 +125,8 @@ export default function PrizesPage() {
         <SectionHeader
           eyebrow="Grand Final · 26 September"
           caret="gold"
-          segments={[{ text: "The " }, { text: "finals-day", accent: "gold" }, { text: " podium" }]}
-          intro="The biggest prizes of the championship, awarded live — per bracket."
+          segments={[{ text: "The " }, { text: "Finals-Day", accent: "gold" }, { text: " Podium" }]}
+          intro="The biggest prizes of the championship, awarded live, per bracket."
         />
         <Reveal delay={0.1}>
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -143,11 +143,11 @@ export default function PrizesPage() {
                 <div className="font-mono text-[0.62rem] uppercase tracking-widest text-faint">
                   {i === 0 ? "1st" : i === 1 ? "2nd" : "3rd"} place
                 </div>
-                <div className="mt-1 font-display text-lg font-bold text-cream">
+                <div className="mt-1 font-display text-xl font-bold text-cream">
                   {p.place}
                 </div>
                 <div
-                  className={`mt-3 font-display text-4xl font-extrabold ${
+                  className={`mt-3 font-display text-5xl font-extrabold ${
                     i === 0 ? "text-gold-grad" : "text-gold/80"
                   }`}
                 >
@@ -172,7 +172,7 @@ export default function PrizesPage() {
             <Info className="mt-0.5 h-5 w-5 shrink-0 text-sky" />
             <p className="text-sm leading-relaxed text-muted">
               <span className="text-cream">One prize each, kept fair.</span> A
-              child can win only one cash category per week — their highest-value
+              child can win only one cash category per week; their highest-value
               one. A household can win one cash prize per bracket per week, so
               siblings in different brackets can both take home a prize; siblings
               in the same bracket share one shot at it.
@@ -186,7 +186,7 @@ export default function PrizesPage() {
         <SectionHeader
           eyebrow="Beyond the cash"
           caret="volt"
-          segments={[{ text: "Hundreds more " }, { text: "ways to win", accent: "volt" }]}
+          segments={[{ text: "Hundreds More " }, { text: "Ways to Win", accent: "volt" }]}
           intro="Every week hands out rewards that last longer than a payout."
         />
         <div className="mt-12 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -202,7 +202,7 @@ export default function PrizesPage() {
                     <Icon className="h-5 w-5" />
                   </span>
                   <div>
-                    <h3 className="font-display text-base font-bold text-cream">
+                    <h3 className="font-display text-lg font-bold text-cream">
                       {b.title}
                     </h3>
                     <p className="mt-1 text-sm leading-relaxed text-muted">
@@ -224,8 +224,8 @@ export default function PrizesPage() {
               <div className="mb-2 font-mono text-[0.62rem] uppercase tracking-widest text-sky">
                 Top 8 per bracket · 16 finalists
               </div>
-              <h3 className="font-display text-2xl font-bold text-cream">
-                If your child makes the Grand Final
+              <h3 className="font-display text-3xl font-bold text-cream">
+                If Your Child Makes the Grand Final
               </h3>
               <ul className="mt-6 space-y-3">
                 {finalistRewards.map((r) => (
@@ -249,8 +249,8 @@ export default function PrizesPage() {
               <div className="mb-2 font-mono text-[0.62rem] uppercase tracking-widest text-gold">
                 2 Grand Champions
               </div>
-              <h3 className="font-display text-2xl font-bold text-cream">
-                If your child becomes Grand Champion
+              <h3 className="font-display text-3xl font-bold text-cream">
+                If Your Child Becomes Grand Champion
               </h3>
               <ul className="mt-6 space-y-3">
                 {championRewards.map((r) => (
@@ -270,12 +270,12 @@ export default function PrizesPage() {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
             <p className="eyebrow mb-4">Everyone who shows up</p>
-            <h2 className="font-display text-3xl font-bold text-cream sm:text-4xl">
-              Play 10+ active days, get a certificate
+            <h2 className="font-display text-4xl font-bold text-cream sm:text-5xl">
+              Play 10+ Active Days, Get a Certificate
             </h2>
             <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted text-pretty">
               Generated automatically with your child&apos;s name, avatar, final
-              words-per-minute, improvement percentage and best rank — emailed
+              words-per-minute, improvement percentage and best rank; emailed
               straight to you. No podium finish required.
             </p>
           </div>
@@ -290,7 +290,7 @@ export default function PrizesPage() {
               <div className="mt-6 font-mono text-[0.6rem] uppercase tracking-widest text-faint">
                 Certificate of participation
               </div>
-              <div className="mt-1 font-display text-2xl font-extrabold text-cream">
+              <div className="mt-1 font-display text-3xl font-extrabold text-cream">
                 Your Child&apos;s Name
               </div>
               <div className="mt-6 grid grid-cols-3 gap-4 border-t border-line/15 pt-5">
@@ -300,7 +300,7 @@ export default function PrizesPage() {
                   ["#7", "best rank"],
                 ].map(([v, l]) => (
                   <div key={l}>
-                    <div className="font-display text-xl font-extrabold text-gold/90">
+                    <div className="font-display text-2xl font-extrabold text-gold/90">
                       {v}
                     </div>
                     <div className="font-mono text-[0.58rem] uppercase tracking-widest text-faint">
@@ -326,7 +326,7 @@ export default function PrizesPage() {
           {championshipPass.perks.map((perk, i) => (
             <Reveal key={perk.title} delay={(i % 3) * 0.08}>
               <div className="border-t border-gold/20 pt-6">
-                <h3 className="font-display text-base font-bold text-cream">
+                <h3 className="font-display text-lg font-bold text-cream">
                   {perk.title}
                 </h3>
                 <p className="mt-1.5 text-sm leading-relaxed text-muted">
@@ -339,15 +339,15 @@ export default function PrizesPage() {
         <Reveal delay={0.15}>
           <p className="mt-10 max-w-2xl text-xs leading-relaxed text-faint">
             Winners may also be featured in a short clip on RapKids&apos; own
-            channels — always with your consent, and always revocable.
+            channels; always with your consent, and always revocable.
           </p>
         </Reveal>
       </Section>
 
       <CtaBand
-        title="Thirty winners. "
-        accent="One could be yours"
-        subtitle="Enter your child and get a shot at every board, every week — all the way to finals day."
+        title="Thirty Winners. "
+        accent="One Could Be Yours"
+        subtitle="Enter your child and get a shot at every board, every week; all the way to finals day."
       />
     </PageShell>
   );

@@ -16,7 +16,7 @@ export default function Glance() {
             delay={i * 0.08}
             className="px-2 text-center md:px-8"
           >
-            <div className="font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
+            <div className="font-display text-5xl font-extrabold tracking-tight sm:text-6xl">
               <span className={i === 0 ? "text-gold-grad" : "text-cream"}>
                 <CountUp to={s.value} prefix={s.prefix} suffix={s.suffix} />
               </span>

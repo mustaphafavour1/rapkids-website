@@ -39,7 +39,7 @@ export default function SectionHeader({
         as="h2"
         segments={segments}
         caret={caret}
-        className="text-3xl sm:text-4xl md:text-[2.9rem]"
+        className="text-4xl sm:text-5xl md:text-[3.4rem]"
       />
       {intro ? (
         <Reveal delay={0.05}>

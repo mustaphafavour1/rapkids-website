@@ -9,11 +9,12 @@ type Props = {
   className?: string;
   /** remove default container to let a child go full-bleed */
   bleed?: boolean;
-  /** an optional comic-character cutout peeking from a bottom corner */
+  /** an optional comic-character cutout peeking from a section corner */
   character?: {
     src: string;
     alt: string;
     side: "left" | "right";
+    vertical?: "top" | "bottom";
     placeholderLabel?: string;
   };
 };

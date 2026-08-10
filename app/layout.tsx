@@ -28,11 +28,11 @@ const siteUrl = "https://rapkids.io/championship";
 export const metadata: Metadata = {
   metadataBase: new URL("https://rapkids.io"),
   title: {
-    default: "RapKids TypeMaster Championship — $4,000 in prizes, one live final",
+    default: "RapKids TypeMaster Championship: $4,000 in Prizes, One Live Final",
     template: "%s · RapKids TypeMaster Championship",
   },
   description:
-    "Four weeks of competitive typing for kids 5–12. $4,000 in cash prizes, 30 cash winners, and a live Grand Final hosted by Jason. Every child on an active RapKids plan can enter — one subscription enters your whole family.",
+    "Four weeks of competitive typing for kids 5–12. $4,000 in cash prizes, 30 cash winners, and a live Grand Final hosted by Jason. Every child on an active RapKids plan can enter; one subscription enters your whole family.",
   keywords: [
     "RapKids",
     "typing championship",

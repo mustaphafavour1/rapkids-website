@@ -7,25 +7,33 @@ type Props = {
   src: string;
   alt: string;
   side: "left" | "right";
+  /** which corner: defaults to the section's bottom edge */
+  vertical?: "top" | "bottom";
   placeholderLabel?: string;
 };
 
 /**
- * A comic-character cutout that peeks in from a section's bottom corner —
- * bare, no card/container, sitting in the section's own bottom whitespace so
- * it complements the content instead of covering it. Desktop only: at typical
- * viewport widths there isn't reliably enough margin outside the centered
- * content column to place it without ever overlapping copy on smaller
- * desktop sizes, so it's hidden below the xl breakpoint.
+ * A comic-character cutout that peeks in from a section's corner, bare, no
+ * card/container, sitting in the section's own whitespace so it complements
+ * the content instead of covering it. Desktop only: at typical viewport
+ * widths there isn't reliably enough margin outside the centered content
+ * column to place it without ever overlapping copy on smaller desktop sizes,
+ * so it's hidden below the xl breakpoint.
  */
-export default function SectionCharacter({ src, alt, side, placeholderLabel }: Props) {
+export default function SectionCharacter({
+  src,
+  alt,
+  side,
+  vertical = "bottom",
+  placeholderLabel,
+}: Props) {
   const reduce = useReducedMotion();
   return (
     <motion.div
       aria-hidden
-      className={`pointer-events-none absolute bottom-0 z-0 hidden xl:block ${
-        side === "left" ? "left-2" : "right-2"
-      }`}
+      className={`pointer-events-none absolute z-0 hidden xl:block ${
+        vertical === "top" ? "top-6" : "bottom-0"
+      } ${side === "left" ? "left-2" : "right-2"}`}
       animate={reduce ? undefined : { y: [0, -10, 0] }}
       transition={{ duration: 7, ease: "easeInOut", repeat: Infinity }}
     >

@@ -67,29 +67,29 @@ export const steps: Step[] = [
     n: "01",
     window: "Anytime",
     tag: "Register",
-    title: "Register from the Parent Zone",
-    body: "Enter each child in a couple of minutes. One subscription covers up to two children.",
+    title: "Register From the Parent Zone",
+    body: "Enter each child in minutes; one subscription covers up to two kids.",
   },
   {
     n: "02",
     window: "12–23 Aug",
     tag: "Warm up",
-    title: "Practice with nothing on the line",
+    title: "Practice With Nothing on the Line",
     body: "Build the daily habit and find their footing. Nothing counts yet.",
   },
   {
     n: "03",
     window: "24 Aug – 20 Sep",
     tag: "Compete",
-    title: "Four weekly heats",
-    body: "Every board resets Monday, so every week is a brand-new shot at winning — a bad week never costs the championship.",
+    title: "Four Weekly Heats",
+    body: "Boards reset every Monday, so each week is a fresh shot at winning.",
   },
   {
     n: "04",
     window: "26 Sep",
     tag: "Grand Final",
-    title: "The live Grand Final",
-    body: "The top 8 in each bracket go head-to-head, live, on passages nobody has seen before — for the biggest prizes of the championship.",
+    title: "The Live Grand Final",
+    body: "The top 8 per bracket go head-to-head live, on brand-new passages.",
   },
 ];
 
@@ -98,18 +98,18 @@ export const steps: Step[] = [
 export const fairness = [
   {
     key: "brackets",
-    title: "Two brackets, always a fair fight",
+    title: "Two Brackets, Always a Fair Fight",
     body: "Juniors (5–8) and Seniors (9–12). Your child only ever competes against kids their own age.",
   },
   {
     key: "reset",
-    title: "A clean slate every Monday",
-    body: "Every leaderboard resets to zero each week. Monday is always a fresh start — and three ways to win it: speed, accuracy and improvement.",
+    title: "A Clean Slate Every Monday",
+    body: "Every leaderboard resets to zero each week. Monday is always a fresh start, with three ways to win it: speed, accuracy and improvement.",
   },
   {
     key: "family",
-    title: "One subscription, the whole family",
-    body: "Both children on your plan can enter — two leaderboards, two chances at a prize, every week.",
+    title: "One Subscription, the Whole Family",
+    body: "Both children on your plan can enter; two leaderboards, two chances at a prize, every week.",
   },
 ];
 
@@ -125,8 +125,8 @@ export const weeklyPrizes: PrizeRow[] = [
 
 export const finalPrizes: { place: string; amount: string }[] = [
   { place: "Grand Champion", amount: "$500" },
-  { place: "Runner-up", amount: "$200" },
-  { place: "Third place", amount: "$100" },
+  { place: "Runner-Up", amount: "$200" },
+  { place: "Third Place", amount: "$100" },
 ];
 
 export const beyondCash = [
@@ -155,7 +155,7 @@ export const finalistRewards = [
 export const championRewards = [
   "Drawn into an actual RapKids comic as a character",
   "An engraved trophy, mailed to you",
-  "The Champion title — the one prize that isn't shared",
+  "The Champion title; the one prize that isn't shared",
 ];
 
 export const championshipPass = {
@@ -207,7 +207,7 @@ export const rules: RuleSection[] = [
   },
   {
     n: 2,
-    title: "Age brackets",
+    title: "Age Brackets",
     points: [
       "Juniors: 5 to 8.",
       "Seniors: 9 to 12.",
@@ -216,10 +216,10 @@ export const rules: RuleSection[] = [
   },
   {
     n: 3,
-    title: "How to enter",
+    title: "How to Enter",
     points: [
       "Enter each child individually from the Parent Zone. Every entry needs a leaderboard handle, first name, date of birth and your consent.",
-      "There's no cutoff for weekly prizes — join any week and compete for that week's prizes on equal terms.",
+      "There's no cutoff for weekly prizes; join any week and compete for that week's prizes on equal terms.",
       "To qualify for the Grand Final, a child needs a scored week in at least 2 of the 4 weeks. Join by the start of Week 3 (7 September) to keep a Grand Final place possible.",
     ],
   },
@@ -230,23 +230,23 @@ export const rules: RuleSection[] = [
       "Your child can compete in any week their subscription is active. The championship runs across two monthly billing periods, so a monthly plan renews once during the competition.",
     points: [
       "A given week's prizes require your subscription to be active when that week closes (Sunday, 23:59 WAT).",
-      "If your plan is due to renew or a payment fails, we'll email you three days before the week closes — naming your child's current rank and what's at stake.",
+      "If your plan is due to renew or a payment fails, we'll email you three days before the week closes, naming your child's current rank and what's at stake.",
     ],
   },
   {
     n: 5,
-    title: "Fair play",
+    title: "Fair Play",
     points: [
       "Every run is checked automatically for signs of scripted or assisted typing.",
       "Nothing is auto-disqualified. Every flagged run, and every prospective weekly winner, is reviewed by a person before any result is announced.",
-      "A child can win only one cash prize category per week — their highest-value one.",
+      "A child can win only one cash prize category per week; their highest-value one.",
       "A household can win at most one cash prize per bracket per week.",
       "Creating multiple profiles for one child, entering a false date of birth, or playing on another child's account is grounds for disqualification.",
     ],
   },
   {
     n: 6,
-    title: "Prizes and payment",
+    title: "Prizes and Payment",
     points: [
       "Cash prizes are paid to the guardian on record, never to the child.",
       "Paid within 10 business days of the result being announced, by bank transfer or another suitable method.",
@@ -254,21 +254,21 @@ export const rules: RuleSection[] = [
   },
   {
     n: 7,
-    title: "Grand Final and broadcast",
+    title: "Grand Final and Broadcast",
     intro:
-      "Appearing on camera is never a condition of winning. Every finalist's guardian chooses one of three ways to take part — all three are eligible for the full prize.",
+      "Appearing on camera is never a condition of winning. Every finalist's guardian chooses one of three ways to take part, and all three are eligible for the full prize.",
     points: [
       "Full broadcast: your child appears on camera during the live stream.",
       "Audio and avatar only: your child is heard, represented by their avatar, but not shown on camera.",
       "Private proctored session: your child competes privately with a proctor, and only the score is made public.",
-      "Consent for the live stream, the recording staying up afterward, and marketing clips are each separate — and each can be withdrawn at any time.",
+      "Consent for the live stream, the recording staying up afterward, and marketing clips are each separate, and each can be withdrawn at any time.",
     ],
   },
   {
     n: 8,
-    title: "Privacy and child protection",
+    title: "Privacy and Child Protection",
     points: [
-      "Public leaderboards show your child's chosen handle only — never their real name, photo or school.",
+      "Public leaderboards show your child's chosen handle only; never their real name, photo or school.",
       "Ask us to remove your child from any public board at any time; we'll do it within 24 hours.",
       "Keystroke timing is kept in raw form for 30 days for fair-play checks, then reduced to summary statistics.",
       "If your child wins and we need to verify their age, we view the document, confirm it and delete it. We never keep a copy.",
@@ -282,19 +282,19 @@ export type Faq = { q: string; a: string; category: string };
 
 export const faqs: Faq[] = [
   {
-    category: "Getting in",
+    category: "Getting In",
     q: "Who can enter?",
     a: "Any child aged 5 to 12 (as of 24 August 2026) on an active RapKids subscription. A parent or guardian enters each child from the Parent Zone and confirms consent on their behalf.",
   },
   {
-    category: "Getting in",
+    category: "Getting In",
     q: "Do I need a separate subscription for each child?",
-    a: "No. One RapKids subscription covers up to two child profiles, and both can enter — two leaderboards, two chances at a prize, every week.",
+    a: "No. One RapKids subscription covers up to two child profiles, and both can enter; two leaderboards, two chances at a prize, every week.",
   },
   {
-    category: "Getting in",
+    category: "Getting In",
     q: "Can we still join once it's started?",
-    a: "Yes. There's no cutoff for weekly prizes — join any week and compete for that week's prizes on equal terms. To keep a Grand Final place possible, join by the start of Week 3 (7 September), since finalists need a scored week in at least 2 of the 4 weeks.",
+    a: "Yes. There's no cutoff for weekly prizes; join any week and compete for that week's prizes on equal terms. To keep a Grand Final place possible, join by the start of Week 3 (7 September), since finalists need a scored week in at least 2 of the 4 weeks.",
   },
   {
     category: "Winning",
@@ -304,12 +304,12 @@ export const faqs: Faq[] = [
   {
     category: "Winning",
     q: "How many times can my child play?",
-    a: "Practice is unlimited, always — any length, no cap, works offline. Scored attempts are capped at 10 a day, and your best 2 count. Winning comes down to how well your child types, not how many hours they spend.",
+    a: "Practice is unlimited, always: any length, no cap, works offline. Scored attempts are capped at 10 a day, and your best 2 count. Winning comes down to how well your child types, not how many hours they spend.",
   },
   {
     category: "Winning",
     q: "Can siblings both win?",
-    a: "Yes. A household can win one cash prize per bracket per week, so siblings in different brackets can each take home a prize. Siblings in the same bracket share one shot at it that week. Each child can also win only one cash category per week — their highest-value one.",
+    a: "Yes. A household can win one cash prize per bracket per week, so siblings in different brackets can each take home a prize. Siblings in the same bracket share one shot at it that week. Each child can also win only one cash category per week; their highest-value one.",
   },
   {
     category: "The Grand Final",
@@ -319,25 +319,25 @@ export const faqs: Faq[] = [
   {
     category: "The Grand Final",
     q: "Who makes the Grand Final?",
-    a: "The top 8 in each bracket — 16 finalists in total — compete live on 26 September on passages nobody has seen before: heats, then semi-finals, then a head-to-head final.",
+    a: "The top 8 in each bracket, 16 finalists in total, compete live on 26 September on passages nobody has seen before: heats, then semi-finals, then a head-to-head final.",
   },
   {
-    category: "Money & billing",
+    category: "Money & Billing",
     q: "How and when are prizes paid?",
-    a: "Cash prizes are paid to the guardian on record, never to the child, within 10 business days of the result being announced — by bank transfer or another suitable method.",
+    a: "Cash prizes are paid to the guardian on record, never to the child, within 10 business days of the result being announced, by bank transfer or another suitable method.",
   },
   {
-    category: "Money & billing",
+    category: "Money & Billing",
     q: "What if my subscription lapses mid-championship?",
     a: "Your child can compete in any week their subscription is active. A week's prizes require an active plan when that week closes (Sunday 23:59 WAT). If a renewal is due or a payment fails, we email you three days before the week closes with your child's current rank and what's at stake.",
   },
   {
-    category: "Safety & privacy",
+    category: "Safety & Privacy",
     q: "What do you show publicly about my child?",
-    a: "Public leaderboards show your child's chosen handle only — never their real name, photo or school. You can ask us to remove your child from any public board at any time and we'll do it within 24 hours.",
+    a: "Public leaderboards show your child's chosen handle only; never their real name, photo or school. You can ask us to remove your child from any public board at any time and we'll do it within 24 hours.",
   },
   {
-    category: "Safety & privacy",
+    category: "Safety & Privacy",
     q: "Is the competition fair?",
     a: "Every run is checked automatically for scripted or assisted typing, but nothing is auto-disqualified. A person reviews every flagged run and every prospective weekly winner before any result is announced.",
   },

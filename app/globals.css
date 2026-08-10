@@ -209,7 +209,21 @@ body {
 
 /* Bubblegum Sans ships one weight (400). Force it everywhere the display
    family is used so a stacked font-bold/font-extrabold utility can't trigger
-   the browser's synthetic-bold fallback, which looks muddy on a bubble font. */
+   the browser's synthetic-bold fallback, which looks muddy on a bubble font.
+   A same-color text-stroke fakes a heavier weight instead — thickening the
+   glyphs without the muddiness of synthetic bold. Falls back to the plain
+   regular weight in browsers without text-stroke support (still legible). */
 .font-display {
   font-weight: 400 !important;
+  -webkit-text-stroke: 1.4px currentColor;
+  text-stroke: 1.4px currentColor;
+  paint-order: stroke fill;
+}
+
+/* Gradient-filled display text sets color:transparent for the clip trick, so
+   currentColor would make its stroke invisible — give it an explicit stroke
+   color in the same warm tone instead. */
+.text-gold-grad.font-display {
+  -webkit-text-stroke-color: rgb(var(--c-gold));
+  text-stroke-color: rgb(var(--c-gold));
 }

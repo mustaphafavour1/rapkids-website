@@ -8,8 +8,8 @@ import { navLinks } from "@/lib/content";
 
 function Wordmark() {
   return (
-    <Link href="/" className="group flex items-baseline gap-0.5" aria-label="RapKids TypeMaster Championship — home">
-      <span className="font-display text-xl font-extrabold tracking-tight">
+    <Link href="/" className="group flex items-baseline gap-0.5" aria-label="RapKids TypeMaster Championship, home">
+      <span className="font-display text-2xl font-extrabold tracking-tight">
         Rap<span className="text-punch">Kids</span>
       </span>
       <span className="ml-0.5 inline-block h-[0.9em] w-[0.42ch] translate-y-[0.02em] rounded-[2px] bg-punch animate-blink" aria-hidden />

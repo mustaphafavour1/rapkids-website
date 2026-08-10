@@ -17,10 +17,10 @@ export default function RegisterPage() {
         eyebrow="Register"
         caret="punch"
         segments={[
-          { text: "Enter your ", accent: "punch" },
-          { text: "child" },
+          { text: "Enter Your ", accent: "punch" },
+          { text: "Child" },
         ]}
-        intro="Takes about two minutes. One RapKids subscription covers up to two children — add both here if you've got them."
+        intro="Takes about two minutes. One RapKids subscription covers up to two children; add both here if you've got them."
       />
       <Section tone="ink" className="!pt-8">
         <RegisterForm />
