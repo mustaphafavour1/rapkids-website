@@ -46,7 +46,11 @@ export default function FaqPage() {
                 </h2>
               </Reveal>
               <Reveal delay={0.05}>
-                <FaqAccordion items={items} idPrefix={`faq-${i}`} />
+                <FaqAccordion
+                  items={items}
+                  idPrefix={`faq-${i}`}
+                  defaultOpen={i === 0 ? 0 : null}
+                />
               </Reveal>
             </div>
           ))}

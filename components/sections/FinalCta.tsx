@@ -14,7 +14,7 @@ const ribbon = [
 
 export default function FinalCta() {
   return (
-    <section className="relative overflow-hidden bg-peach py-24 text-white md:py-32">
+    <section className="relative overflow-hidden bg-gradient-to-br from-punch via-punch to-blush py-24 text-white md:py-32">
       <div aria-hidden className="pointer-events-none absolute inset-0 bg-dots opacity-20" />
       <div
         aria-hidden

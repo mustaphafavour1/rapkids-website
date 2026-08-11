@@ -26,14 +26,12 @@ const config: Config = {
         muted: withOpacity("--c-muted"), // secondary text
         faint: withOpacity("--c-faint"), // tertiary text / captions
         punch: withOpacity("--c-punch"), // primary action + Juniors bracket (purple)
-        sky: withOpacity("--c-sky"), // secondary + Seniors bracket (pink)
-        gold: withOpacity("--c-gold"), // prizes / money / winning (text on white)
-        volt: withOpacity("--c-volt"), // "live" / streak / go states (green, text on white)
-        peach: withOpacity("--c-peach"), // tertiary accent + the closing CTA's solid bg
-        spark: withOpacity("--c-spark"), // pale gold — headline keyword/caret on dark color sections
-        blush: withOpacity("--c-blush"), // bright pink — the hero gradient's warm end
-        sun: withOpacity("--c-sun"), // bright gold — Prizes section's solid canvas
-        grass: withOpacity("--c-grass"), // bright lime — Rules section's solid canvas
+        sky: withOpacity("--c-sky"), // pink #E62EDF (secondary + Seniors bracket)
+        gold: withOpacity("--c-gold"), // prizes / money (gold text on white)
+        volt: withOpacity("--c-volt"), // green #95CF42 (live / go + Rules canvas)
+        peach: withOpacity("--c-peach"), // peach #F582A1 (tertiary accent)
+        spark: withOpacity("--c-spark"), // cream #FED59D — Prizes canvas + keyword/caret on dark sections
+        blush: withOpacity("--c-blush"), // pink #E62EDF — hero + CTA gradient warm end
       },
       fontFamily: {
         display: ["var(--font-display)", "system-ui", "sans-serif"],

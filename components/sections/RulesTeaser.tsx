@@ -82,8 +82,8 @@ function Preview({ mode }: { mode: string }) {
   }
   return (
     <div className="flex h-full flex-col items-center justify-center gap-3">
-      <div className="flex h-16 w-16 items-center justify-center rounded-full bg-volt/15">
-        <Lock className="h-7 w-7 text-volt" />
+      <div className="flex h-16 w-16 items-center justify-center rounded-full bg-punch/10">
+        <Lock className="h-7 w-7 text-punch" />
       </div>
       <div className="rounded-lg bg-cream/[0.05] px-4 py-2 text-center">
         <div className="font-mono text-[0.6rem] uppercase tracking-widest text-faint">
@@ -100,22 +100,22 @@ const guarantees = [
   {
     icon: EyeOff,
     title: "Handles, never names",
-    body: "Public boards show your child's chosen handle only; never their real name, photo or school.",
+    body: "A chosen handle only; never a real name or photo.",
   },
   {
     icon: BadgeDollarSign,
     title: "Paid to you, not the child",
-    body: "Cash prizes go to the guardian on record, within 10 business days of the result.",
+    body: "Prizes go to the guardian, within 10 business days.",
   },
   {
     icon: UserCheck,
     title: "A person checks every win",
-    body: "Nothing is auto-disqualified. A human reviews every prospective winner before it's announced.",
+    body: "A human reviews every winner before it's announced.",
   },
   {
     icon: ShieldCheck,
     title: "Off the board on request",
-    body: "Ask us to remove your child from any public board and we'll do it within 24 hours.",
+    body: "Ask us to remove your child; done within 24 hours.",
   },
 ];
 
@@ -203,18 +203,18 @@ export default function RulesTeaser() {
         </div>
 
         {/* trust guarantees */}
-        <div className="divide-y divide-line/15">
+        <div className="divide-y divide-cream/15">
           {guarantees.map((g, i) => (
             <Reveal key={g.title} delay={i * 0.08}>
-              <div className="flex items-start gap-4 py-5 first:pt-0">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white text-volt shadow-sm shadow-black/5">
+              <div className="flex items-center gap-4 py-[1.15rem]">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white text-punch shadow-sm shadow-black/5">
                   <g.icon className="h-5 w-5" />
                 </span>
-                <div>
-                  <h3 className="font-display text-lg font-bold text-cream">
+                <div className="min-w-0">
+                  <h3 className="font-display text-lg font-bold leading-tight text-cream">
                     {g.title}
                   </h3>
-                  <p className="mt-1 text-sm leading-relaxed text-cream/80">
+                  <p className="mt-0.5 truncate text-sm text-cream/80">
                     {g.body}
                   </p>
                 </div>

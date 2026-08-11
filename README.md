@@ -28,34 +28,32 @@ Tailwind in `tailwind.config.ts`:
 - **cream / muted / faint** — despite the name kept from an earlier dark build,
   these are now the primary/secondary/tertiary **text** colors (dark on light)
 - **punch** (purple, `#7A3EF5`) — primary actions + the Juniors bracket
-- **sky** (pink, `#B825B2`) — secondary + the Seniors bracket
-- **gold / volt / peach** (`#C28A1A` / `#5C8A22` / `#C73864`) — deepened amber,
-  green and rose, tuned to hold up as **text/icon** colour on white (prizes/
-  money, "live"/go states, tertiary accent). `peach` doubles as the closing
-  CTA's solid background.
+- **sky** (pink, `#E62EDF`) — secondary + the Seniors bracket
+- **volt** (green, `#95CF42`) — "live"/go states + the Rules section canvas
+- **peach** (`#F582A1`) — tertiary accent
+- **gold** (`#C28A1A`) — money/prizes as text (podium amounts, the `text-gold-grad`
+  figures); the one accent that isn't in the core brand set
+- **spark** (`#FED59D`) — brand cream: the Prizes section canvas **and** the
+  headline keyword + caret on the dark colour sections (hero, prizes hero)
+- **blush** (`#E62EDF`) — the warm end of the hero + closing-CTA gradient
 
-The three accents above are deepened from the brand's pastels so they read as
-text on white. For the **solid colour section backgrounds** there's a second,
-brighter set — light enough that dark ink text clears AA on them — plus two
-helpers for headlines on colour:
+`sky`, `volt`, `peach` and `spark` are the exact brand accent hexes, used
+straight (not deepened). They read best as fills, section canvases and large
+headline accents; where one would be used as small text/icon on white and lose
+contrast, that spot falls back to `punch` or ink instead.
 
-- **sun** (`#F5B838`) — the Prizes section's bright-gold canvas
-- **grass** (`#A6D95B`) — the Rules section's bright-lime canvas
-- **blush** (`#E62EDF`) — the warm end of the hero's purple→pink gradient
-- **spark** (`#FED59D`) — pale gold used as the headline keyword + caret on the
-  dark colour sections (hero, closing CTA)
-
-**Section backgrounds:** the hero is a **fully-coloured** diagonal
-purple→pink gradient (`from-punch via-punch to-blush`) with white text; most
-sections stay white or the pale lavender `surface` step for breathing room; and
-three sections go **solid, full-strength** colour — Prizes on `sun` (bright
-gold) and Rules & Safety on `grass` (bright lime), both with dark text, and the
-closing CTA on `peach` (deep rose) with white text, bookending the hero. The
-gold/lime canvases take dark ink text; the purple/rose ones take white — chosen
-per background for AA contrast. Colour sections get white/translucent buttons
-(`.btn-on-color`), chips (`.chip-solid` / `.chip-on-dark`) and cards so nothing
-dissolves into the background. Set via `Section`'s `tone` prop and the
-`SectionHeader` `tone` prop (`"page"` / `"onColor"` / `"onDark"`).
+**Section backgrounds:** the hero and the closing CTA are a **fully-coloured**
+diagonal purple→pink gradient (`from-punch via-punch to-blush`) with white text;
+the Glance strip fades white→`#D6C3FC`; most sections stay white or the pale
+lavender `surface` step; and two sections carry a solid brand canvas — Prizes on
+`spark` (cream `#FED59D`) and Rules & Safety on `volt` (green `#95CF42`), both
+with dark ink text and a purple headline accent. Colour sections get
+white/translucent buttons (`.btn-on-color`), chips (`.chip-solid` /
+`.chip-on-dark`) and cards so nothing dissolves into the background. Set via
+`Section`'s `tone` prop (`cream` / `volt` / …) and the `SectionHeader` `tone`
+prop (`"page"` / `"onColor"` / `"onDark"`). The site scrollbar is hidden
+globally, and `Section` accepts `overflowVisible` so a page can host a
+`position: sticky` child (the Rules jump-to index).
 
 **Logo & wordmark:** the nav shows the RapKids logo mark
 (`public/brand/logo.png`, via `BrandLogo`) and the footer shows the higher-res

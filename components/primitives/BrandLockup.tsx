@@ -20,7 +20,7 @@ export default function BrandLockup() {
   }, []);
 
   return (
-    <div className="mt-10 flex items-center justify-center gap-4">
+    <div className="flex items-center justify-center gap-4">
       {!failed ? (
         <>
           {/* eslint-disable-next-line @next/next/no-img-element */}

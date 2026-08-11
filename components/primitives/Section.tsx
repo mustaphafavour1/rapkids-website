@@ -4,11 +4,13 @@ import SectionCharacter from "./SectionCharacter";
 type Props = {
   id?: string;
   children: ReactNode;
-  /** background rhythm: base white, a stepped lavender surface, or a fully-saturated accent canvas */
-  tone?: "ink" | "surface" | "gold" | "volt" | "peach";
+  /** background rhythm: base white, a stepped lavender surface, or a solid accent canvas */
+  tone?: "ink" | "surface" | "cream" | "volt" | "peach";
   className?: string;
   /** remove default container to let a child go full-bleed */
   bleed?: boolean;
+  /** allow overflow (needed so a descendant position:sticky can work) */
+  overflowVisible?: boolean;
   /** an optional comic-character cutout peeking from a section corner */
   character?: {
     src: string;
@@ -22,9 +24,9 @@ type Props = {
 const toneClass: Record<NonNullable<Props["tone"]>, string> = {
   ink: "bg-ink",
   surface: "bg-surface",
-  gold: "bg-sun", // bright gold canvas (dark text) — Prizes
-  volt: "bg-grass", // bright lime canvas (dark text) — Rules
-  peach: "bg-peach", // deep rose canvas (white text)
+  cream: "bg-spark", // cream #FED59D canvas (dark text) — Prizes
+  volt: "bg-volt", // green #95CF42 canvas (dark text) — Rules
+  peach: "bg-peach", // peach canvas
 };
 
 /**
@@ -37,12 +39,15 @@ export default function Section({
   tone = "ink",
   className = "",
   bleed = false,
+  overflowVisible = false,
   character,
 }: Props) {
   return (
     <section
       id={id}
-      className={`relative scroll-mt-24 overflow-hidden py-24 sm:py-28 md:py-36 ${toneClass[tone]} ${className}`}
+      className={`relative scroll-mt-24 py-24 sm:py-28 md:py-36 ${
+        overflowVisible ? "" : "overflow-hidden"
+      } ${toneClass[tone]} ${className}`}
     >
       {bleed ? children : <div className="container-page">{children}</div>}
       {character ? <SectionCharacter {...character} /> : null}

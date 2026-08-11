@@ -28,7 +28,7 @@ export default function RulesPage() {
         intro="No fine print you need a lawyer for. Here's exactly how entry, winning, billing and your child's privacy work."
       />
 
-      <Section tone="ink" className="!pt-10">
+      <Section tone="ink" overflowVisible className="!pt-10">
         <div className="grid gap-10 lg:grid-cols-[0.32fr_1fr] lg:gap-16">
           {/* side index */}
           <nav aria-label="Rules sections" className="lg:sticky lg:top-28 lg:self-start">

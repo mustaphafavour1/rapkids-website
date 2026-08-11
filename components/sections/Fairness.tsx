@@ -82,7 +82,7 @@ function MondayReset() {
     <div className="flex h-full flex-col justify-center">
       <div className="mb-2 flex items-center justify-between font-mono text-[0.6rem] uppercase tracking-widest text-faint">
         <span>Leaderboard</span>
-        <span className="text-volt">MON · 00:00</span>
+        <span className="text-punch">MON · 00:00</span>
       </div>
       <div className="flex h-24 items-end gap-2.5">
         {bars.map((h, i) => (
@@ -139,7 +139,7 @@ function FamilyFanout() {
             className="flex items-center justify-between rounded-lg border border-line/15 bg-cream/[0.03] px-2.5 py-2"
           >
             <span className="text-sm font-semibold text-cream">{k}</span>
-            <span className="font-mono text-[0.62rem] text-volt">
+            <span className="font-mono text-[0.62rem] text-punch">
               #{i + 1}
             </span>
           </motion.div>

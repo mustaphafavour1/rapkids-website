@@ -44,35 +44,41 @@ export default function PrizesPage() {
     <PageShell>
       <PageHeader
         eyebrow="The prize pool"
-        caret="gold"
+        caret="spark"
+        gradient
+        character={{
+          src: "/characters/hero-champion.png",
+          alt: "A RapKids champion celebrating",
+          placeholderLabel: "characters/hero-champion.png",
+        }}
         segments={[
-          { text: "$4,000 in Prizes", accent: "gold" },
+          { text: "$4,000 in Prizes", accent: "spark" },
           { text: ". Four Weeks. Two Brackets." },
         ]}
         intro="Thirty children win cash. Hundreds more win free months, badges and a spot in the record books."
       >
         <div className="flex flex-wrap gap-3">
-          <div className="rounded-2xl border border-gold/25 bg-gold/[0.06] px-5 py-3">
-            <div className="font-display text-3xl font-extrabold text-gold-grad">
+          <div className="rounded-2xl border border-white/20 bg-white/10 px-5 py-3 backdrop-blur-sm">
+            <div className="font-display text-3xl font-extrabold text-spark">
               $<CountUp to={4000} />
             </div>
-            <div className="font-mono text-[0.62rem] uppercase tracking-widest text-faint">
+            <div className="font-mono text-[0.62rem] uppercase tracking-widest text-white/70">
               total pool
             </div>
           </div>
-          <div className="rounded-2xl border border-line/15 bg-cream/[0.03] px-5 py-3">
-            <div className="font-display text-3xl font-extrabold text-cream">
+          <div className="rounded-2xl border border-white/20 bg-white/10 px-5 py-3 backdrop-blur-sm">
+            <div className="font-display text-3xl font-extrabold text-white">
               <CountUp to={30} />
             </div>
-            <div className="font-mono text-[0.62rem] uppercase tracking-widest text-faint">
+            <div className="font-mono text-[0.62rem] uppercase tracking-widest text-white/70">
               cash winners
             </div>
           </div>
-          <div className="rounded-2xl border border-line/15 bg-cream/[0.03] px-5 py-3">
-            <div className="font-display text-3xl font-extrabold text-cream">
-              100s
+          <div className="rounded-2xl border border-white/20 bg-white/10 px-5 py-3 backdrop-blur-sm">
+            <div className="font-display text-3xl font-extrabold text-white">
+              several
             </div>
-            <div className="font-mono text-[0.62rem] uppercase tracking-widest text-faint">
+            <div className="font-mono text-[0.62rem] uppercase tracking-widest text-white/70">
               non-cash rewards
             </div>
           </div>
@@ -168,7 +174,7 @@ export default function PrizesPage() {
 
         {/* fairness note */}
         <Reveal delay={0.2}>
-          <div className="mt-8 flex items-start gap-3 rounded-2xl border border-sky/20 bg-sky/[0.05] p-5">
+          <div className="mt-8 flex max-w-xl items-start gap-3 rounded-2xl border border-sky/20 bg-sky/[0.05] p-5 lg:max-w-[50%]">
             <Info className="mt-0.5 h-5 w-5 shrink-0 text-sky" />
             <p className="text-sm leading-relaxed text-muted">
               <span className="text-cream">One prize each, kept fair.</span> A
@@ -193,8 +199,13 @@ export default function PrizesPage() {
           {beyondCash.map((b, i) => {
             const Icon = beyondIcons[i] ?? Award;
             const accent = beyondAccents[i % beyondAccents.length];
+            const isLast = i === beyondCash.length - 1;
             return (
-              <Reveal key={b.title} delay={(i % 3) * 0.08}>
+              <Reveal
+                key={b.title}
+                delay={(i % 3) * 0.08}
+                className={isLast ? "lg:col-start-2" : ""}
+              >
                 <div className="flex gap-4 border-t border-line/15 pt-6">
                   <span
                     className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cream/[0.05] ${accent}`}
@@ -220,21 +231,29 @@ export default function PrizesPage() {
       <Section tone="surface">
         <div className="grid gap-6 lg:grid-cols-2">
           <Reveal>
-            <div className="h-full rounded-3xl border border-sky/25 bg-sky/[0.05] p-8">
-              <div className="mb-2 font-mono text-[0.62rem] uppercase tracking-widest text-sky">
-                Top 8 per bracket · 16 finalists
+            <div className="relative h-full overflow-hidden rounded-3xl border border-sky/25 bg-sky/[0.05] p-8">
+              <CharacterImage
+                src="/characters/finalist-kid.png"
+                alt="A RapKids finalist character"
+                placeholderLabel="characters/finalist-kid.png"
+                className="pointer-events-none absolute bottom-0 right-0 h-full w-auto max-w-[48%] object-contain object-bottom"
+              />
+              <div className="relative z-10 max-w-[58%]">
+                <div className="mb-2 font-mono text-[0.62rem] uppercase tracking-widest text-sky">
+                  Top 8 per bracket · 16 finalists
+                </div>
+                <h3 className="font-display text-3xl font-bold text-cream">
+                  If Your Child Makes the Grand Final
+                </h3>
+                <ul className="mt-6 space-y-3">
+                  {finalistRewards.map((r) => (
+                    <li key={r} className="flex items-start gap-3 text-sm text-muted">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-sky" />
+                      <span>{r}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h3 className="font-display text-3xl font-bold text-cream">
-                If Your Child Makes the Grand Final
-              </h3>
-              <ul className="mt-6 space-y-3">
-                {finalistRewards.map((r) => (
-                  <li key={r} className="flex items-start gap-3 text-sm text-muted">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-sky" />
-                    <span>{r}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
           </Reveal>
 
@@ -244,22 +263,24 @@ export default function PrizesPage() {
                 src="/characters/comic-champion.png"
                 alt="A RapKids comic character"
                 placeholderLabel="characters/comic-champion.png"
-                className="pointer-events-none absolute -right-4 -top-2 h-28 w-28 object-contain opacity-90"
+                className="pointer-events-none absolute bottom-0 right-0 h-full w-auto max-w-[48%] object-contain object-bottom"
               />
-              <div className="mb-2 font-mono text-[0.62rem] uppercase tracking-widest text-gold">
-                2 Grand Champions
+              <div className="relative z-10 max-w-[58%]">
+                <div className="mb-2 font-mono text-[0.62rem] uppercase tracking-widest text-gold">
+                  2 Grand Champions
+                </div>
+                <h3 className="font-display text-3xl font-bold text-cream">
+                  If Your Child Becomes Grand Champion
+                </h3>
+                <ul className="mt-6 space-y-3">
+                  {championRewards.map((r) => (
+                    <li key={r} className="flex items-start gap-3 text-sm text-muted">
+                      <Trophy className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                      <span>{r}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h3 className="font-display text-3xl font-bold text-cream">
-                If Your Child Becomes Grand Champion
-              </h3>
-              <ul className="mt-6 space-y-3">
-                {championRewards.map((r) => (
-                  <li key={r} className="flex items-start gap-3 text-sm text-muted">
-                    <Trophy className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                    <span>{r}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
           </Reveal>
         </div>

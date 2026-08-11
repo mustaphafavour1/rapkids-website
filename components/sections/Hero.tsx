@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, Play, Trophy, Radio } from "lucide-react";
+import { ArrowRight, Trophy, Radio } from "lucide-react";
 import CaretHeadline from "@/components/primitives/CaretHeadline";
 import CountUp from "@/components/primitives/CountUp";
 import CharacterImage from "@/components/primitives/CharacterImage";
@@ -42,21 +42,23 @@ export default function Hero() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-punch via-punch to-blush pb-20 pt-28 sm:pt-32 md:pb-28 md:pt-40">
+    <section className="relative flex min-h-[92vh] items-center overflow-hidden bg-gradient-to-br from-punch via-punch to-blush pb-20 pt-28 sm:pt-32 md:pb-24 md:pt-36">
       {/* soft sheen on the character side for depth on the saturated gradient */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_78%_22%,rgba(255,255,255,0.20),transparent_55%)]"
       />
 
-      <div className="container-page relative grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+      <div className="container-page relative grid w-full items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
         {/* left — headline, offer, action */}
         <div className="text-white">
+          {/* min-height reserves ~3 lines so the subtitle and buttons don't jump
+             as the headline types itself out */}
           <CaretHeadline
             as="h1"
             typed
             caret="spark"
-            className="text-[2.35rem] leading-[1.08] sm:text-6xl md:text-7xl lg:text-[4.6rem]"
+            className="min-h-[3.4em] text-[2.35rem] leading-[1.08] sm:text-6xl md:text-7xl lg:text-[4.6rem]"
             segments={[
               { text: "$4,000", accent: "spark" },
               { text: " Up for Grabs for Kids in the TypeMaster Championship" },
@@ -77,7 +79,6 @@ export default function Hero() {
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <a href="#how-it-works" className="btn-ghost-on-color">
-                <Play className="h-4 w-4" />
                 See how it works
               </a>
             </div>
@@ -92,7 +93,8 @@ export default function Hero() {
                 </span>
                 Registration open
               </span>
-              <span className="chip-on-dark">4-week championship · ages 5–12</span>
+              <span className="chip-on-dark">4-week championship</span>
+              <span className="chip-on-dark">Ages 5 to 12</span>
             </div>
           </Reveal>
         </div>
@@ -114,7 +116,7 @@ export default function Hero() {
                 src="/characters/hero-champion.png"
                 alt="A RapKids champion celebrating at the keyboard"
                 placeholderLabel="characters/hero-champion.png"
-                className="relative z-10 h-full w-full object-contain drop-shadow-[0_30px_50px_rgba(0,0,0,0.5)]"
+                className="relative z-10 h-full w-full object-contain drop-shadow-[0_10px_22px_rgba(0,0,0,0.18)]"
               />
             </motion.div>
 
@@ -164,7 +166,7 @@ export default function Hero() {
             </HudStat>
             <span className="h-5 w-px bg-line/20" aria-hidden />
             <HudStat label="Accuracy" size="sm">
-              <span className="text-volt">
+              <span className="text-punch">
                 <CountUp to={99} group={false} suffix="%" />
               </span>
             </HudStat>

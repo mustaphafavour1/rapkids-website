@@ -21,19 +21,15 @@
   --c-muted: 90 76 115; /* #5A4C73 secondary text */
   --c-faint: 138 122 168; /* #8A7AA8 captions */
   --c-punch: 122 62 245; /* #7A3EF5 purple — primary + Juniors */
-  --c-sky: 184 37 178; /* #B825B2 pink — secondary + Seniors */
-  --c-gold: 194 138 26; /* #C28A1A amber gold — prizes / winning (as text on white) */
-  --c-volt: 92 138 34; /* #5C8A22 green — live / streak / go (as text on white) */
-  --c-peach: 199 56 100; /* #C73864 peach/rose — tertiary accent / a full-color section bg */
+  --c-sky: 230 46 223; /* #E62EDF pink — exact brand accent (secondary + Seniors) */
+  --c-gold: 194 138 26; /* #C28A1A amber gold — prizes / money (as text on white) */
+  --c-volt: 149 207 66; /* #95CF42 green — exact brand accent (live / go / Rules canvas) */
+  --c-peach: 245 130 161; /* #F582A1 peach — exact brand accent */
 
-  /* Bright, fully-saturated values used as large SOLID section backgrounds (with
-     dark ink text) and as headline accents on the dark color sections. These are
-     intentionally lighter than the deepened text tokens above so dark text clears
-     AA on them; the deepened tokens above still power text/icons on white. */
-  --c-spark: 254 213 157; /* #FED59D pale gold — headline keyword + caret on dark color sections */
-  --c-blush: 230 46 223; /* #E62EDF bright pink — the hero gradient's warm end */
-  --c-sun: 245 184 56; /* #F5B838 bright gold — Prizes section canvas */
-  --c-grass: 166 217 91; /* #A6D95B bright lime — Rules section canvas */
+  /* Brand cream + pink used for solid section canvases and headline accents on
+     the dark color sections. */
+  --c-spark: 254 213 157; /* #FED59D cream/pale-gold — Prizes canvas + keyword/caret on dark sections */
+  --c-blush: 230 46 223; /* #E62EDF pink — the hero + CTA gradient's warm end */
 }
 
 * {
@@ -81,21 +77,15 @@ body {
   border-radius: 4px;
 }
 
-/* Thin themed scrollbar */
+/* Hide the scrollbar entirely across the site; scrolling still works normally. */
+html {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* legacy Edge/IE */
+}
 ::-webkit-scrollbar {
-  width: 11px;
-  height: 11px;
-}
-::-webkit-scrollbar-track {
-  background: rgb(var(--c-surface));
-}
-::-webkit-scrollbar-thumb {
-  background: rgb(var(--c-raise));
-  border-radius: 999px;
-  border: 3px solid rgb(var(--c-surface));
-}
-::-webkit-scrollbar-thumb:hover {
-  background: rgb(var(--c-line) / 0.5);
+  width: 0;
+  height: 0;
+  display: none;
 }
 
 @layer components {
@@ -143,6 +133,20 @@ body {
     border: 1px solid rgb(var(--c-cream) / 0.12);
     background: #fff;
     color: rgb(var(--c-cream));
+  }
+
+  /* Chip with only a border, no fill (used in the footer). */
+  .chip-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    font-family: var(--font-mono), monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    border: 1px solid rgb(var(--c-line) / 0.3);
+    background: transparent;
   }
 
   /* Chip for use on a dark color section (Hero/Final CTA): translucent white

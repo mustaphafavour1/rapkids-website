@@ -1,29 +1,44 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { navLinks } from "@/lib/content";
 import BrandLogo from "@/components/primitives/BrandLogo";
 
-function Wordmark() {
+function Wordmark({ light }: { light: boolean }) {
   return (
     <Link href="/" className="group flex items-center gap-2" aria-label="RapKids TypeMaster Championship, home">
       <BrandLogo className="h-8 w-auto object-contain md:h-9" />
       <span className="flex items-baseline gap-0.5">
-        <span className="font-sans text-2xl font-extrabold tracking-tight">
-          Rap<span className="text-punch">Kids</span>
+        <span
+          className={`font-sans text-2xl font-extrabold tracking-tight ${
+            light ? "text-white" : ""
+          }`}
+        >
+          Rap<span className={light ? "text-white" : "text-punch"}>Kids</span>
         </span>
-        <span className="ml-0.5 inline-block h-[0.9em] w-[0.42ch] translate-y-[0.02em] rounded-[2px] bg-punch animate-blink" aria-hidden />
+        <span
+          className={`ml-0.5 inline-block h-[0.9em] w-[0.42ch] translate-y-[0.02em] rounded-[2px] animate-blink ${
+            light ? "bg-white" : "bg-punch"
+          }`}
+          aria-hidden
+        />
       </span>
     </Link>
   );
 }
 
 export default function Nav() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  // Only these routes have a dark gradient hero behind the nav's top edge.
+  const darkHero = pathname === "/" || pathname === "/prizes";
+  const atTop = darkHero && !scrolled;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -42,19 +57,23 @@ export default function Nav() {
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div
-        className={`bg-ink/80 backdrop-blur-xl transition-colors duration-300 ${
-          scrolled ? "border-b border-line/15" : "border-b border-transparent"
+        className={`transition-colors duration-300 ${
+          atTop
+            ? "border-b border-transparent bg-transparent"
+            : "border-b border-line/15 bg-ink/80 backdrop-blur-xl"
         }`}
       >
         <nav className="container-page flex h-16 items-center justify-between md:h-[4.5rem]">
-          <Wordmark />
+          <Wordmark light={atTop} />
 
           <div className="hidden items-center gap-8 md:flex">
             {navLinks.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
-                className="text-sm font-medium text-muted transition-colors hover:text-cream"
+                className={`text-sm font-medium transition-colors ${
+                  atTop ? "text-white/85 hover:text-white" : "text-muted hover:text-cream"
+                }`}
               >
                 {l.label}
               </Link>
@@ -64,7 +83,9 @@ export default function Nav() {
           <div className="flex items-center gap-3">
             <Link
               href="/register"
-              className="btn-primary hidden !px-5 !py-2.5 text-sm sm:inline-flex"
+              className={`hidden !px-5 !py-2.5 text-sm sm:inline-flex ${
+                atTop ? "btn-on-color" : "btn-primary"
+              }`}
             >
               Register your child
               <ArrowRight className="h-4 w-4" />
@@ -74,7 +95,9 @@ export default function Nav() {
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line/25 text-cream md:hidden"
+              className={`inline-flex h-10 w-10 items-center justify-center rounded-full border md:hidden ${
+                atTop ? "border-white/40 text-white" : "border-line/25 text-cream"
+              }`}
             >
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>

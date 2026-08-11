@@ -5,7 +5,7 @@ import {
   Flame,
   Infinity as InfinityIcon,
   ChevronRight,
-  Sparkles,
+  Award,
   ArrowRight,
   CalendarClock,
 } from "lucide-react";
@@ -65,7 +65,7 @@ export default function AboutPage() {
                     <div className="font-display text-xl font-bold text-cream">
                       40 wpm
                     </div>
-                    <div className="font-mono text-xs text-volt">98% accuracy</div>
+                    <div className="font-mono text-xs text-punch">98% accuracy</div>
                     <div className="mt-2 font-mono text-[0.6rem] uppercase tracking-widest text-punch">
                       wins
                     </div>
@@ -205,7 +205,7 @@ export default function AboutPage() {
           <Reveal>
             <div className="flex h-full flex-col justify-between rounded-3xl border border-gold/20 bg-gradient-to-br from-gold/[0.08] to-transparent p-8">
               <div>
-                <Sparkles className="h-7 w-7 text-gold" />
+                <Award className="h-7 w-7 text-gold" />
                 <h3 className="mt-4 font-display text-3xl font-bold text-cream">
                   More Than Cash
                 </h3>

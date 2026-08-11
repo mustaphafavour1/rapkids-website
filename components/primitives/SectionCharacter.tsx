@@ -32,7 +32,7 @@ export default function SectionCharacter({
     <motion.div
       aria-hidden
       className={`pointer-events-none absolute z-0 hidden xl:block ${
-        vertical === "top" ? "top-6" : "bottom-0"
+        vertical === "top" ? "top-[16%]" : "bottom-0"
       } ${side === "left" ? "left-2" : "right-2"}`}
       animate={reduce ? undefined : { y: [0, -10, 0] }}
       transition={{ duration: 7, ease: "easeInOut", repeat: Infinity }}
@@ -41,7 +41,7 @@ export default function SectionCharacter({
         src={src}
         alt={alt}
         placeholderLabel={placeholderLabel}
-        className="h-32 w-auto object-contain opacity-90 drop-shadow-[0_20px_30px_rgba(0,0,0,0.4)] md:h-40"
+        className="h-48 w-auto object-contain opacity-95 drop-shadow-[0_8px_16px_rgba(0,0,0,0.15)] md:h-60"
       />
     </motion.div>
   );

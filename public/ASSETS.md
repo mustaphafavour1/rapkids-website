@@ -17,8 +17,9 @@ These are the transparent PNG characters from the app.
 
 | Filename | Used on | What it should be | Recommended size |
 |---|---|---|---|
-| `hero-champion.png` | Home hero (right side) | A single hero character celebrating / at the keyboard, **transparent background** | Portrait, ~800 × 1000px (4:5), PNG |
-| `comic-champion.png` | Prizes page ("Grand Champion" callout) | A comic character bust/badge, **transparent background** | Square-ish, ~600 × 600px, PNG |
+| `hero-champion.png` | Home hero (right side) **and** the Prizes page hero | A single hero character celebrating / at the keyboard, **transparent background** | Portrait, ~800 × 1000px (4:5), PNG |
+| `finalist-kid.png` | Prizes page, "If Your Child Makes the Grand Final" card (fills the card's right side, full height) | A finalist character standing/cheering, **transparent background**, cropped tight | Portrait, ~600 × 900px, PNG |
+| `comic-champion.png` | Prizes page, "If Your Child Becomes Grand Champion" card (fills the card's right side, full height) | A comic champion character, **transparent background**, cropped tight | Portrait, ~600 × 900px, PNG |
 | `char-howitworks.png` | Home "How it works" (top-right corner) | A character cheering, no background | ~500px tall, PNG, cropped tight to the figure |
 | `char-about.png` | Home "About" teaser (bottom-right corner) | A character typing confidently, no background | ~500px tall, PNG, cropped tight to the figure |
 | `char-rules.png` | Home "Rules & safety" teaser (top-right corner) | A character giving a thumbs up, no background | ~500px tall, PNG, cropped tight to the figure |

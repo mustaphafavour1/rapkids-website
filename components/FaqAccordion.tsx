@@ -10,11 +10,17 @@ type Props = {
   items: Faq[];
   /** index-offset so multiple accordions on a page keep unique ids */
   idPrefix?: string;
+  /** which item starts open (null = all closed) */
+  defaultOpen?: number | null;
 };
 
-export default function FaqAccordion({ items, idPrefix = "faq" }: Props) {
+export default function FaqAccordion({
+  items,
+  idPrefix = "faq",
+  defaultOpen = 0,
+}: Props) {
   const reduce = useReducedMotion();
-  const [open, setOpen] = useState<number | null>(0);
+  const [open, setOpen] = useState<number | null>(defaultOpen);
 
   return (
     <div className="divide-y divide-line/15 border-y border-line/15">

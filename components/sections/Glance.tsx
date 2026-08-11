@@ -5,7 +5,10 @@ import { glance } from "@/lib/content";
 
 export default function Glance() {
   return (
-    <Section tone="surface" className="!py-16 md:!py-20">
+    <Section
+      tone="ink"
+      className="!py-16 bg-gradient-to-b from-white to-[#D6C3FC] md:!py-20"
+    >
       <Reveal>
         <p className="eyebrow mb-10 text-center">The championship at a glance</p>
       </Reveal>
