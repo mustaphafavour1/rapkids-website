@@ -15,10 +15,10 @@ function Wordmark({ light }: { light: boolean }) {
       <span className="flex items-baseline gap-0.5">
         <span
           className={`font-sans text-2xl font-extrabold tracking-tight ${
-            light ? "text-white" : ""
+            light ? "text-white" : "text-punch"
           }`}
         >
-          Rap<span className={light ? "text-white" : "text-punch"}>Kids</span>
+          Rap<span>Kids</span>
         </span>
         <span
           className={`ml-0.5 inline-block h-[0.9em] w-[0.42ch] translate-y-[0.02em] rounded-[2px] animate-blink ${
@@ -67,17 +67,30 @@ export default function Nav() {
           <Wordmark light={atTop} />
 
           <div className="hidden items-center gap-8 md:flex">
-            {navLinks.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className={`text-sm font-medium transition-colors ${
-                  atTop ? "text-white/85 hover:text-white" : "text-muted hover:text-cream"
-                }`}
-              >
-                {l.label}
-              </Link>
-            ))}
+            {navLinks.map((l) => {
+              const base = l.href.split("#")[0] || "/";
+              const isActive = base === "/" ? pathname === "/" : pathname.startsWith(base);
+              return (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  aria-current={isActive ? "page" : undefined}
+                  className={`text-sm transition-colors ${
+                    isActive ? "font-bold" : "font-medium"
+                  } ${
+                    atTop
+                      ? isActive
+                        ? "text-white"
+                        : "text-white/85 hover:text-white"
+                      : isActive
+                        ? "text-punch"
+                        : "text-muted hover:text-cream"
+                  }`}
+                >
+                  {l.label}
+                </Link>
+              );
+            })}
           </div>
 
           <div className="flex items-center gap-3">
@@ -115,16 +128,23 @@ export default function Nav() {
             className="border-b border-line/15 bg-ink/95 backdrop-blur-xl md:hidden"
           >
             <div className="container-page flex flex-col gap-1 py-4">
-              {navLinks.map((l) => (
-                <Link
-                  key={l.href}
-                  href={l.href}
-                  onClick={() => setOpen(false)}
-                  className="rounded-xl px-3 py-3 text-base font-medium text-cream transition-colors hover:bg-cream/5"
-                >
-                  {l.label}
-                </Link>
-              ))}
+              {navLinks.map((l) => {
+                const base = l.href.split("#")[0] || "/";
+                const isActive = base === "/" ? pathname === "/" : pathname.startsWith(base);
+                return (
+                  <Link
+                    key={l.href}
+                    href={l.href}
+                    onClick={() => setOpen(false)}
+                    aria-current={isActive ? "page" : undefined}
+                    className={`rounded-xl px-3 py-3 text-base transition-colors hover:bg-cream/5 ${
+                      isActive ? "font-bold text-punch" : "font-medium text-cream"
+                    }`}
+                  >
+                    {l.label}
+                  </Link>
+                );
+              })}
               <Link
                 href="/register"
                 className="btn-primary mt-3"

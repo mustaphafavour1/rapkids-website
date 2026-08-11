@@ -12,7 +12,7 @@ const emptyChild: Child = { name: "", dob: "", nickname: "" };
 const MAX_CHILDREN = 2;
 
 const fieldClass =
-  "w-full rounded-xl border border-line/20 bg-cream/[0.03] px-4 py-3 text-sm text-cream placeholder:text-faint outline-none transition-colors focus:border-punch/50 focus:bg-cream/[0.05]";
+  "w-full rounded-xl border border-line/20 bg-[#F2ECFE] px-4 py-3 text-sm text-cream placeholder:text-faint outline-none transition-colors focus:border-punch/50 focus:bg-white";
 const labelClass = "mb-1.5 block text-sm font-semibold text-cream";
 
 export default function RegisterForm() {

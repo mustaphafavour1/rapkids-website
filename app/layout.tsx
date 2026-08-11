@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Bubblegum_Sans, Nunito_Sans, JetBrains_Mono } from "next/font/google";
+import { Bubblegum_Sans, Nunito, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const display = Bubblegum_Sans({
@@ -9,7 +9,7 @@ const display = Bubblegum_Sans({
   display: "swap",
 });
 
-const sans = Nunito_Sans({
+const sans = Nunito({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-sans",

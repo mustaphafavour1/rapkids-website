@@ -130,8 +130,9 @@ export default function PrizesPage() {
       <Section tone="surface">
         <SectionHeader
           eyebrow="Grand Final · 26 September"
-          caret="gold"
-          segments={[{ text: "The " }, { text: "Finals-Day", accent: "gold" }, { text: " Podium" }]}
+          caret="punch"
+          accentOutline
+          segments={[{ text: "The " }, { text: "Finals-Day", accent: "spark" }, { text: " Podium" }]}
           intro="The biggest prizes of the championship, awarded live, per bracket."
         />
         <Reveal delay={0.1}>
@@ -192,6 +193,7 @@ export default function PrizesPage() {
         <SectionHeader
           eyebrow="Beyond the cash"
           caret="volt"
+          align="center"
           segments={[{ text: "Hundreds More " }, { text: "Ways to Win", accent: "volt" }]}
           intro="Every week hands out rewards that last longer than a payout."
         />
@@ -339,8 +341,9 @@ export default function PrizesPage() {
       <Section tone="surface">
         <SectionHeader
           eyebrow="Optional add-on"
-          caret="gold"
-          segments={[{ text: "The Championship " }, { text: "Pass", accent: "gold" }]}
+          caret="punch"
+          accentOutline
+          segments={[{ text: "The Championship " }, { text: "Pass", accent: "spark" }]}
           intro={championshipPass.note}
         />
         <div className="mt-12 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">

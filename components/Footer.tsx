@@ -1,49 +1,52 @@
 import Link from "next/link";
 import { navLinks } from "@/lib/content";
-import BrandLockup from "@/components/primitives/BrandLockup";
+import BrandLogo from "@/components/primitives/BrandLogo";
+import { SUPPORT_EMAIL } from "@/lib/config";
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-line/15 bg-surface">
-      <div className="container-page relative py-16 md:py-20">
-        <div className="grid gap-12 md:grid-cols-3 md:items-center">
-          {/* left — tagline, chips, copyright */}
-          <div>
-            <p className="max-w-sm text-sm leading-relaxed text-muted">
-              The TypeMaster Championship: four weeks of competitive typing for
-              kids 5–12, ending in a live Grand Final on 26 September.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-2">
-              <span className="chip-outline">Warm-up · 12–23 Aug</span>
-              <span className="chip-outline">Heats · 24 Aug – 20 Sep</span>
-              <span className="chip-outline text-gold">Grand Final · 26 Sep</span>
-            </div>
-            <p className="mt-6 text-xs text-faint">
-              © {new Date().getFullYear()} RapKids. All rights reserved.
-            </p>
-          </div>
+    <footer className="border-t border-line/15 bg-gradient-to-b from-white to-surface">
+      <div className="container-page py-14 text-center md:py-16">
+        {/* brand lockup */}
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2.5"
+          aria-label="RapKids TypeMaster Championship, home"
+        >
+          <BrandLogo className="h-9 w-auto object-contain" />
+          <span className="font-sans text-2xl font-extrabold tracking-tight">
+            Rap<span className="text-punch">Kids</span>
+          </span>
+        </Link>
 
-          {/* center — logo + wordmark lockup */}
-          <div className="flex justify-center">
-            <BrandLockup />
-          </div>
+        <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-muted">
+          Four weeks of competitive typing for kids 5–12, ending in a live Grand
+          Final on 26 September.
+        </p>
 
-          {/* right — championship links, far right */}
-          <div className="md:text-right">
-            <p className="eyebrow mb-4">Championship</p>
-            <ul className="space-y-3">
-              {navLinks.map((l) => (
-                <li key={l.href}>
-                  <Link
-                    href={l.href}
-                    className="text-sm text-muted transition-colors hover:text-cream"
-                  >
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+        {/* directory */}
+        <nav className="mt-7 flex flex-wrap items-center justify-center gap-x-7 gap-y-3">
+          {navLinks.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className="text-sm font-medium text-muted transition-colors hover:text-cream"
+            >
+              {l.label}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="mx-auto mt-8 h-px max-w-[22rem] bg-line/15" />
+
+        <div className="mt-6 flex flex-col items-center justify-center gap-2 text-xs text-faint sm:flex-row sm:gap-6">
+          <p>© {new Date().getFullYear()} RapKids. All rights reserved.</p>
+          <a
+            href={`mailto:${SUPPORT_EMAIL}`}
+            className="transition-colors hover:text-cream"
+          >
+            {SUPPORT_EMAIL}
+          </a>
         </div>
       </div>
     </footer>

@@ -33,6 +33,9 @@ type Props = {
   typed?: boolean;
   typeSpeed?: number;
   caret?: Accent;
+  /** give accent segments a purple outline so a pale accent (cream) stays
+      legible on a light background */
+  accentOutline?: boolean;
 };
 
 /**
@@ -48,6 +51,7 @@ export default function CaretHeadline({
   typed = false,
   typeSpeed = 42,
   caret = "punch",
+  accentOutline = false,
 }: Props) {
   const reduce = useReducedMotion();
   const ref = useRef<HTMLHeadingElement>(null);
@@ -75,8 +79,12 @@ export default function CaretHeadline({
     remaining -= take;
     const visible = seg.text.slice(0, take);
     const cls = seg.accent ? accentText[seg.accent] : "";
+    const style =
+      seg.accent && accentOutline
+        ? { WebkitTextStrokeColor: "rgb(var(--c-punch))" as const }
+        : undefined;
     return (
-      <span key={idx} className={cls}>
+      <span key={idx} className={cls} style={style}>
         {visible}
       </span>
     );

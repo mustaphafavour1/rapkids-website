@@ -21,6 +21,8 @@ type Props = {
   moreLabel?: string;
   className?: string;
   tone?: Tone;
+  /** purple-outline the accent keyword (keeps a cream accent legible on light) */
+  accentOutline?: boolean;
 };
 
 const eyebrowTone: Record<Tone, string> = {
@@ -52,6 +54,7 @@ export default function SectionHeader({
   moreLabel,
   className = "",
   tone = "page",
+  accentOutline = false,
 }: Props) {
   const centered = align === "center";
   return (
@@ -69,6 +72,7 @@ export default function SectionHeader({
         as="h2"
         segments={segments}
         caret={caret}
+        accentOutline={accentOutline}
         className="text-4xl sm:text-5xl md:text-[3.4rem]"
       />
       {intro ? (

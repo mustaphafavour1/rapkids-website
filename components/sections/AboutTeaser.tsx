@@ -16,7 +16,7 @@ const facts = [
 export default function AboutTeaser() {
   return (
     <Section id="about" tone="ink">
-      <div className="grid items-center gap-14 lg:grid-cols-2">
+      <div className="grid items-stretch gap-14 lg:grid-cols-2">
         {/* text */}
         <div>
           <p className="eyebrow mb-4">Why it works</p>
@@ -58,16 +58,14 @@ export default function AboutTeaser() {
           </Reveal>
         </div>
 
-        {/* app screenshot */}
-        <Reveal delay={0.1}>
-          <div className="overflow-hidden rounded-3xl border border-line/15 bg-surface/60 p-3 backdrop-blur-sm">
-            <CharacterImage
-              src="/screenshots/why-it-works.png"
-              alt="A screenshot of the RapKids app scoring a typing run"
-              placeholderLabel="screenshots/why-it-works.png"
-              className="aspect-[4/3] w-full rounded-2xl object-cover"
-            />
-          </div>
+        {/* app screenshot — PNG cutout, sits directly on the section, no frame */}
+        <Reveal delay={0.1} className="flex items-center justify-center">
+          <CharacterImage
+            src="/screenshots/why-it-works.png"
+            alt="A screenshot of the RapKids app scoring a typing run"
+            placeholderLabel="screenshots/why-it-works.png"
+            className="h-full max-h-[540px] w-full object-contain"
+          />
         </Reveal>
       </div>
     </Section>

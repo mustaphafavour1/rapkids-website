@@ -14,6 +14,8 @@ type Props = {
   gradient?: boolean;
   /** optional character cutout shown on the right (desktop) */
   character?: { src: string; alt: string; placeholderLabel?: string };
+  /** center the eyebrow/headline/intro */
+  align?: "left" | "center";
 };
 
 /** Inner-page hero band, offset below the fixed nav. */
@@ -25,9 +27,11 @@ export default function PageHeader({
   children,
   gradient = false,
   character,
+  align = "left",
 }: Props) {
+  const centered = align === "center";
   const copy = (
-    <div className={gradient ? "text-white" : ""}>
+    <div className={`${gradient ? "text-white" : ""} ${centered ? "text-center" : ""}`}>
       <Reveal>
         <Link
           href="/"
@@ -44,14 +48,14 @@ export default function PageHeader({
         as="h1"
         caret={caret}
         segments={segments}
-        className="max-w-4xl text-5xl sm:text-6xl md:text-7xl"
+        className={`text-5xl sm:text-6xl md:text-7xl ${centered ? "mx-auto max-w-4xl" : "max-w-4xl"}`}
       />
       {intro ? (
         <Reveal delay={0.08}>
           <p
-            className={`mt-6 max-w-2xl text-lg leading-relaxed text-pretty ${
-              gradient ? "text-white/90" : "text-muted"
-            }`}
+            className={`mt-6 text-lg leading-relaxed text-pretty ${
+              centered ? "mx-auto max-w-2xl" : "max-w-2xl"
+            } ${gradient ? "text-white/90" : "text-muted"}`}
           >
             {intro}
           </p>
