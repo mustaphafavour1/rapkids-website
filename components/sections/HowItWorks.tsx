@@ -37,7 +37,6 @@ export default function HowItWorks() {
       <SectionHeader
         eyebrow="How it works"
         caret="punch"
-        accentOutline
         segments={[
           { text: "From SignUp to the " },
           { text: "Live Final", accent: "spark" },
@@ -51,7 +50,7 @@ export default function HowItWorks() {
           {/* track + self-drawing fill */}
           <div className="absolute left-0 right-0 top-[13px] h-[3px] rounded-full bg-line/15" />
           <motion.div
-            className="absolute left-0 top-[13px] h-[3px] rounded-full bg-gradient-to-r from-punch via-punch to-punch"
+            className="absolute left-0 top-[13px] h-[3px] rounded-full bg-gradient-to-r from-punch via-punch to-sky"
             initial={{ width: reduce ? "100%" : 0 }}
             whileInView={{ width: "100%" }}
             viewport={{ once: true, amount: 0.4 }}
@@ -73,14 +72,14 @@ export default function HowItWorks() {
                   <span
                     className={`h-[30px] w-[30px] rounded-full border-2 transition-all duration-300 ${
                       isFinal(i)
-                        ? "border-punch"
+                        ? "border-sky"
                         : active === i
                           ? "border-punch"
                           : "border-line/30"
                     } ${
                       active === i
                         ? isFinal(i)
-                          ? "scale-100 bg-punch"
+                          ? "scale-100 bg-sky"
                           : "scale-100 bg-punch"
                         : "scale-90 bg-ink"
                     }`}
@@ -89,7 +88,7 @@ export default function HowItWorks() {
                     <motion.span
                       layoutId="how-ring"
                       className={`absolute inset-[-6px] rounded-full ring-2 ${
-                        isFinal(i) ? "ring-punch/40" : "ring-punch/40"
+                        isFinal(i) ? "ring-sky/40" : "ring-punch/40"
                       }`}
                       transition={{ duration: 0.3, ease }}
                     />
@@ -105,7 +104,7 @@ export default function HowItWorks() {
                     <span className="font-mono text-xs text-faint">{s.n}</span>
                     <span
                       className={`font-mono text-[0.68rem] uppercase tracking-[0.14em] ${
-                        isFinal(i) ? "text-punch" : "text-punch"
+                        isFinal(i) ? "text-sky" : "text-punch"
                       }`}
                     >
                       {s.tag}
@@ -132,7 +131,7 @@ export default function HowItWorks() {
         <div className="relative pl-8">
           <div className="absolute bottom-2 left-[9px] top-2 w-[3px] rounded-full bg-line/15" />
           <motion.div
-            className="absolute left-[9px] top-2 w-[3px] rounded-full bg-gradient-to-b from-punch to-punch"
+            className="absolute left-[9px] top-2 w-[3px] rounded-full bg-gradient-to-b from-punch to-sky"
             initial={{ height: reduce ? "100%" : 0 }}
             whileInView={{ height: "100%" }}
             viewport={{ once: true, amount: 0.2 }}
@@ -143,7 +142,7 @@ export default function HowItWorks() {
               <div key={s.n} className="relative">
                 <span
                   className={`absolute -left-8 top-1 h-5 w-5 rounded-full border-2 ${
-                    isFinal(i) ? "border-punch bg-punch" : "border-punch bg-punch"
+                    isFinal(i) ? "border-sky bg-sky" : "border-punch bg-punch"
                   }`}
                 />
                 <div className="flex items-center gap-2">
