@@ -155,7 +155,7 @@ export default function RegisterForm() {
                         required
                         value={child.nickname}
                         onChange={(e) => updateChild(i, "nickname", e.target.value)}
-                        placeholder="e.g. TypeStorm7"
+                        placeholder="Child's nickname on RapKids"
                         className={fieldClass}
                       />
                     </div>
