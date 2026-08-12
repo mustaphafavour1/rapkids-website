@@ -6,7 +6,6 @@ import {
   TrendingUp,
   Flame,
   Frame,
-  Smartphone,
   Crown,
   Check,
   Trophy,
@@ -36,7 +35,7 @@ export const metadata: Metadata = {
     "$4,000 in prizes across four weeks. 15 children win cash; hundreds more win free months, badges, certificates, and one becomes a character in a real RapKids comic.",
 };
 
-const beyondIcons = [Gift, Medal, Award, TrendingUp, Flame, Frame, Smartphone];
+const beyondIcons = [Gift, Medal, Award, TrendingUp, Flame, Frame];
 const beyondAccents = ["text-volt", "text-sky", "text-peach", "text-gold", "text-punch"];
 
 export default function PrizesPage() {
@@ -201,13 +200,8 @@ export default function PrizesPage() {
           {beyondCash.map((b, i) => {
             const Icon = beyondIcons[i] ?? Award;
             const accent = beyondAccents[i % beyondAccents.length];
-            const isLast = i === beyondCash.length - 1;
             return (
-              <Reveal
-                key={b.title}
-                delay={(i % 3) * 0.08}
-                className={isLast ? "lg:col-start-2" : ""}
-              >
+              <Reveal key={b.title} delay={(i % 3) * 0.08}>
                 <div className="flex gap-4 border-t border-line/15 pt-6">
                   <span
                     className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cream/[0.05] ${accent}`}

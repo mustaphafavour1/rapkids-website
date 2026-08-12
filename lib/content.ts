@@ -137,10 +137,6 @@ export const beyondCash = [
   { title: "Personal best badge", body: "Any time your child beats their own record." },
   { title: "Streak badges", body: "At 7, 14, 21 and 28 consecutive active days." },
   { title: "Champion avatar frame", body: "For weekly winners." },
-  {
-    title: "Touch Champion title",
-    body: "Top touchscreen player, revealed at the Grand Final.",
-  },
 ];
 
 export const finalistRewards = [
@@ -301,7 +297,7 @@ export const faqs: Faq[] = [
   {
     category: "Winning",
     q: "How many times can my child play?",
-    a: "Practice is unlimited, always: any length, no cap, works offline. Scored attempts are capped at 10 a day, and your best 2 count. Winning comes down to how well your child types, not how many hours they spend.",
+    a: "Practice is unlimited, always: any length, no cap. Scored attempts are capped at 10 a day, and your best 2 count. Winning comes down to how well your child types, not how many hours they spend.",
   },
   {
     category: "Winning",

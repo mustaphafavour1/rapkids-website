@@ -116,8 +116,8 @@ export default function AboutPage() {
                 Practice Is Unlimited, Always
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">
-                Any length, no cap, works offline. Your child can warm up as much
-                as they like without it ever counting against them.
+                Any length, no cap. Your child can warm up as much as they like
+                without it ever counting against them.
               </p>
             </div>
           </Reveal>
