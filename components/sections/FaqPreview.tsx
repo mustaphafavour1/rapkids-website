@@ -10,7 +10,7 @@ import { faqs } from "@/lib/content";
 const preview = [
   faqs.find((f) => f.q.startsWith("Do I need")),
   faqs.find((f) => f.q === "How is a run scored?"),
-  faqs.find((f) => f.q === "Does my child have to appear on camera?"),
+  faqs.find((f) => f.q === "Is the Grand Final streamed or on camera?"),
   faqs.find((f) => f.q === "Can we still join once it's started?"),
   faqs.find((f) => f.q.startsWith("What do you show")),
 ].filter(Boolean) as typeof faqs;

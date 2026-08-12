@@ -11,7 +11,7 @@ import { SUPPORT_EMAIL } from "@/lib/config";
 export const metadata: Metadata = {
   title: "FAQ",
   description:
-    "Answers for parents and guardians: who can enter, how scoring works, camera choices, prizes, billing, safety and privacy in the RapKids TypeMaster Championship.",
+    "Answers for parents and guardians: who can enter, how scoring works, the Grand Final, prizes, billing, safety and privacy in the RapKids TypeMaster Championship.",
 };
 
 export default function FaqPage() {
