@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, Trophy, CalendarDays } from "lucide-react";
+import { ArrowRight, Trophy, Radio } from "lucide-react";
 import CaretHeadline from "@/components/primitives/CaretHeadline";
 import CountUp from "@/components/primitives/CountUp";
 import CharacterImage from "@/components/primitives/CharacterImage";
@@ -142,7 +142,7 @@ export default function Hero() {
               transition={{ duration: 0.6, ease, delay: 1.25 }}
               className="absolute -right-2 bottom-16 z-20 flex items-center gap-2 rounded-2xl border border-sky/25 bg-ink/90 px-4 py-3 shadow-xl shadow-black/10 backdrop-blur-md"
             >
-              <CalendarDays className="h-5 w-5 text-sky" />
+              <Radio className="h-5 w-5 text-sky" />
               <div className="leading-tight">
                 <div className="font-display text-base font-bold text-cream">
                   Live Grand Final

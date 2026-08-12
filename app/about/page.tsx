@@ -154,7 +154,7 @@ export default function AboutPage() {
           <div>
             <p className="eyebrow mb-4">The Grand Final</p>
             <h2 className="font-display text-4xl font-bold text-cream sm:text-5xl">
-              Eight Finalists, One Live Final
+              Eight Finalists, Live and Unscripted
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-muted text-pretty">
               The top 8 (eight children in total) compete live on 26 September,
@@ -172,24 +172,24 @@ export default function AboutPage() {
           <Reveal delay={0.1}>
             <div className="h-full rounded-3xl border border-line/15 bg-surface/60 p-7">
               <h3 className="font-display text-xl font-bold text-cream">
-                Played Live, Never Broadcast
+                Every Finalist&apos;s Guardian Chooses How Their Child Appears
               </h3>
               <ul className="mt-4 space-y-3 text-sm text-muted">
                 <li className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-punch" />
-                  The top 8 compete in real time on 26 September.
+                  Full camera on the live stream
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sky" />
-                  No camera and no stream; the final isn&apos;t broadcast.
+                  Audio and avatar only; heard, not shown
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-volt" />
-                  Results are published afterward; boards show handles only.
+                  A private, proctored session with only the score made public
                 </li>
               </ul>
               <p className="mt-4 border-t border-line/15 pt-4 font-mono text-xs text-faint">
-                Your child&apos;s privacy comes first, start to finish.{" "}
+                All three are scored identically and eligible for the same prize.{" "}
                 <Link href="/rules" className="text-muted underline underline-offset-2 hover:text-cream">
                   See the rules
                 </Link>

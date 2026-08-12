@@ -247,13 +247,14 @@ export const rules: RuleSection[] = [
   },
   {
     n: 7,
-    title: "The Grand Final",
+    title: "Grand Final and Broadcast",
     intro:
-      "The top 8 across the four weekly heats play the Grand Final live on 26 September, in real time, on passages nobody has seen before.",
+      "Appearing on camera is never a condition of winning. Every finalist's guardian chooses one of three ways to take part, and all three are eligible for the full prize.",
     points: [
-      "The format is heats, then semi-finals, then a head-to-head final.",
-      "The Grand Final is not streamed or broadcast, and no child appears on camera.",
-      "Results are announced on finals day; public boards only ever show a child's chosen handle.",
+      "Full broadcast: your child appears on camera during the live stream.",
+      "Audio and avatar only: your child is heard, represented by their avatar, but not shown on camera.",
+      "Private proctored session: your child competes privately with a proctor, and only the score is made public.",
+      "Consent for the live stream, the recording staying up afterward, and marketing clips are each separate, and each can be withdrawn at any time.",
     ],
   },
   {
@@ -305,8 +306,8 @@ export const faqs: Faq[] = [
   },
   {
     category: "The Grand Final",
-    q: "Is the Grand Final streamed or on camera?",
-    a: "No. The Grand Final is played live on 26 September but it isn't streamed or broadcast, and no child ever appears on camera. Results are published afterward, and public leaderboards only ever show your child's chosen handle.",
+    q: "Does my child have to appear on camera?",
+    a: "Never. Every finalist's guardian picks one of three ways to take part: full camera; audio and avatar only; or a private proctored session with just the score made public. All three are scored identically and eligible for the same prize.",
   },
   {
     category: "The Grand Final",
