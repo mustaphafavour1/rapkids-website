@@ -58,13 +58,13 @@ them without overlapping the copy.
 
 ---
 
-## 4. Bracket photos — `public/photos/` (already included)
+## 4. Competitor photo — `public/photos/` (already included)
 
-`junior-bracket.jpg` and `senior-bracket.jpg` are real photos already checked
-into the repo for the "Built to Be Fair" section's Juniors/Seniors bracket
-visual, sourced from Unsplash (free to use, no attribution required). Swap
-either file for your own photo whenever you'd like; same filenames, square
-crop, face centered.
+`senior-bracket.jpg` (and `junior-bracket.jpg`, currently unused) are real
+photos checked into the repo; `senior-bracket.jpg` fronts the "Built to Be
+Fair" section's single age-group (9–12) visual, sourced from Unsplash (free to
+use, no attribution required). Swap it for your own photo whenever you'd like;
+same filename, square crop, face centered.
 
 ---
 

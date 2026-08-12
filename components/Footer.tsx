@@ -20,7 +20,7 @@ export default function Footer() {
         </Link>
 
         <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-muted">
-          Four weeks of competitive typing for kids 5–12, ending in a live Grand
+          Four weeks of competitive typing for kids 9–12, ending in a live Grand
           Final on 26 September.
         </p>
 

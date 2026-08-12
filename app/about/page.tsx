@@ -154,11 +154,11 @@ export default function AboutPage() {
           <div>
             <p className="eyebrow mb-4">The Grand Final</p>
             <h2 className="font-display text-4xl font-bold text-cream sm:text-5xl">
-              Sixteen Finalists, Live and Unscripted
+              Eight Finalists, Live and Unscripted
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-muted text-pretty">
-              The top 8 from each bracket (16 children in total) compete live on
-              26 September, on passages nobody has seen before.
+              The top 8 (eight children in total) compete live on 26 September,
+              on passages nobody has seen before.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-2">
               {["Heats", "Semi-finals", "Head-to-head final"].map((s, i) => (
@@ -211,7 +211,7 @@ export default function AboutPage() {
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted">
                   Badges, free subscription months and a certificate with your
-                  child&apos;s stats. The two Grand Champions also earn a spot as a
+                  child&apos;s stats. The Grand Champion also earns a spot as a
                   character in an actual RapKids comic.
                 </p>
               </div>

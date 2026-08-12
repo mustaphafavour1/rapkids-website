@@ -9,7 +9,7 @@ import { rules } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Rules",
   description:
-    "The official rules of the RapKids TypeMaster Championship: eligibility, age brackets, entry, billing, fair play, prizes, the Grand Final broadcast choices, and child-protection commitments.",
+    "The official rules of the RapKids TypeMaster Championship: eligibility, age group, entry, billing, fair play, prizes, the Grand Final broadcast choices, and child-protection commitments.",
 };
 
 const slug = (n: number, title: string) =>

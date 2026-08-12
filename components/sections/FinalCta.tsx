@@ -5,8 +5,8 @@ import Reveal from "@/components/primitives/Reveal";
 
 const ribbon = [
   "$4,000 PRIZE POOL",
-  "30 CASH WINNERS",
-  "TWO AGE BRACKETS",
+  "15 CASH WINNERS",
+  "AGES 9 TO 12",
   "FOUR WEEKLY HEATS",
   "LIVE GRAND FINAL · 26 SEP",
   "ONE PLAN, THE WHOLE FAMILY",

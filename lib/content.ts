@@ -8,14 +8,11 @@ export const championship = {
   name: "RapKids TypeMaster Championship",
   year: 2026,
   prizePool: 4000,
-  cashWinners: 30,
+  cashWinners: 15,
   grandFinalDate: "26 September",
   grandFinalDateLong: "Saturday 26 September 2026",
   host: "Jason",
-  brackets: {
-    juniors: { name: "Juniors", ages: "5–8", accent: "punch" as const },
-    seniors: { name: "Seniors", ages: "9–12", accent: "sky" as const },
-  },
+  ageRange: "9–12",
 };
 
 /* ---- At a glance ------------------------------------------------------- */
@@ -33,17 +30,18 @@ export const glance: GlanceStat[] = [
     value: 4000,
     prefix: "$",
     label: "Total prize pool",
-    sub: "30 children win cash",
+    sub: "15 children win cash",
   },
   {
-    value: 30,
+    value: 15,
     label: "Cash winners",
     sub: "Hundreds more win free months & badges",
   },
   {
-    value: 2,
-    label: "Age brackets",
-    sub: "Juniors 5–8 · Seniors 9–12",
+    value: 9,
+    suffix: "–12",
+    label: "Ages",
+    sub: "One group; everyone competes 9 to 12",
   },
   {
     value: 4,
@@ -89,7 +87,7 @@ export const steps: Step[] = [
     window: "26 Sep",
     tag: "Grand Final",
     title: "The Live Grand Final",
-    body: "The top 8 per bracket go head-to-head live, on brand-new passages.",
+    body: "The top 8 go head-to-head live, on brand-new passages.",
   },
 ];
 
@@ -97,9 +95,9 @@ export const steps: Step[] = [
 
 export const fairness = [
   {
-    key: "brackets",
-    title: "Two Brackets, Always a Fair Fight",
-    body: "Juniors (5–8) and Seniors (9–12). Your child only ever competes against kids their own age.",
+    key: "agegroup",
+    title: "One Age Group, One Fair Race",
+    body: "Everyone competing is 9 to 12, so your child is always up against a genuinely even field.",
   },
   {
     key: "reset",
@@ -109,7 +107,7 @@ export const fairness = [
   {
     key: "family",
     title: "One Subscription, the Whole Family",
-    body: "Both children on your plan can enter; two leaderboards, two chances at a prize, every week.",
+    body: "Both children on your plan can enter, each with their own shot at a prize every week.",
   },
 ];
 
@@ -118,15 +116,15 @@ export const fairness = [
 export type PrizeRow = { name: string; amount: string; how: string };
 
 export const weeklyPrizes: PrizeRow[] = [
-  { name: "Week Champion", amount: "$150", how: "Highest score that week" },
-  { name: "Most Improved", amount: "$100", how: "Biggest gain over your own baseline" },
-  { name: "Accuracy Ace", amount: "$50", how: "Highest accuracy, min. 5 active days" },
+  { name: "Week Champion", amount: "$300", how: "Highest score that week" },
+  { name: "Most Improved", amount: "$200", how: "Biggest gain over your own baseline" },
+  { name: "Accuracy Ace", amount: "$100", how: "Highest accuracy, min. 5 active days" },
 ];
 
 export const finalPrizes: { place: string; amount: string }[] = [
-  { place: "Grand Champion", amount: "$500" },
-  { place: "Runner-Up", amount: "$200" },
-  { place: "Third Place", amount: "$100" },
+  { place: "Grand Champion", amount: "$1,000" },
+  { place: "Runner-Up", amount: "$400" },
+  { place: "Third Place", amount: "$200" },
 ];
 
 export const beyondCash = [
@@ -141,7 +139,7 @@ export const beyondCash = [
   { title: "Champion avatar frame", body: "For weekly winners." },
   {
     title: "Touch Champion title",
-    body: "Top touchscreen player per bracket, revealed at the Grand Final.",
+    body: "Top touchscreen player, revealed at the Grand Final.",
   },
 ];
 
@@ -199,7 +197,7 @@ export const rules: RuleSection[] = [
     n: 1,
     title: "Eligibility",
     points: [
-      "Entrants must be 5 to 12 as of 24 August 2026.",
+      "Entrants must be 9 to 12 as of 24 August 2026.",
       "An active RapKids subscription is required to enter, appear on the leaderboard or win a prize. Monthly is the minimum plan.",
       "Entry must be completed by a parent or legal guardian, who confirms consent on the child's behalf.",
       "Up to two child profiles per parent account may compete.",
@@ -207,11 +205,10 @@ export const rules: RuleSection[] = [
   },
   {
     n: 2,
-    title: "Age Brackets",
+    title: "Age Group",
     points: [
-      "Juniors: 5 to 8.",
-      "Seniors: 9 to 12.",
-      "Every child competes only within their own bracket.",
+      "The championship is open to children 9 to 12.",
+      "Everyone competes together in one group, on one leaderboard.",
     ],
   },
   {
@@ -240,7 +237,7 @@ export const rules: RuleSection[] = [
       "Every run is checked automatically for signs of scripted or assisted typing.",
       "Nothing is auto-disqualified. Every flagged run, and every prospective weekly winner, is reviewed by a person before any result is announced.",
       "A child can win only one cash prize category per week; their highest-value one.",
-      "A household can win at most one cash prize per bracket per week.",
+      "A household can win at most one cash prize per week.",
       "Creating multiple profiles for one child, entering a false date of birth, or playing on another child's account is grounds for disqualification.",
     ],
   },
@@ -284,12 +281,12 @@ export const faqs: Faq[] = [
   {
     category: "Getting In",
     q: "Who can enter?",
-    a: "Any child aged 5 to 12 (as of 24 August 2026) on an active RapKids subscription. A parent or guardian enters each child from the Parent Zone and confirms consent on their behalf.",
+    a: "Any child aged 9 to 12 (as of 24 August 2026) on an active RapKids subscription. A parent or guardian enters each child from the Parent Zone and confirms consent on their behalf.",
   },
   {
     category: "Getting In",
     q: "Do I need a separate subscription for each child?",
-    a: "No. One RapKids subscription covers up to two child profiles, and both can enter; two leaderboards, two chances at a prize, every week.",
+    a: "No. One RapKids subscription covers up to two child profiles, and both can enter; two entries, two chances at a prize, every week.",
   },
   {
     category: "Getting In",
@@ -309,7 +306,7 @@ export const faqs: Faq[] = [
   {
     category: "Winning",
     q: "Can siblings both win?",
-    a: "Yes. A household can win one cash prize per bracket per week, so siblings in different brackets can each take home a prize. Siblings in the same bracket share one shot at it that week. Each child can also win only one cash category per week; their highest-value one.",
+    a: "A household can win one cash prize per week. Both your children compete on the same board, so they share the household's one shot at each week's cash; and any child can win only one cash category per week, their highest-value one.",
   },
   {
     category: "The Grand Final",
@@ -319,7 +316,7 @@ export const faqs: Faq[] = [
   {
     category: "The Grand Final",
     q: "Who makes the Grand Final?",
-    a: "The top 8 in each bracket, 16 finalists in total, compete live on 26 September on passages nobody has seen before: heats, then semi-finals, then a head-to-head final.",
+    a: "The top 8, eight finalists in total, compete live on 26 September on passages nobody has seen before: heats, then semi-finals, then a head-to-head final.",
   },
   {
     category: "Money & Billing",

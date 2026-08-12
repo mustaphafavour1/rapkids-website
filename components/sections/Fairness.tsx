@@ -8,68 +8,35 @@ import Reveal from "@/components/primitives/Reveal";
 import { fairness } from "@/lib/content";
 import { ease } from "@/lib/motion";
 
-/* 1 — two brackets: kids matched within their own age lane, each fronted by
-   a real photo so the bracket reads as real kids, not an abstract diagram */
-function BracketLanes() {
-  const Lane = ({
-    label,
-    ages,
-    color,
-    photo,
-    alt,
-  }: {
-    label: string;
-    ages: string;
-    color: "punch" | "sky";
-    photo: string;
-    alt: string;
-  }) => (
-    <div
-      className={`flex items-center gap-3 rounded-xl border px-3 py-2.5 ${
-        color === "punch"
-          ? "border-punch/25 bg-punch/[0.07]"
-          : "border-sky/25 bg-sky/[0.07]"
-      }`}
-    >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={photo}
-        alt={alt}
-        className={`h-11 w-11 shrink-0 rounded-full object-cover ring-2 ${
-          color === "punch" ? "ring-punch/50" : "ring-sky/50"
-        }`}
-      />
-      <div className="leading-tight">
-        <div className="font-display text-base font-bold text-cream">{label}</div>
-        <div className="font-mono text-[0.6rem] uppercase tracking-widest text-faint">
-          Ages {ages}
+/* 1 — one age group: every competitor is 9 to 12, fronted by a real photo so
+   it reads as real kids on one even field, not an abstract diagram */
+function OneAgeGroup() {
+  return (
+    <div className="flex h-full flex-col justify-center gap-4">
+      <div className="flex items-center gap-2 self-start rounded-full border border-punch/30 bg-punch/10 px-3 py-1.5">
+        <span className="font-mono text-[0.62rem] uppercase tracking-widest text-punch">
+          Ages 9–12
+        </span>
+      </div>
+      <div className="flex items-center gap-3 rounded-xl border border-punch/25 bg-punch/[0.07] px-3 py-2.5">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/photos/senior-bracket.jpg"
+          alt="A championship competitor"
+          className="h-12 w-12 shrink-0 rounded-full object-cover ring-2 ring-punch/50"
+        />
+        <div className="leading-tight">
+          <div className="font-display text-base font-bold text-cream">
+            One group, one board
+          </div>
+          <div className="font-mono text-[0.6rem] uppercase tracking-widest text-faint">
+            everyone 9 to 12
+          </div>
         </div>
       </div>
-    </div>
-  );
-  return (
-    <div className="flex h-full flex-col justify-center gap-3">
-      <Lane
-        label="Juniors"
-        ages="5–8"
-        color="punch"
-        photo="/photos/junior-bracket.jpg"
-        alt="A Juniors-bracket kid"
-      />
-      <div className="flex items-center justify-center gap-2">
-        <span className="h-px w-8 bg-line/20" />
-        <span className="font-mono text-[0.6rem] uppercase tracking-widest text-faint">
-          never mixed
-        </span>
-        <span className="h-px w-8 bg-line/20" />
+      <div className="font-mono text-[0.6rem] text-faint">
+        no age advantage · an even field
       </div>
-      <Lane
-        label="Seniors"
-        ages="9–12"
-        color="sky"
-        photo="/photos/senior-bracket.jpg"
-        alt="A Seniors-bracket kid"
-      />
     </div>
   );
 }
@@ -117,7 +84,7 @@ function MondayReset() {
   );
 }
 
-/* 3 — one subscription, up to two children each with their own board */
+/* 3 — one subscription, up to two children, each with their own entry */
 function FamilyFanout() {
   const kids = ["Ada", "Zed"];
   return (
@@ -146,13 +113,13 @@ function FamilyFanout() {
         ))}
       </div>
       <div className="font-mono text-[0.6rem] text-faint">
-        up to 2 kids · 2 boards · 2 chances
+        up to 2 kids · 2 chances every week
       </div>
     </div>
   );
 }
 
-const visuals = [BracketLanes, MondayReset, FamilyFanout];
+const visuals = [OneAgeGroup, MondayReset, FamilyFanout];
 
 export default function Fairness() {
   return (
@@ -165,7 +132,7 @@ export default function Fairness() {
           { text: "Always a " },
           { text: "Fair Fight", accent: "sky" },
         ]}
-        intro="No child is ever out of it. Same-age brackets, a clean slate every week, and a plan that lets your whole family compete."
+        intro="No child is ever out of it. One age group, a clean slate every week, and a plan that lets your whole family compete."
       />
 
       <div className="mt-14 grid gap-px overflow-hidden rounded-3xl border border-line/15 bg-line/10 md:grid-cols-3">

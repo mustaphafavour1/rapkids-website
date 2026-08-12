@@ -33,7 +33,7 @@ import {
 export const metadata: Metadata = {
   title: "Prizes",
   description:
-    "$4,000 in prizes across four weeks and two brackets. 30 children win cash; hundreds more win free months, badges, certificates, and two become characters in a real RapKids comic.",
+    "$4,000 in prizes across four weeks. 15 children win cash; hundreds more win free months, badges, certificates, and one becomes a character in a real RapKids comic.",
 };
 
 const beyondIcons = [Gift, Medal, Award, TrendingUp, Flame, Frame, Smartphone];
@@ -53,9 +53,9 @@ export default function PrizesPage() {
         }}
         segments={[
           { text: "$4,000 in Prizes", accent: "spark" },
-          { text: ". Four Weeks. Two Brackets." },
+          { text: ". Four Weeks. Ages 9–12." },
         ]}
-        intro="Thirty children win cash. Hundreds more win free months, badges and a spot in the record books."
+        intro="Fifteen children win cash. Hundreds more win free months, badges and a spot in the record books."
       >
         <div className="flex flex-wrap gap-3">
           <div className="rounded-2xl border border-white/20 bg-white/10 px-5 py-3 backdrop-blur-sm">
@@ -68,7 +68,7 @@ export default function PrizesPage() {
           </div>
           <div className="rounded-2xl border border-white/20 bg-white/10 px-5 py-3 backdrop-blur-sm">
             <div className="font-display text-3xl font-extrabold text-white">
-              <CountUp to={30} />
+              <CountUp to={15} />
             </div>
             <div className="font-mono text-[0.62rem] uppercase tracking-widest text-white/70">
               cash winners
@@ -88,10 +88,10 @@ export default function PrizesPage() {
       {/* Weekly heats */}
       <Section tone="ink">
         <SectionHeader
-          eyebrow="Weekly heats · both brackets"
+          eyebrow="Weekly heats"
           caret="punch"
           segments={[{ text: "Win Every " }, { text: "Single Week", accent: "punch" }]}
-          intro="Three ways to win each week, in each bracket. Boards reset every Monday; winners announced the Monday after."
+          intro="Three ways to win, every week. Boards reset every Monday; winners announced the Monday after."
         />
         <Reveal delay={0.1}>
           <div className="mt-10 overflow-hidden rounded-3xl border border-line/15">
@@ -120,7 +120,7 @@ export default function PrizesPage() {
         </Reveal>
         <Reveal delay={0.15}>
           <p className="mt-5 font-mono text-xs text-faint">
-            $300 per bracket, every week ·{" "}
+            $600 every week ·{" "}
             <span className="text-cream">$2,400 across the four weekly heats</span>
           </p>
         </Reveal>
@@ -133,7 +133,7 @@ export default function PrizesPage() {
           caret="punch"
           accentOutline
           segments={[{ text: "The " }, { text: "Finals-Day", accent: "spark" }, { text: " Podium" }]}
-          intro="The biggest prizes of the championship, awarded live, per bracket."
+          intro="The biggest prizes of the championship, awarded live on finals day."
         />
         <Reveal delay={0.1}>
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -168,7 +168,7 @@ export default function PrizesPage() {
           <p className="mt-5 font-mono text-xs text-faint">
             $1,600 on finals day ·{" "}
             <span className="text-cream">
-              Juniors and Seniors each crown a Grand Champion
+              one Grand Champion crowned, ages 9 to 12
             </span>
           </p>
         </Reveal>
@@ -180,9 +180,9 @@ export default function PrizesPage() {
             <p className="text-sm leading-relaxed text-muted">
               <span className="text-cream">One prize each, kept fair.</span> A
               child can win only one cash category per week; their highest-value
-              one. A household can win one cash prize per bracket per week, so
-              siblings in different brackets can both take home a prize; siblings
-              in the same bracket share one shot at it.
+              one. A household can win one cash prize per week, so two siblings
+              on your plan share the household&apos;s one shot at each week&apos;s
+              cash.
             </p>
           </div>
         </Reveal>
@@ -242,7 +242,7 @@ export default function PrizesPage() {
               />
               <div className="relative z-10 max-w-[58%]">
                 <div className="mb-2 font-mono text-[0.62rem] uppercase tracking-widest text-sky">
-                  Top 8 per bracket · 16 finalists
+                  Top 8 · 8 finalists
                 </div>
                 <h3 className="font-display text-3xl font-bold text-cream">
                   If Your Child Makes the Grand Final
@@ -269,7 +269,7 @@ export default function PrizesPage() {
               />
               <div className="relative z-10 max-w-[58%]">
                 <div className="mb-2 font-mono text-[0.62rem] uppercase tracking-widest text-gold">
-                  2 Grand Champions
+                  1 Grand Champion
                 </div>
                 <h3 className="font-display text-3xl font-bold text-cream">
                   If Your Child Becomes Grand Champion
@@ -369,7 +369,7 @@ export default function PrizesPage() {
       </Section>
 
       <CtaBand
-        title="Thirty Winners. "
+        title="Fifteen Winners. "
         accent="One Could Be Yours"
         subtitle="Enter your child and get a shot at every board, every week; all the way to finals day."
       />

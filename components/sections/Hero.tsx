@@ -68,7 +68,7 @@ export default function Hero() {
           <Reveal delay={0.1}>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/85 text-pretty">
               Four weeks of competitive typing game. $4,000 in cash prizes. For
-              kids between ages 5 to 12.
+              kids between ages 9 to 12.
             </p>
           </Reveal>
 
@@ -94,7 +94,7 @@ export default function Hero() {
                 Registration open
               </span>
               <span className="chip-on-dark">4-week championship</span>
-              <span className="chip-on-dark">Ages 5 to 12</span>
+              <span className="chip-on-dark">Ages 9 to 12</span>
             </div>
           </Reveal>
         </div>
@@ -131,7 +131,7 @@ export default function Hero() {
               <div className="leading-tight">
                 <div className="font-display text-xl font-bold text-gold-grad">$4,000</div>
                 <div className="font-mono text-[0.6rem] uppercase tracking-widest text-faint">
-                  30 cash winners
+                  15 cash winners
                 </div>
               </div>
             </motion.div>

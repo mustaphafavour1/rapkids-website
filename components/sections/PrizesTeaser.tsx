@@ -71,10 +71,10 @@ export default function PrizesTeaser() {
         align="center"
         tone="onColor"
         segments={[
-          { text: "$4,000, and 30 Ways ", accent: "punch" },
+          { text: "$4,000, and 15 Ways ", accent: "punch" },
           { text: "to Win It" },
         ]}
-        intro="Thirty children win cash. Hundreds more win free months, badges and a certificate, with their name in the record books."
+        intro="Fifteen children win cash. Hundreds more win free months, badges and a certificate, with their name in the record books."
       />
 
       {/* Grand Final podium, centered */}
@@ -83,7 +83,7 @@ export default function PrizesTeaser() {
           <PodiumBar
             place="2"
             label="Runner-Up"
-            amount="$200"
+            amount="$400"
             barHeight={132}
             order="order-1"
             delay={0.15}
@@ -91,7 +91,7 @@ export default function PrizesTeaser() {
           <PodiumBar
             place="1"
             label="Grand Champion"
-            amount="$500"
+            amount="$1,000"
             barHeight={208}
             order="order-2"
             primary
@@ -100,14 +100,14 @@ export default function PrizesTeaser() {
           <PodiumBar
             place="3"
             label="Third Place"
-            amount="$100"
+            amount="$200"
             barHeight={92}
             order="order-3"
             delay={0.3}
           />
         </div>
         <p className="mt-5 text-center font-mono text-xs text-cream/70">
-          Per bracket, live. Juniors and Seniors each crown a Grand Champion.
+          Live on finals day. One Grand Champion is crowned, ages 9 to 12.
         </p>
       </div>
 
@@ -116,7 +116,7 @@ export default function PrizesTeaser() {
         <div className="mb-6 flex flex-wrap items-center justify-center gap-3">
           <span className="chip-solid">Weekly heats</span>
           <span className="font-mono text-xs text-cream/80">
-            $300 to be won every week before the Grand Final
+            $600 to be won every week before the Grand Final
           </span>
         </div>
         <div className="grid gap-4 sm:grid-cols-3">

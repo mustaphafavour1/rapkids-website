@@ -1,7 +1,7 @@
 # RapKids TypeMaster Championship
 
 The marketing site for the **RapKids TypeMaster Championship** — four weeks of
-competitive typing for kids 5–12, $4,000 in prizes, and a live Grand Final.
+competitive typing for kids 9–12, $4,000 in prizes, and a live Grand Final.
 
 Built with **Next.js (App Router) · TypeScript · Tailwind CSS · Framer Motion**.
 
@@ -27,8 +27,8 @@ Tailwind in `tailwind.config.ts`:
   section rhythm, and a soft raised fill
 - **cream / muted / faint** — despite the name kept from an earlier dark build,
   these are now the primary/secondary/tertiary **text** colors (dark on light)
-- **punch** (purple, `#7A3EF5`) — primary actions + the Juniors bracket
-- **sky** (pink, `#E62EDF`) — secondary + the Seniors bracket
+- **punch** (purple, `#7A3EF5`) — primary actions + the main accent
+- **sky** (pink, `#E62EDF`) — secondary accent
 - **volt** (green, `#95CF42`) — "live"/go states + the Rules section canvas
 - **peach** (`#F582A1`) — tertiary accent
 - **gold** (`#C28A1A`) — money/prizes as text (podium amounts, the `text-gold-grad`
