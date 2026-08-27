@@ -7,6 +7,7 @@ import CaretHeadline from "@/components/primitives/CaretHeadline";
 import CountUp from "@/components/primitives/CountUp";
 import CharacterImage from "@/components/primitives/CharacterImage";
 import Reveal from "@/components/primitives/Reveal";
+import ChampionshipChatbot from "@/components/Chatbot/ChampionshipChatbot";
 import { ease } from "@/lib/motion";
 
 function HudStat({
@@ -179,6 +180,8 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
+
+      <ChampionshipChatbot />
     </section>
   );
 }

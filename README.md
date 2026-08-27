@@ -16,6 +16,44 @@ Built with **Next.js (App Router) · TypeScript · Tailwind CSS · Framer Motion
 | `/faq` | Every question a guardian asks, grouped by topic. |
 | `/register` | The entry form — parent email, and up to two children each with name, date of birth and leaderboard nickname. Submission is currently stubbed client-side (see below). |
 
+## Chatbot & content base
+
+A small championship Q&A widget lives on the home page hero
+(`components/Chatbot/ChampionshipChatbot.tsx`) — a floating launcher, bottom
+right, that opens a chat panel. It's self-contained (fixed-position, no props,
+manages its own state), so it can be added to any other page by importing it
+and rendering `<ChampionshipChatbot />` once.
+
+It talks to `POST /api/chat`, which streams a reply from **Claude Haiku 4.5**
+(`claude-haiku-4-5-20251001` — the cheapest current Claude model; change it in
+[`lib/anthropic.ts`](lib/anthropic.ts) if you ever want smarter-but-pricier
+answers). The system prompt the model sees is built in
+[`lib/chat-context.ts`](lib/chat-context.ts) from two sources:
+
+1. **The site's own copy** — prizes, rules, FAQ, how-it-works, all pulled live
+   from `lib/content.ts`, so the bot never drifts out of sync with the pages.
+2. **The content base** — free-text notes pasted in at the password-protected
+   `/admin` page, for anything not already on the site: RapKids, Raptures, extra
+   championship notes, and a "response guidelines" field for tone/boundaries.
+
+**Setup** (see [`.env.example`](.env.example) for the full list):
+
+- `ANTHROPIC_API_KEY` — required for the chatbot to respond at all. Without it,
+  the widget shows a friendly "not set up yet" message instead of erroring.
+- `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` — persists the content
+  base across deploys and backs a light per-IP rate limit on `/api/chat`
+  (8 messages/minute). Create a free database at
+  [console.upstash.com](https://console.upstash.com) or via the Vercel
+  Marketplace's Upstash integration, which fills these in for you. Without
+  them the site still works, but `/admin` shows a banner warning that edits
+  won't survive a redeploy or restart.
+- `KB_ADMIN_PASSWORD` / `KB_SESSION_SECRET` — gate `/admin`. One shared
+  password (no user accounts); `KB_SESSION_SECRET` signs the session cookie
+  and can be any long random string (e.g. `openssl rand -hex 32`).
+
+`/admin` isn't linked from the nav and is excluded from search indexing
+(`robots: noindex`) — it's reachable only by URL.
+
 ## Design system
 
 A light theme: most sections are white or a pale lavender step, with a handful
@@ -58,11 +96,11 @@ globally, and `Section` accepts `overflowVisible` so a page can host a
 **Logo & wordmark:** the nav shows the RapKids logo mark
 (`public/brand/logo.png`, via `BrandLogo`) and the footer shows the higher-res
 `public/brand/rapkids-footer.png` (via `BrandLockup`) beside the "RapKids"
-wordmark set in **Nunito Sans** (not the display face). Both hide the mark
+wordmark set in **Nunito** (not the display face). Both hide the mark
 cleanly if the file isn't present. `logo.png` is also the browser-tab favicon
 (`metadata.icons` in `app/layout.tsx`).
 
-Type: **Bubblegum Sans** (display headlines), **Nunito Sans** (body/UI),
+Type: **Bubblegum Sans** (display headlines), **Nunito** (body/UI),
 **JetBrains Mono** (data, labels, the typing motif). Loaded via `next/font` —
 self-hosted at build, no external CDN at runtime. Bubblegum Sans ships one
 weight, so `.font-display` forces `font-weight: 400` globally to stop the
@@ -115,12 +153,20 @@ in one place: [`lib/content.ts`](lib/content.ts).
 ## Structure
 
 ```
-app/                 routes (landing + about/prizes/rules/faq/register) + layout, globals
+app/                 routes (landing + about/prizes/rules/faq/register/admin) + layout, globals
+  api/chat/          streaming chat endpoint (Claude Haiku 4.5)
+  api/kb/            content-base GET/PUT, admin-gated
+  api/admin/         login/logout (sets/clears the admin session cookie)
+  admin/             /admin — password gate + content-base editor
 components/
   sections/          landing-page sections (Hero, Glance, HowItWorks, …)
   primitives/        reusable building blocks (CaretHeadline, CountUp, Reveal,
                       SectionCharacter, …)
+  Chatbot/           ChampionshipChatbot — the standalone chat widget
+  admin/             AdminLoginForm, KnowledgeBaseEditor
   Nav, Footer, PageHeader, PageShell, CtaBand, FaqAccordion, RegisterForm
-lib/                 content.ts (copy/data), config.ts (URLs), motion.ts
-public/              image assets + ASSETS.md
+lib/                 content.ts (copy/data), config.ts (URLs), motion.ts,
+                      anthropic.ts, chat-context.ts, kb-store.ts, admin-auth.ts,
+                      rate-limit.ts
+public/               image assets + ASSETS.md
 ```
