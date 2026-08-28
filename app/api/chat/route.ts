@@ -1,7 +1,6 @@
 import type { NextRequest } from "next/server";
 import { getAnthropicClient, isChatConfigured, CHAT_MODEL, CHAT_MAX_TOKENS } from "@/lib/anthropic";
 import { buildSystemPrompt } from "@/lib/chat-context";
-import { checkRateLimit } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 
@@ -9,14 +8,6 @@ type ChatMessage = { role: "user" | "assistant"; content: string };
 
 const MAX_MESSAGE_LENGTH = 600;
 const MAX_MESSAGES = 16;
-const RATE_LIMIT = 8;
-const RATE_WINDOW_SECONDS = 60;
-
-function getClientIp(req: NextRequest): string {
-  const xff = req.headers.get("x-forwarded-for");
-  if (xff) return xff.split(",")[0]!.trim();
-  return "unknown";
-}
 
 function badRequest(message: string) {
   return Response.json({ error: message }, { status: 400 });
@@ -70,15 +61,6 @@ export async function POST(req: NextRequest) {
 
   if (cleaned[cleaned.length - 1]!.role !== "user") {
     return badRequest("The last message must be from the user.");
-  }
-
-  const ip = getClientIp(req);
-  const { allowed } = await checkRateLimit(`chat:${ip}`, RATE_LIMIT, RATE_WINDOW_SECONDS);
-  if (!allowed) {
-    return Response.json(
-      { error: "Too many messages — please wait a minute and try again." },
-      { status: 429 }
-    );
   }
 
   const system = await buildSystemPrompt();

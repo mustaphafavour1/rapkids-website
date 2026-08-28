@@ -13,13 +13,14 @@ import {
   faqs,
 } from "@/lib/content";
 import { SUPPORT_EMAIL } from "@/lib/config";
-import { getKnowledgeBase, type KnowledgeBase } from "@/lib/kb-store";
+import { getKnowledgeBase, type KnowledgeBase } from "@/lib/google-docs-kb";
 
 /**
  * Builds the system prompt for the championship chatbot: fixed guardrails,
- * the admin's free-text knowledge base (from /admin), and a structured dump
- * of the site's own copy (lib/content.ts) so facts like dates and prize
- * amounts stay accurate without the admin having to duplicate them by hand.
+ * the site owner's free-text knowledge base (four Google Docs — see
+ * lib/google-docs-kb.ts), and a structured dump of the site's own copy
+ * (lib/content.ts) so facts like dates and prize amounts stay accurate
+ * without anyone having to duplicate them by hand.
  */
 
 function formatStructuredContext(): string {

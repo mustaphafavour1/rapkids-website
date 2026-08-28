@@ -32,27 +32,23 @@ answers). The system prompt the model sees is built in
 
 1. **The site's own copy** — prizes, rules, FAQ, how-it-works, all pulled live
    from `lib/content.ts`, so the bot never drifts out of sync with the pages.
-2. **The content base** — free-text notes pasted in at the password-protected
-   `/admin` page, for anything not already on the site: RapKids, Raptures, extra
-   championship notes, and a "response guidelines" field for tone/boundaries.
+2. **The knowledge base** — four Google Docs, one per topic, for anything not
+   already on the site: RapKids, Raptures, extra championship notes, and a
+   "response guidelines" doc for tone/boundaries. No admin page, no database —
+   just edit the doc.
 
 **Setup** (see [`.env.example`](.env.example) for the full list):
 
 - `ANTHROPIC_API_KEY` — required for the chatbot to respond at all. Without it,
   the widget shows a friendly "not set up yet" message instead of erroring.
-- `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` — persists the content
-  base across deploys and backs a light per-IP rate limit on `/api/chat`
-  (8 messages/minute). Create a free database at
-  [console.upstash.com](https://console.upstash.com) or via the Vercel
-  Marketplace's Upstash integration, which fills these in for you. Without
-  them the site still works, but `/admin` shows a banner warning that edits
-  won't survive a redeploy or restart.
-- `KB_ADMIN_PASSWORD` / `KB_SESSION_SECRET` — gate `/admin`. One shared
-  password (no user accounts); `KB_SESSION_SECRET` signs the session cookie
-  and can be any long random string (e.g. `openssl rand -hex 32`).
-
-`/admin` isn't linked from the nav and is excluded from search indexing
-(`robots: noindex`) — it's reachable only by URL.
+- `KB_DOC_RAPKIDS_URL`, `KB_DOC_RAPTURES_URL`, `KB_DOC_CHAMPIONSHIP_URL`,
+  `KB_DOC_GUIDELINES_URL` — each one a Google Doc's share link (or just its
+  ID). All optional; leave any blank to skip that section, the bot still
+  answers off the site's own content either way. **Each doc must be shared as
+  "Anyone with the link → Viewer"** (Share → General access) — the server
+  reads its plain-text export directly, with no Google sign-in on our end.
+  Edits typically go live within about a minute (short in-memory cache, no
+  redeploy needed) — see [`lib/google-docs-kb.ts`](lib/google-docs-kb.ts).
 
 ## Design system
 
@@ -153,20 +149,15 @@ in one place: [`lib/content.ts`](lib/content.ts).
 ## Structure
 
 ```
-app/                 routes (landing + about/prizes/rules/faq/register/admin) + layout, globals
+app/                 routes (landing + about/prizes/rules/faq/register) + layout, globals
   api/chat/          streaming chat endpoint (Claude Haiku 4.5)
-  api/kb/            content-base GET/PUT, admin-gated
-  api/admin/         login/logout (sets/clears the admin session cookie)
-  admin/             /admin — password gate + content-base editor
 components/
   sections/          landing-page sections (Hero, Glance, HowItWorks, …)
   primitives/        reusable building blocks (CaretHeadline, CountUp, Reveal,
                       SectionCharacter, …)
   Chatbot/           ChampionshipChatbot — the standalone chat widget
-  admin/             AdminLoginForm, KnowledgeBaseEditor
   Nav, Footer, PageHeader, PageShell, CtaBand, FaqAccordion, RegisterForm
 lib/                 content.ts (copy/data), config.ts (URLs), motion.ts,
-                      anthropic.ts, chat-context.ts, kb-store.ts, admin-auth.ts,
-                      rate-limit.ts
+                      anthropic.ts, chat-context.ts, google-docs-kb.ts
 public/               image assets + ASSETS.md
 ```
